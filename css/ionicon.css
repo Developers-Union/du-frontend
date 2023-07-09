@@ -1,0 +1,11 @@
+ion-icon {
+    margin-top: .2vw;
+    color: #fff;
+    width: 2vw;
+    height: 2vw;
+    transition: all .5s;
+}
+
+ion-icon:hover {
+    color: #6ab7ff;
+}
