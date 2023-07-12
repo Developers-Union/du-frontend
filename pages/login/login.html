@@ -1,17 +1,79 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Log in - Developers Union</title>
-    <link rel="stylesheet" href="../../css/basic.css">
-    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            background: linear-gradient(135deg, #34ac40, #2c8ae8, #dc47cd, #e7e373);
+            background-size: 500%;
+        
+            animation: bgAnimation 6s linear infinite;
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
-<body>
-<div class="main-wrapper">
 
-</div>
+<body>
+
+<!-- 此下为框架 无CSS -->
+<h1>username</h1><input id="username">
+<h1>password</h1><input id="password">
+<h1 id="wrong"></h1>
+<button id="submit">提交</button>
+<!-- 此上为框架 无CSS -->
+
+<script>
+    function submit(){
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var wrong = document.getElementById("wrong");
+        var LoginServerURL = "http://127.0.0.1:8080/user/login";
+        fetch(LoginServerURL, {
+            mode: 'no-cors',
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+				userName:username.value,
+                password:password.value
+            })
+        })
+            .then((response) => response.text())
+            .then((response) => {
+                console.log(response)
+            })
+    }
+    var button = document.getElementById("submit");
+    button.onclick = submit;
+</script>
 </body>
+
 </html>
