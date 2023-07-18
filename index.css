@@ -105,7 +105,8 @@ ul {
     margin-top: 3vw;
     color: #fff;
     font-size: 4vw; */
-    background: linear-gradient(to right, rgb(42,245,152), rgb(0,158,253));
+    background: linear-gradient(to right, rgb(42, 245, 152), rgb(0, 158, 253));
+    background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     width: fit-content;
@@ -275,7 +276,7 @@ ul {
     display: none;
 }
 
-.footer{
+.footer {
     position: absolute;
     width: 100%;
 }

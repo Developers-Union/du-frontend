@@ -5,32 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login | DU</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Register | DU</title>
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
 
     <div class="main-wrapper">
-        <div class="login-wrapper">
+        <div class="register-wrapper">
             <div class="h1-wrapper">
-                <h1>Log In</h1>
+                <h1>Register</h1>
             </div>
             <div class="username input-wrapper">
-                <p>input username or e-mail:</p>
+                <p>input e-mail:</p>
                 <textarea name="username" id="username"></textarea>
             </div>
             <div class="password input-wrapper">
                 <p>input password:</p>
                 <textarea name="password" id="password"></textarea>
                 <br>
-                <a id="forget-password">Forgot password?</a>
             </div>
-            <div class="no-account">
-                <p>Haven't had an account? <a href="../register/register.html" id="register">Register</a> </p>
+            <div class="verify">
+                <p>input verify code:</p>
+                <div id="verify-code-wrapper">
+                    <div class="verify-code-digit"></div>
+                    <div class="verify-code-digit"></div>
+                    <div class="verify-code-digit"></div>
+                    <div class="verify-code-digit"></div>
+                    <div class="verify-code-digit"></div>
+                    <div class="verify-code-digit"></div>
+                </div>
             </div>
-            <div class="login-button-wrapper">
-                <button id="login-button">Log in</button>
+            <div class="had-account">
+                <p>Had had an account? <a href="../login/login.html" id="login">Log In</a> </p>
+            </div>
+            <div class="register-button-wrapper">
+                <button id="login-button">Register</button>
             </div>
         </div>
     </div>
@@ -46,8 +56,8 @@
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    "username": username.value,
-                    "password": password.value
+                    username: username.value,
+                    password: password.value
                 })
             })
                 .then((response) => response.json())

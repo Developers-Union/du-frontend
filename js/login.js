@@ -1,7 +1,6 @@
 var username = document.getElementById('username');
 var password = document.getElementById('password');
-var email = document.getElementById('email');
-var loginUrl = "";
+var loginUrl = "127.0.0.1:3000/login";
 
 function checkUn(username) {
     if (username.value.length > 15 || username.value.length < 3) {
@@ -12,29 +11,6 @@ function checkUn(username) {
 }
 
 
-var Cookie = {
-    set: function (key, value, exdays) {
-        let exdate = new Date()
-        exdate.setTime(exdate.getTime() + 24 * 60 * 60 * 1000 * exdays)
-        window.document.cookie = key + '=' + value + ';path=/;expires=' + exdate.toGMTString()
-    },
-
-    get: function (key) {
-        if (document.cookie.length > 0) {
-            var arr = document.cookie.split('; ')
-            for (let i = 0; i < arr.length; i++) {
-                let arr2 = arr[i].split('=')
-                if (arr2[0] === key) {
-                    return arr2[1]
-                }
-            }
-        }
-    },
-
-    remove: function (key) {
-        set(key, '', -1);
-    }
-};
 
 
 var xhr = new XMLHttpRequest()

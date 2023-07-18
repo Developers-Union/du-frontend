@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #34ac40, #2c8ae8, #dc47cd, #e7e373);
+    background-size: 500%;
+
+    animation: bgAnimation 6s linear infinite;
+}
+
+
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+textarea {
+    border: none;
+    border-bottom: 2px #ffffffa8 solid;
+    color: #fff;
+    background: none;
+    resize: none;
+    outline: none;
+    overflow: hidden;
+    opacity: .8;
+    height: 2vw;
+    width: 80%;
+    font-size: 1.6vw;
+    line-height: 2vw;
+}
+
+.main-wrapper {
+    margin: 10vw 40vw;
+}
+
+.register-wrapper {
+    width: 30vw;
+    padding: 5vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: self-start;
+    background-color: #2c8ae833;
+}
+
+.register-wrapper p {
+    color: #ffffff95;
+    font-family: 'Poppins';
+    font-size: 1.5vw;
+}
+
+.register-wrapper .h1-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 2vw;
+}
+
+.register-wrapper .h1-wrapper h1 {
+    font-family: 'Poppins', serif;
+    color: #ffffffd1;
+    font-size: 3vw;
+    font-weight: normal;
+}
+
+.register-wrapper .input-wrapper {
+    width: 100%;
+    margin: 1vw;
+}
+
+.register-wrapper .verify {
+    margin: 1vw;
+    width: 100%;
+}
+
+.register-wrapper .verify #verify-code-wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin-top: 1vw;
+}
+
+.register-wrapper .verify #verify-code-wrapper .verify-code-digit {
+    width: 6%;
+    height: 3vw;
+    margin-right: 3%;
+    background-image: linear-gradient(135deg, #2c8ae8, #dc47cd);
+}
+
+.register-wrapper .register-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 2vw;
+}
+
+.register-wrapper .register-button-wrapper button {
+    background-color: transparent;
+    width: 40%;
+    font-family: 'Poppins';
+    color: #ffffffd1;
+    font-size: 2vw;
+    border: 2px solid #ffffffd1;
+    margin: 1vw;
+    padding: 1vw;
+    transition: all 0.5s;
+    mix-blend-mode: screen;
+}
+
+.register-wrapper .register-button-wrapper button:hover {
+    background-color: #ffffff;
+    color: #111111;
+    mix-blend-mode: screen;
+}
+
+
+.register-wrapper .had-account {
+    margin-left: 1vw;
+}

@@ -1,43 +1,46 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8">
-    <title>上传MD文件并展示内容</title>
-  </head>
-  <body>
-    <a href="#" id="uploadLink">upload</a>
-    <input type="file" id="fileInput" style="display:none;">
-    <script>
-      var uploadLink = document.getElementById('uploadLink');
-      var fileInput = document.getElementById('fileInput');
-      
-      uploadLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        fileInput.click();
-      });
-      
-      fileInput.addEventListener('change', function(e) {
-        var file = e.target.files[0];
-        // if (file.type != 'md') {
-        //   alert('请选择一个MD文件');
-        //   return;
-        // }
-        var reader = new FileReader();
-        reader.onload = function(e) {
-          var content = e.target.result;
-          var formData = new FormData();
-          formData.append('file', file);
-          fetch('/upload', {
-            method: 'POST',
-            body: formData
-          }).then(function(response) {
-            return response.text();
-          }).then(function(text) {
-            alert(text);
-          });
-        };
-        reader.readAsText(file);
-      });
-    </script>
-  </body>
+
+<head>
+  <meta charset="UTF-8">
+  <title>上传MD文件并展示内容</title>
+</head>
+
+<body>
+  <a href="#" id="uploadLink">upload</a>
+  <input type="file" id="fileInput" style="display:none;">
+  <script>
+    var uploadLink = document.getElementById('uploadLink');
+    var fileInput = document.getElementById('fileInput');
+
+    uploadLink.addEventListener('click', function (e) {
+      e.preventDefault();
+      fileInput.click();
+    });
+
+    fileInput.addEventListener('change', function (e) {
+      var file = e.target.files[0];
+      // if (file.type != 'md') {
+      //   alert('请选择一个MD文件');
+      //   return;
+      // }
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var content = e.target.result;
+        var formData = new FormData();
+        formData.append('file', file);
+        fetch('/upload', {
+          method: 'POST',
+          body: formData
+        }).then(function (response) {
+          return response.text();
+        }).then(function (text) {
+          alert(text);
+        });
+      };
+      reader.readAsText(file);
+    });
+  </script>
+</body>
+
 </html>
