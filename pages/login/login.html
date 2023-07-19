@@ -5,59 +5,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login | DU</title>
-    <link rel="stylesheet" href="login.css">
+    <title>Login</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        
+            background: linear-gradient(135deg, #34ac40, #2c8ae8, #dc47cd, #e7e373);
+            background-size: 500%;
+        
+            animation: bgAnimation 6s linear infinite;
+        }
+        
+        h1 {
+            color: white;
+        }
+        
+        @keyframes bgAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="main-wrapper">
-        <div class="login-wrapper">
-            <div class="h1-wrapper">
-                <h1>Log In</h1>
-            </div>
-            <div class="username input-wrapper">
-                <p>input username or e-mail:</p>
-                <textarea name="username" id="username"></textarea>
-            </div>
-            <div class="password input-wrapper">
-                <p>input password:</p>
-                <textarea name="password" id="password"></textarea>
-                <br>
-                <a id="forget-password">Forgot password?</a>
-            </div>
-            <div class="no-account">
-                <p>Haven't had an account? <a href="../register/register.html" id="register">Register</a> </p>
-            </div>
-            <div class="login-button-wrapper">
-                <button id="login-button">Log in</button>
-            </div>
-        </div>
-    </div>
+<!-- 此下为框架 无CSS -->
+<h1>username</h1><input id="username">
+<h1>password</h1><input id="password">
+<h1 id="wrong"></h1>
+<button id="submit">提交</button>
+<!-- 此上为框架 无CSS -->
 
-    <script>
-        function submit() {
-            var username = document.getElementById("username");
-            var password = document.getElementById("password");
-            var LoginServerURL = "http://127.0.0.1:3000/login";
-            fetch(LoginServerURL, {
-                method: 'post',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({
-                    "username": username.value,
-                    "password": password.value
-                })
+<script>
+    function submit(){
+        var username = document.getElementById("username");
+        var password = document.getElementById("password");
+        var wrong = document.getElementById("wrong");
+        var LoginServerURL = "http://127.0.0.1:8080/user/login";
+        fetch(LoginServerURL, {
+            mode: 'no-cors',
+            method: 'post',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+				userName:username.value,
+                password:password.value
             })
-                .then((response) => response.json())
-                .then((response) => {
-                    console.log(response)
-                })
-        }
-        var button = document.getElementById("login-button");
-        button.onclick = submit;
-    </script>
+        })
+            .then((response) => response.text())
+            .then((response) => {
+                console.log(response)
+            })
+    }
+    var button = document.getElementById("submit");
+    button.onclick = submit;
+</script>
 </body>
 
 </html>
