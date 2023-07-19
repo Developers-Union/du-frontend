@@ -1,11 +1,6 @@
-var hotBlogsURL = "";
-var xhr = new XMLHttpRequest();
-var res;
-xhr.open('post', '/hotBlogs', true);
-xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        res = xhr.responseText;
-    }
+import "./lib";
+var res=fedu("/hotBlogs",{m:"POST",h:{'content-Type': 'application/x-www-form-urlencoded'}},fail);
+
+function fail(){
+    console.log("操作过于频繁，请重试");
 }
-xhr.setRequestHeader('content-Type', 'application/x-www-form-urlencoded');
-xhr.send(body);										

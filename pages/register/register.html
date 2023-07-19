@@ -45,28 +45,29 @@
         </div>
     </div>
 
-    <script>
-        function submit() {
-            var username = document.getElementById("username");
-            var password = document.getElementById("password");
-            var LoginServerURL = "http://127.0.0.1:3000/login";
-            fetch(LoginServerURL, {
-                method: 'post',
-                headers: {
+    <script type="module">
+        import {$, fedu} from "../../js/lib.js";
+        function submit(){
+            var username = $("#username").value;
+            var password = $("#password").value;
+            var wrong = document.getElementById("wrong");
+            var RegServerURL = "/user/register";
+            fedu(RegServerURL, {
+                mode: 'no-cors',
+                h: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({
-                    username: username.value,
-                    password: password.value
-                })
+                b: {
+                    username,
+                    password
+                }
             })
-                .then((response) => response.json())
+                .then((response) => response.text())
                 .then((response) => {
                     console.log(response)
                 })
         }
-        var button = document.getElementById("login-button");
-        button.onclick = submit;
+        $("#login-button").onclick = submit;
     </script>
 </body>
 

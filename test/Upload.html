@@ -9,9 +9,10 @@
 <body>
   <a href="#" id="uploadLink">upload</a>
   <input type="file" id="fileInput" style="display:none;">
-  <script>
-    var uploadLink = document.getElementById('uploadLink');
-    var fileInput = document.getElementById('fileInput');
+  <script type="module">
+    import {fedu, $} from "../js/lib.js";
+    var uploadLink = $('#uploadLink');
+    var fileInput = $('#fileInput');
 
     uploadLink.addEventListener('click', function (e) {
       e.preventDefault();
@@ -29,9 +30,8 @@
         var content = e.target.result;
         var formData = new FormData();
         formData.append('file', file);
-        fetch('/upload', {
-          method: 'POST',
-          body: formData
+        fedu('/upload', {
+          b: formData
         }).then(function (response) {
           return response.text();
         }).then(function (text) {
