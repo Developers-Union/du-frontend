@@ -1,4 +1,4 @@
-import {md5_$} from "./md5";
+//import {md5_$} from "./md5";
 const fedu=(function(){
     function fedu0(){
         if(!arguments[0]){
@@ -89,15 +89,15 @@ Cookie.check = function checkCookie(c_name) {
     let username = getCookie(c_name);
     return username !== null && username !== '' ? true : false;
 }//检查是否有指定名字的cookie且有值
-var _obj = (x) => Object.prototype.toString.call(x).slice(8, 14) == "Object";
+var $h_obj = (x) => Object.prototype.toString.call(x).slice(8, 14) == "Object";
 function $h() {
     var main = document.createElement(arguments[0]);
     child = [];
     if (arguments[1]) {
-        if (_obj(arguments[1])) {
+        if ($h_obj(arguments[1])) {
             for (var i in arguments[1]) {
                 if (Object.hasOwn(HTMLElement.prototype, i)) {
-                    if (_obj(arguments[1][i])) {
+                    if ($h_obj(arguments[1][i])) {
                         for (var k in arguments[1][i]) {
                             main[i][k] = arguments[1][i][k]
                         }
@@ -123,7 +123,8 @@ function $h() {
     }
     return main;
 }
+/*
 try{
     module.exports={fedu, $, $$, Cookie, $h, md5_$};
 }catch(err){console.log("Environment:Not Nodejs")}
-export default {fedu, $, $$, Cookie, $h, md5_$};
+export default {fedu, $, $$, Cookie, $h, md5_$};*/
