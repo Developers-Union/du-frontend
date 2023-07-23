@@ -89,6 +89,7 @@ Cookie.check = function checkCookie(c_name) {
     let username = getCookie(c_name);
     return username !== null && username !== '' ? true : false;
 }//检查是否有指定名字的cookie且有值
+
 var $h_obj = (x) => Object.prototype.toString.call(x).slice(8, 14) == "Object";
 function $h() {
     var main = document.createElement(arguments[0]);
@@ -123,7 +124,7 @@ function $h() {
     }
     return main;
 }
-function $h_flat(arr){var t=[];for(var i=0;i<arr.length;i++){if(arr[i] instanceof Array){t=t.concat(flat(arr[i]))}else{t.push(arr[i])}};return t}
+function $h_flat(arr){var t=[];for(var i=0;i<arr.length;i++){if(arr[i] instanceof Array){t=t.concat($h_flat(arr[i]))}else{t.push(arr[i])}};return t}
 /*
 try{
     module.exports={fedu, $, $$, Cookie, $h, md5_$};
