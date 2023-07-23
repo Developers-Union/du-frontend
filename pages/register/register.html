@@ -8,6 +8,7 @@
     <title>Register | DU</title>
     <link rel="stylesheet" href="register.css">
     <script src="../../js/lib.js"></script>
+    <script src="../../js/md5.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
     <script>
         function submit(){
             var username = $("#username").value;
-            var password = $("#password").value;
+            var password = md5_$($("#password").value);
             var wrong = document.getElementById("wrong");
             var RegServerURL = "/user/register";
             fedu(RegServerURL, {
