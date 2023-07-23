@@ -96,7 +96,7 @@ function $h() {
     if (arguments[1]) {
         if ($h_obj(arguments[1])) {
             for (var i in arguments[1]) {
-                if (Object.hasOwn(HTMLElement.prototype, i)) {
+                if (i in HTMLElement.prototype) {
                     if ($h_obj(arguments[1][i])) {
                         for (var k in arguments[1][i]) {
                             main[i][k] = arguments[1][i][k]
@@ -112,7 +112,7 @@ function $h() {
         if (arguments[2]) { child.push(arguments[2]) }
     }
     if (child.length) {
-        child = child.flat();
+        child = $h_flat(child);
         for (var i in child) {
             if (Object.prototype.toString.call(child[i].__proto__.__proto__.__proto__).slice(8, 15) == "Element") {
                 main.append(child[i])
@@ -123,6 +123,7 @@ function $h() {
     }
     return main;
 }
+function $h_flat(arr){var t=[];for(var i=0;i<arr.length;i++){if(arr[i] instanceof Array){t=t.concat(flat(arr[i]))}else{t.push(arr[i])}};return t}
 /*
 try{
     module.exports={fedu, $, $$, Cookie, $h, md5_$};
