@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register | DU</title>
-    <link rel="stylesheet" href="register.css">
-    <script src="../../js/lib.js"></script>
-    <script src="../../js/md5.js"></script>
+    <link rel="stylesheet" href="../../css/pages/register/register.css">
 </head>
 
 <body>
@@ -18,17 +16,25 @@
             <div class="h1-wrapper">
                 <h1>Register</h1>
             </div>
+
             <div class="username input-wrapper">
-                <p>input e-mail:</p>
+                <p>input username:</p>
                 <textarea name="username" id="username"></textarea>
             </div>
+
+            <div class="username input-wrapper">
+                <p>input e-mail:</p>
+                <textarea name="email" id="email"></textarea>
+            </div>
+
             <div class="password input-wrapper">
                 <p>input password:</p>
                 <textarea name="password" id="password"></textarea>
                 <br>
             </div>
+
             <div class="verify">
-                <p>input verify code:</p>
+                <p>input verify code:</p><input id="verifyCode">
                 <div id="verify-code-wrapper">
                     <div class="verify-code-digit"></div>
                     <div class="verify-code-digit"></div>
@@ -36,6 +42,7 @@
                     <div class="verify-code-digit"></div>
                     <div class="verify-code-digit"></div>
                     <div class="verify-code-digit"></div>
+                    <button id="verify">verify</button>
                 </div>
             </div>
             <div class="had-account">
@@ -48,27 +55,88 @@
     </div>
 
     <script>
-        function submit(){
-            var username = $("#username").value;
-            var password = md5_$($("#password").value);
-            var wrong = document.getElementById("wrong");
-            var RegServerURL = "/user/register";
-            fedu(RegServerURL, {
-                mode: 'no-cors',
-                h: {
-                    'Content-Type': 'application/json'
-                },
-                b: {
-                    username,
-                    password
-                }
-            })
-                .then((response) => response.text())
-                .then((response) => {
-                    console.log(response)
-                })
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+        var email = document.getElementById("email").value;
+        var verifyCode = document.getElementById("verifyCode").value;
+        var Server = "http://127.0.0.1:3000";
+        var uuid;
+        var wrong = document.getElementById("wrong");
+        function submit() {
+            // var RegServerURL = Server+"/register";
+            // fetch(RegServerURL, {
+            //     method: 'post',
+            //     mode: 'no-cors',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify({
+            //         "username" : username,
+            //         "password" : password,
+            //         "email" : email,
+            //         "avatar" : "xxx",
+            //         "sex" : 3,
+            //         "verifyCode" : verifyCode,
+            //         "uuid" : uuid
+            //     })
+            // })
+            //     .then((response) => response.json())
+            //     .then((response) => {
+            //         console.log(response)
+            //     })
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+                "username": "yang11541137",
+                "password": password,
+                "email": email,
+                "avatar": "xxx",
+                "sex": 3,
+                "verifyCode": verifyCode,
+                "uuid": uuid
+            });
+
+            var requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                    redirect: 'follow'
+            };
+
+            fetch("http://127.0.0.1:3000/register/", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
         }
-        $("#login-button").onclick = submit;
+        document.getElementById("login-button").onclick = submit;
+
+        function SendVerifyCode() {
+            // if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/.test(email)){
+
+            // }
+            var EmailServerURL = Server+"/email";
+            var email = document.getElementById("email").value;
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+
+            var raw = JSON.stringify({
+            "email": email
+            });
+
+            var requestOptions = {
+            method: 'POST',
+            headers: myHeaders,
+            body: raw,
+            redirect: 'follow'
+            };
+
+            fetch("http://127.0.0.1:3000/email", requestOptions)
+            .then(response => response.text())
+            .then(result => console.log(result))
+            .catch(error => console.log('error', error));
+        }
+        document.getElementById("verify").onclick = SendVerifyCode;
     </script>
 </body>
 

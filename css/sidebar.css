@@ -2,8 +2,9 @@
     width: 60px;
     height: 500px;
     display: flex;
-    margin-top: 50px;
-    float: right;
+    top: 7vw;
+    right: 0;
+    position: absolute;
     flex-direction: column;
     justify-content: center;
     align-items: center;

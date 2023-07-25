@@ -1,0 +1,323 @@
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url(../fonts/JetBrainsMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url(../fonts/Verdana-1.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    /* background-color: #080214; */
+    background-color: #080614;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-wrapper {
+    margin: 0 3vw;
+}
+
+.main-wrapper .nav {
+    height: 7vw;
+}
+
+.main-wrapper .nav .nav-left {
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-left span {
+    font-family: 'Poppins';
+    color: #6ab7ff;
+    font-size: 1.5vw;
+    border-bottom: 3px solid #080614;
+}
+
+.main-wrapper .nav .nav-left a {
+    font-family: 'Poppins';
+    margin-left: 2vw;
+    height: 4vw;
+    line-height: 4vw;
+    font-size: 1.2vw;
+    color: azure;
+    transition: all .5s;
+    border-bottom: 2px solid #080614;
+}
+
+.main-wrapper .nav .nav-left a:hover {
+    border-bottom: 2px solid #6ab7ff;
+}
+
+.main-wrapper .nav .nav-right {
+    float: right;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-right .avatar {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.main-wrapper .original-button {
+    border: none;
+    font-size: large;
+    font-family: 'Poppins', serif;
+    margin-right: 2vw;
+    background-color: transparent;
+}
+
+.main-wrapper .original-button-already-login {
+    display: none !important;
+}
+
+/* .main-wrapper .cover {
+    background-image: url(image/bg.png);
+    opacity: 0.7;
+} */
+
+.main-wrapper .original-button#button-login {
+    color: white;
+}
+
+.main-wrapper .original-button#button-signup {
+    color: #6ab7ff;
+}
+
+.main-wrapper .nav-name {
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+
+.main-wrapper .nav-name-not-login {
+    display: none !important;
+}
+
+.title h1 {
+    /* font-family: 'Jetbrains Mono';
+    margin-top: 3vw;
+    color: #fff;
+    font-size: 4vw; */
+    background: linear-gradient(to right, rgb(42, 245, 152), rgb(0, 158, 253));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    width: fit-content;
+    font-family: 'Jetbrains Mono', serif;
+    margin-top: 3vw;
+    font-size: 5vw;
+}
+
+.title h2 {
+    font-family: 'Verdana', serif;
+    font-size: 1.3vw;
+    font-weight: normal;
+    margin-bottom: 5vw;
+    color: #aaa;
+}
+
+.main {
+    margin-top: 2vw;
+    display: flex;
+    flex-direction: row;
+}
+
+.main h2 {
+    color: #fff;
+    font-family: 'Verdana';
+    font-weight: normal;
+    font-size: 2vw;
+    margin-right: 2vw;
+}
+
+.main-left {
+    display: flex;
+    flex-grow: 13;
+    flex-direction: column;
+}
+
+.main-left .blog-title-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.main-left .blogs .blog {
+    margin: 2vw;
+}
+
+.main-left .blogs .blog .blog-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-left .blogs .blog .blog-author .blog-title-avatar {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.main-left .blogs .blog .blog-author .blog-author-name {
+    margin-left: .5vw;
+    font-family: 'Poppins';
+    font-size: 1vw;
+    color: #ccc;
+}
+
+.main-left .blogs .blog .blog-title {
+    font-family: 'Poppins';
+    color: #eee;
+    font-weight: normal;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+.main-left .blogs .blog .blog-title:hover {
+    color: #6ab7ff;
+}
+
+.main-left .blogs .blog .blog-description {
+    font-family: 'Poppins', serif;
+    color: #aaa;
+    font-weight: 300;
+    font-size: small;
+}
+
+.main-right {
+    display: flex;
+    flex-grow: 11;
+    flex-direction: column;
+}
+
+.main-right-hidden {
+    display: none;
+}
+
+.main-right#hider {
+    display: block;
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-weight: 500;
+    font-size: 3vw;
+}
+
+.main-right .main-team .team-name {
+    margin: 1vw;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-right .main-team .team-name .team-avatar {
+    height: 3vw;
+    width: 3vw;
+    margin-right: 1vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.main-right .main-team .team-name a {
+    font-family: 'Poppins';
+    color: #fff;
+    font-size: 1vw;
+    transition: all .3s;
+}
+
+.main-right .main-team .team-name a:hover {
+    color: #6ab7ff;
+}
+
+.main-right .main-team .team-projects > p {
+    font-family: 'Poppins', serif;
+    color: #fff;
+    font-size: 1.5vw;
+    margin-left: 1vw;
+}
+
+.main-right .main-team .team-projects .projects .team-project {
+    margin: 1vw 1vw 1vw 2vw;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-left .project-name {
+    font-family: 'Poppins', serif;
+    color: #fff;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-left.project-name:hover {
+    color: #6ab7ff;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-left .project-description {
+    font-family: 'Poppins', serif;
+    color: #aaa;
+    font-weight: 300;
+    font-size: small;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-right {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-right .star {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-right .star .star-wrapper .star-display {
+    display: block;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-right .star .star-wrapper .star-hidden {
+    display: none;
+}
+
+.main-right .main-team .team-projects .projects .team-project .team-project-right p {
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    color: white;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+}

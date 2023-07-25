@@ -3,66 +3,76 @@
 
 <head>
     <title>Talk | DU</title>
-    <link rel="stylesheet" href="../../css/talk.css">
+    <link rel="stylesheet" href="../../css/pages/talk/talk.css">
 </head>
 
 <body>
-    <ul id="messages"></ul>
-    <form id="form" action="">
-        <textarea id="input" autocomplete="off"></textarea><button>Send</button>
-    </form>
-    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
-    <script type="module">
-        import { cookie } from "../../tools/cookie.js";
-        //import {$h} from "../../tools/h.js";
-        var usr = {};
-        usr.token = cookie.get("token");
-        usr.id = Number(cookie.get("id"));
-        var socket = io("http://127.0.0.1:3001", {//临时测试
-            auth: {
-                token: usr.token
-            }
-        });
-        var messages = document.getElementById('messages');
-        var form = document.getElementById('form');
-        var input = document.getElementById('input');
-
-        form.addEventListener('submit', function (e) {
-            e.preventDefault();
-            if (input.value.trim()) {
-                socket.emit('send', JSON.stringify({ "token": usr, "msg": input.value.replaceAll(" ", "&nbsp;"), "t": String(Date.now()), "talkid": "10000", "token": usr }));
-                input.value = '';
-                $("#form>button").style.background = "rgb(51, 54, 57)";
-            }
-        });
-        socket.on('back', function (msg) {
-            var t = JSON.parse(msg);
-            var gf = document.createElement("div"); gf.setAttribute("class", t.id == usr.id ? "mess" : "messleft");
-            gf.innerHTML = `<div class="avatar"><img src="${t.avatar}"></img></div><div class="main"><p>${new Date(Number(t.t)).format()}</p><div><div>${t.msg.replaceAll("<", "&lt;").replaceAll(">", " 	&gt;")}</div></div></div>`;
-            document.getElementById("messages").appendChild(gf);
-            window.scrollTo(0, document.body.scrollHeight);
-        });
-        socket.on('error', function (msg) {
-            console.log(msg)
-        });
-        function animate(el, params, speed) {//speed是以秒为单位的数字
-            el.style.transition = 'all ' + speed + 's';
-            Object.keys(params).forEach((key) => {
-                el.style[key] = params[key];
-            });
-        };
-        const $ = (x) => document.querySelector(x);
-        $("#input").oninput = () => {
-            if ($("#input").value.trim().length) {
-                $("#form>button").style.background = "#ac0dac";
-            } else {
-                $("#form>button").style.background = "rgb(51, 54, 57)";
-            }
+<ul id="messages"></ul>
+<form id="form" action="">
+    <textarea id="input" autocomplete="off"></textarea>
+    <button>Send</button>
+</form>
+<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+<script type="module">
+    import {cookie} from "../../tools/cookie.js";
+    //import {$h} from "../../tools/h.js";
+    var usr = {};
+    usr.token = cookie.get("token");
+    usr.id = Number(cookie.get("id"));
+    var socket = io("http://127.0.0.1:3001", {//临时测试
+        auth: {
+            token: usr.token
         }
-    </script>
+    });
+    var messages = document.getElementById('messages');
+    var form = document.getElementById('form');
+    var input = document.getElementById('input');
+
+    form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (input.value.trim()) {
+            socket.emit('send', JSON.stringify({
+                "token": usr,
+                "msg": input.value.replaceAll(" ", "&nbsp;"),
+                "t": String(Date.now()),
+                "talkid": "10000",
+            }));
+            input.value = '';
+            $("#form>button").style.background = "rgb(51, 54, 57)";
+        }
+    });
+    socket.on('back', function (msg) {
+        var t = JSON.parse(msg);
+        var gf = document.createElement("div");
+        gf.setAttribute("class", t.id === usr.id ? "mess" : "messleft");
+        gf.innerHTML = `<div class="avatar"><img src="${t.avatar}" alt=""></img></div><div class="main"><p>${new Date(Number(t.t)).format()}</p><div><div>${t.msg.replaceAll("<", "&lt;").replaceAll(">", " 	&gt;")}</div></div></div>`;
+        document.getElementById("messages").appendChild(gf);
+        window.scrollTo(0, document.body.scrollHeight);
+    });
+    socket.on('error', function (msg) {
+        console.log(msg)
+    });
+
+    function animate(el, params, speed) {//speed是以秒为单位的数字
+        el.style.transition = 'all ' + speed + 's';
+        Object.keys(params).forEach((key) => {
+            el.style[key] = params[key];
+        });
+    };
+    const $ = (x) => document.querySelector(x);
+    $("#input").oninput = () => {
+        if ($("#input").value.trim().length) {
+            $("#form>button").style.background = "#ac0dac";
+        } else {
+            $("#form>button").style.background = "rgb(51, 54, 57)";
+        }
+    }
+</script>
 </body>
 
 </html>
 <script>
-    Date.prototype.format = function () { return `${this.getFullYear()}/${(this.getMonth() + 1 + "").padStart(2, "0")}/${(this.getDate() + "").padStart(2, "0")} ${(this.getHours() + "").padStart(2, "0")}:${(this.getMinutes() + "").padStart(2, "0")}:${(this.getSeconds() + "").padStart(2, "0")}` };
+    Date.prototype.format = function () {
+        return `${this.getFullYear()}/${(this.getMonth() + 1 + "").padStart(2, "0")}/${(this.getDate() + "").padStart(2, "0")} ${(this.getHours() + "").padStart(2, "0")}:${(this.getMinutes() + "").padStart(2, "0")}:${(this.getSeconds() + "").padStart(2, "0")}`
+    };
 </script>

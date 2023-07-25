@@ -4,143 +4,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/be1fe47fa2.js" crossorigin="anonymous"></script>
-    <!-- <link rel="stylesheet" href="css/ionicon.css"> -->
+    <link rel="stylesheet" href="css/ionicon.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sidebar.css">
     <title>Developers Union | DU</title>
 </head>
 
 <body>
-    <div class="main-wrapper">
-        <div class="cover">
-            <div class="nav">
-                <div class="nav-left">
-                    <span>Developers Union</span>
-                    <a href="pages/description.html">About us</a>
-                    <a href="">Write Blogs</a>
-                    <a href="">Activities</a>
-                </div>
-                <div class="nav-right">
-                    <div class="avatar" onclick="window.location.href='./pages/personpage/index.html'"></div>
-                    <button class="original-button" id="button-login"
-                        onclick="window.location='pages/Login/login.html'">Log In</button>
-                    <button class="original-button" id="button-signup">Sign Up</button>
-                </div>
+<div class="main-wrapper">
+    <div class="cover">
+        <div class="shell">
+            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
+                <span>footer</span></a>
+            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
+                <span>xxxxxxxx</span></a>
+            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
+                <span>xxxxxxxx</span></a>
+            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
+                <span>xxxxxx</span></a>
+            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
+                <span>xxxx</span></a>
+            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
+                <span>xxxx</span></a>
+        </div>
+        <div class="nav">
+            <div class="nav-left">
+                <span>Developers Union</span>
+                <a href="pages/description/description.html">About us</a>
+                <a href="">Write Blogs</a>
+                <a href="">Activities</a>
             </div>
-            <div class="shell">
-                <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                    <span>footer</span></a>
-                <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                    <span>xxxxxxxx</span></a>
-                <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                    <span>xxxxxxxx</span></a>
-                <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                    <span>xxxxxx</span></a>
-                <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                    <span>xxxx</span></a>
-                <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                    <span>xxxx</span></a>
-            </div>
-            <div class="title">
-                <h1>Developers Union</h1>
-                <h2>A programming exchange platform for teenagers</h2>
+            <div class="nav-right">
+                <div class="avatar" onclick="window.location.href='./pages/personpage/person.html'"></div>
+                <!-- <button class="original-button" id="button-login"
+                        onclick="window.location='pages/login/login.html'">Log In
+                </button>
+                <button class="original-button" id="button-signup">Sign Up</button> -->
+                <p class="nav-name" id="username">Minsecrus</p>
             </div>
         </div>
-        <div class="main">
-            <div class="main-left">
-                <div class="blog-title-bar">
-                    <h2>blogs</h2>
-                    <ion-icon name="refresh-circle-outline"></ion-icon>
+        <div class="title">
+            <h1>Developers Union</h1>
+            <h2>A programming exchange platform for teenagers</h2>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-left">
+            <div class="blog-title-bar">
+                <h2>blogs</h2>
+                <ion-icon name="refresh-circle-outline" id="icon-fresh-blog"></ion-icon>
+            </div>
+            <ul class="blogs">
+                <li class="blog">
+                    <div class="blog-author">
+                        <div class="blog-title-avatar"></div>
+                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                    </div>
+                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                    <p class="blog-description">using std::vector</p>
+                </li>
+                <li class="blog">
+                    <div class="blog-author">
+                        <div class="blog-title-avatar"></div>
+                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                    </div>
+                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                </li>
+                <li class="blog">
+                    <div class="blog-author">
+                        <div class="blog-title-avatar"></div>
+                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                    </div>
+                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                </li>
+                <li class="blog">
+                    <div class="blog-author">
+                        <div class="blog-title-avatar"></div>
+                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                    </div>
+                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-right" id="hider">Log in to Learn More.</div>
+        <div class="main-right-hidden" id="main-right">
+            <div class="main-team">
+                <h2>Your team</h2>
+                <div class="team-name">
+                    <div class="team-avatar"></div>
+                    <a href="">Developers Union Official Team</a>
                 </div>
-                <ul class="blogs">
-                    <li class="blog">
-                        <div class="blog-author">
-                            <div class="blog-title-avatar"></div>
-                            <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                        </div>
-                        <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                        <p class="blog-description">A ...</p>
-                    </li>
-                    <li class="blog">
-                        <div class="blog-author">
-                            <div class="blog-title-avatar"></div>
-                            <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                        </div>
-                        <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                    </li>
-                    <li class="blog">
-                        <div class="blog-author">
-                            <div class="blog-title-avatar"></div>
-                            <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                        </div>
-                        <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                    </li>
-                    <li class="blog">
-                        <div class="blog-author">
-                            <div class="blog-title-avatar"></div>
-                            <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                        </div>
-                        <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                <div class="team-projects">
+                    <p>Projects of your team:</p>
+                    <ul class="projects">
+                        <li class="team-project">
+                            <div class="team-project-left">
+                                <a href="" class="project-name">DUNote</a>
+                                <p class="project-description">a markdown editor</p>
+                            </div>
+                            <div class="team-project-right">
+                                <div class="star">
+                                    <div class="star-wrapper" onclick="changeStarStatus(this)">
+                                        <div class="star-display">
+                                            <ion-icon name="star-outline" class="icon-project-stars"></ion-icon>
+                                        </div>
+                                        <div class="star-hidden">
+                                            <ion-icon name="star" class="icon-project-stars"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <p>1223</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="team-project">
+                            <div class="team-project-left">
+                                <a href="" class="project-name">MDR</a>
+                                <p class="project-description">a robot who can write code</p>
+                            </div>
+                            <div class="team-project-right">
+                                <div class="star">
+                                    <div class="star-wrapper" onclick="changeStarStatus(this)">
+                                        <div class="star-display">
+                                            <ion-icon name="star-outline" class="icon-project-stars"></ion-icon>
+                                        </div>
+                                        <div class="star-hidden">
+                                            <ion-icon name="star" class="icon-project-stars"></ion-icon>
+                                        </div>
+                                    </div>
+                                    <p>666</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main-activities">
+                <h2>Activities and Competitions</h2>
+                <ul class="activities">
+                    <li class="activity">
+                        <p class="activity-title">1ST programming contest of Developers Union</p>
+                        <p class="activity-time">2023.07.24 15:00</p>
                     </li>
                 </ul>
             </div>
-            <div class="main-right">
-                <div class="main-right-not-login">Log in to Learn More.</div>
-                <div class="main-team">
-                    <h2>Your team</h2>
-                    <div class="team-name">
-                        <div class="team-avatar"></div>
-                        <a href="">Developers Union Official Team</a>
-                    </div>
-                    <div class="team-projects">
-                        <p>Projects of your team:</p>
-                        <ul class="projects">
-                            <li class="team-project">
-                                <a href="" class="project-name">iBasicLibrary</a>
-                                <p class="project-description">a cpp Library</p>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="main-activities">
-                    <h2>Activities and Competitions</h2>
-                </div>
-            </div>
         </div>
     </div>
-    <br /><br />
-    <div class="footer">
-        <div class="header1">
-            <!-- <div class="inner-header flex"></div> -->
-            <div>
-                <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                    viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
-                    <defs>
-                        <path id="gentle-wave"
-                            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
-                    </defs>
-                    <g class="parallax">
-                        <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,191,255,0.7)" />
-                        <use xlink:href="#gentle-wave" x="48" y="1" fill="rgba(0,191,255,0.5)" />
-                        <use xlink:href="#gentle-wave" x="48" y="1.6" fill="rgba(0,191,255,0.3)" />
-                        <use xlink:href="#gentle-wave" x="48" y="2.3" fill="rgba(0,191,255,1)" />
-                    </g>
-                </svg>
-            </div>
-        </div>
-        <div class="content1 flex">
-            <!-- <div class="left"><img src="../image/DU.jpg" alt=""></div> -->
-            <div class="right"><a href="#" class="afooter">xxxx</a> | <a href="#" class="afooter">xxxx</a> | <a href="#"
-                    class="afooter">xxxx</a> | <a href="#" class="afooter">xxxx</a> </div>
-            <div class="right"><a href="#" class="afooter">xxxx</a> | <a href="#" class="afooter">xxxx</a> | <a href="#"
-                    class="afooter">xxxx</a> | <a href="#" class="afooter">xxxx</a> </div>
-            <div class="right">Developed by the <a href="#" class="afooter">Developers Union Dev Team</a></div>
-            <div class="right">2021-2023 , © Developers Union</div>
+</div>
+<br/><br/>
+<div class="footer">
+    <div class="header1">
+        <!-- <div class="inner-header flex"></div> -->
+        <div>
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                 viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave"
+                          d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"/>
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(0,191,255,0.7)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="1" fill="rgba(0,191,255,0.5)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="1.6" fill="rgba(0,191,255,0.3)"/>
+                    <use xlink:href="#gentle-wave" x="48" y="2.3" fill="rgba(0,191,255,1)"/>
+                </g>
+            </svg>
         </div>
     </div>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <div class="content1 flex">
+        <!-- <div class="left"><img src="../image/DU.jpg" alt=""></div> -->
+        <div class="right"><a href="#" class="afooter">xxxx</a> | <a href="#" class="afooter">xxxx</a> | <a href="#"
+                                                                                                            class="afooter">xxxx</a>
+            | <a href="#" class="afooter">xxxx</a></div>
+        <div class="right"><a href="#" class="afooter">xxxx</a> | <a href="#" class="afooter">xxxx</a> | <a href="#"
+                                                                                                            class="afooter">xxxx</a>
+            | <a href="#" class="afooter">xxxx</a></div>
+        <div class="right">Developed by the <a href="#" class="afooter">Developers Union Dev Team</a></div>
+        <div class="right">2021-2023 , © Developers Union</div>
+    </div>
+</div>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 </body>
+
+<script src="js/lib.js"></script>
+<script src="js/pages/main/mainpage.js"></script>
 
 </html>

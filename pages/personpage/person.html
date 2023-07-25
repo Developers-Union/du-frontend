@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Page | DU</title>
+    <link rel="stylesheet" href="../../css/pages/personpage/person.css">
+    <script src="../../js/lib.js"></script>
+    <script src="../../js/pages/personpage/personpage.js"></script>
+</head>
+
+<body>
+<div class="main-wrapper">
+    <div class="nav">
+        <div class="nav-left">
+            <a href="../../index.html">Return Homepage</a>
+        </div>
+        <div class="nav-right">
+            <div class="avatar"></div>
+            <p class="nav-name" id="username">Minsecrus</p>
+        </div>
+    </div>
+    <div class="main">
+        <div class="main-top">
+            <div class="main-top-left">
+                <div class="main-top-avatar"></div>
+                <div class="main-top-left-bottom">
+                    <button id="button-follow" class="button-followed" onclick="follow()">Follow</button>
+                    <button id="button-send-message">Send Message</button>
+                </div>
+            </div>
+            <div class="main-top-right">
+                <div class="main-top-info">
+                    <div class="main-top-info-name">Minsecrus</div>
+                    <div class="main-top-info-id">ID: <span>1025</span></div>
+                </div>
+                <div class="main-top-saying">我相信会再次看到蓝天，鲜花挂满枝头</div>
+                <div class="main-top-profile">
+                    <div class="main-top-profile-basic">
+                        <div class="main-top-profile-basic-sex">
+                            <ion-icon name="male-female-outline"></ion-icon>
+                        </div>
+                        <div class="main-top-profile-basic-age">
+                            <ion-icon name="cube-outline"></ion-icon>
+                            <div id="main-top-profile-age">15</div>
+                        </div>
+                        <div class="main-top-profile-basic-location">
+                            <ion-icon name="location"></ion-icon>
+                            <div id="main-top-profile-location">Liaoning, China</div>
+                        </div>
+                    </div>
+                    <div class="main-top-profile-team">
+                        <ion-icon name="people-circle-outline"></ion-icon>
+                        <p>in </p>
+                        <p id="main-top-team-name">Developers Union Dev Team</p>
+                    </div>
+                    <div class="main-top-profile-popular">
+                        <div class="main-top-profile-popular-follower">
+                            <ion-icon name="person-add-outline"></ion-icon>
+                            <p id="num-follower">114514</p>
+                            <p> followers</p>
+                        </div>
+                        <div class="main-top-profile-popular-following">
+                            <ion-icon name="heart-circle-outline"></ion-icon>
+                            <p id="num-following">14</p>
+                            <p> followings</p>
+                        </div>
+                        <div class="main-top-profile-popular-blog">
+                            <ion-icon name="document-outline"></ion-icon>
+                            <p id="num-blog">68</p>
+                            <p> blogs</p>
+                        </div>
+                        <div class="main-top-profile-popular-favorite">
+                            <ion-icon name="star-sharp"></ion-icon>
+                            <p id="num-favorite">13</p>
+                            <p> favorites</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main-middle">
+            <div class="main-middle-left">
+                <div class="main-middle-left-charts">
+                    <div class="main-middle-left-chart-left">
+<!-- <h1 class="main-middle-left-chart-title">Title1</h1> -->
+                        <div class="canvasBox">
+                            <canvas id="charts"></canvas>
+                        </div>
+                    </div>
+                    <div class="main-middle-left-chart-right">
+
+                        <h1 class="main-middle-left-chart-title">Title2</h1>
+                    </div>
+                </div>
+                <h1>此处为自定义主页内容，可使用DUNote进行编辑</h1>
+            </div>
+            <div class="main-middle-right">
+                <div class="main-middle-right-blog">
+                    <p class="main-middle-right-title">Recent blogs</p>
+                    <ul class="main-middle-right-blog-list">
+                        <li class="main-middle-right-blog-list-item">
+                            <a class="main-middle-right-blog-title">Mdr's past</a>
+                            <div class="main-middle-right-blog-data">
+                                <div class="main-middle-right-blog-liked">
+                                    <ion-icon name="heart"></ion-icon>
+                                    <p>143</p>
+                                </div>
+                                <div class="main-middle-right-blog-comment">
+                                    <ion-icon name="chatbox-ellipses"></ion-icon>
+                                    <p>12</p>
+                                </div>
+                                <div class="main-middle-right-blog-favorite">
+                                    <ion-icon name="star-sharp"></ion-icon>
+                                    <p>2</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="main-middle-right-blog-list-item">
+                            <a class="main-middle-right-blog-title">Mdr's future</a>
+                            <div class="main-middle-right-blog-data">
+                                <div class="main-middle-right-blog-liked">
+                                    <ion-icon name="heart"></ion-icon>
+                                    <p>8888888</p>
+                                </div>
+                                <div class="main-middle-right-blog-comment">
+                                    <ion-icon name="chatbox-ellipses"></ion-icon>
+                                    <p>77777</p>
+                                </div>
+                                <div class="main-middle-right-blog-favorite">
+                                    <ion-icon name="star-sharp"></ion-icon>
+                                    <p>666</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="main-middle-right-about">
+                    <p class="main-middle-right-title">Other things about <span class="personal-pronoun">him</span>
+                    </p>
+                    <ul class="main-middle-right-about-list">
+                        <li class="main-middle-right-about-item">
+                            <ion-icon name="logo-github"></ion-icon>
+                            <a target="_blank" href="https://github.com/Minsecrus">Minsecrus</a>
+                        </li>
+                        <li class="main-middle-right-about-item">
+                            <ion-icon name="logo-wechat"></ion-icon>
+                            <a target="_blank">Minsecrus_dreamers</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="../../js/pages/personpage/canvas.js"></script> <!-- 不要改这行代码的位置！-->
+</body>
+
+</html>
