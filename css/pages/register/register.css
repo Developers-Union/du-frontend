@@ -60,8 +60,7 @@ textarea {
 }
 
 .main-wrapper {
-    margin: 10vw 40vw;
-    margin-top: -10%;
+    margin: -10% 40vw 10vw;
 }
 
 .register-wrapper {
