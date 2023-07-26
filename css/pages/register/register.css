@@ -6,6 +6,7 @@
 
 a {
     text-decoration: none;
+    color: white;
     opacity: .85;
     transition: all .5s;
 }
@@ -119,7 +120,7 @@ textarea {
     outline: none;
 }
 
-.register-wrapper .verify #verify-code-wrapper .verify-code-digit>p {
+.register-wrapper .verify #verify-code-wrapper .verify-code-digit > p {
     outline: none;
     height: 3vw;
     line-height: 3vw;
@@ -154,7 +155,7 @@ textarea {
 .register-wrapper .register-button-wrapper button {
     background-color: transparent;
     width: 40%;
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     color: #ffffffd1;
     font-size: 2vw;
     border: 2px solid #ffffffd1;
