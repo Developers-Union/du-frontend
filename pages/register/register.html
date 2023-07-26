@@ -97,16 +97,14 @@
     }
 
 
-    $$('.verify-code-digit').forEach(addListener)
-
-    function addListener(element, index, _) {
+    $$('.verify-code-digit').forEach(function (element, index, _) {
         element.addEventListener('keydown', (event) => {
             const keyName = event.key;
             if (keyName === 'Backspace') {
                 deleteDigit(index)
             }
         })
-    }
+    })
 
     function deleteDigit(index) {
         let before;
@@ -122,16 +120,26 @@
         }
     }
 
+    function getVerifyCode() {
+        const digits = $$('.verify-code-digit');
+        let str = "";
+        for (let i = 0; i < 6; i++) {
+            str += digits[i].getElementsByTagName("p")[0].innerText;
+        }
+        return str;
+    }
+
 
     function submit() {
         if (uuid.length) {
-            var myHeaders = new Headers();
+            const myHeaders = new Headers();
             myHeaders.append("Content-Type", "application/json");
-            verifyCode = $("#verifyCode").value;
+            verifyCode = getVerifyCode();
+            alert(verifyCode)
             username = $("#username").value;
             password = $("#password").value;
             email = $('#email').value;
-            var requestOptions = {
+            const requestOptions = {
                 h: myHeaders,
                 b: {
                     "username": username,
@@ -159,19 +167,19 @@
     let second = 0;
 
     function sendVerifyCode() { //把这个返回值传入uuid 一会我去测逝一下
-        var EmailServerURL = server + "/email";
-        var email = document.getElementById("email").value;
-        var myHeaders = new Headers();
+        const EmailServerURL = server + "/email";
+        const email = document.getElementById("email").value;
+        const myHeaders = new Headers();
         myHeaders.append("Content-Type", "application/json");
 
-        var requestOptions = {
+        const requestOptions = {
             h: myHeaders,
             b: {
                 "email": email
             },
             redirect: 'follow'
         };
-        fedu("http://127.0.0.1:3000/email", requestOptions)
+        fedu(EmailServerURL, requestOptions)
             .then(response => response.text())
             .then(t => {
                 uuid = t;

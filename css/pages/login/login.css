@@ -10,7 +10,7 @@ a {
     transition: all .5s;
 }
 
-a:hover{
+a:hover {
     opacity: 1.3;
 }
 
