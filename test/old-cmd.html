@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    line-height: 1.5715;
+    font-size: 16px;
+    font-family: courier-new,courier,monospace;
+}
+#inpot{
+    float: left;
+    width: 100%;
+    text-align: inherit;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: black;
+    color: white;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    font-family: courier-new,courier,monospace;
+}
+.jing{
+    background-color: black;
+}
+details ::marker{
+    content:' > '
+}
+details[open] ::marker{
+    content:' < '
+}
+summary{
+    user-select:none;
+}
+</style>
+<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/crypto-js/3.1.9-1/crypto-js.min.js"></script>
+</head>
+<body id="all" onkeydown="shc()">
+<span>html-cmd(version:2.12.21.33)<br>Sife Studio keeps all the rights.</span><br>
+<span style="display:flex" id="line1"><span>cmd></span><input type="text" id="inpot" onkeydown="get()"></span>
+<script>
+oldhis=[];
+easygame=['https://haiyong.site/moyu/lion.html','https://haiyong.site/moyu/2048.html','https://haiyong.site/moyu/feiji.html','https://haiyong.site/moyu/Santa-Claus.html','https://haiyong.site/moyu/qiefangkuai.html','https://haiyong.site/moyu/catch-mole.html','https://haiyong.site/moyu/simplejsgame.html','https://haiyong.site/moyu/tower-blocks.html','https://haiyong.site/moyu/sanzhiji.html','https://haiyong.site/moyu/kill-the-king.html','https://haiyong.site/moyu/penhuolong.html','https://haiyong.site/moyu/migong.html','https://haiyong.site/moyu/feijizhadan.html','https://haiyong.site/moyu/baohujidan.html','https://haiyong.site/moyu/shengchengshu.html','https://haiyong.site/moyu/doumaomi.html','https://haiyong.site/moyu/yunshi.html','https://haiyong.site/moyu/xiaofeiyu.html','https://haiyong.site/moyu/xxoo.html','https://haiyong.site/moyu/pokemon.html','https://haiyong.site/moyu/shejian.html','https://haiyong.site/moyu/wuxianpaoku.html','https://haiyong.site/moyu/paocaimigong.html','http://liferestart.syaro.io/view/','https://haiyong.site/moyu/flappy-dino.html','https://haiyong.site/moyu/shitoujiandaobu','https://haiyong.site/moyu/guomalu.html','https://haiyong.site/moyu/wuziqi.html','https://haiyong.site/moyu/laganziguoguan','https://haiyong.site/moyu/doudizhu.html','https://haiyong.site/moyu/danzhu.html','https://haiyong.site/moyu/rengongzhizh.html','https://haiyong.site/moyu/baohuduixin.html','https://haiyong.site/moyu/eluosi.html','https://haiyong.site/moyu/huaxue.html','https://haiyong.site/moyu/tan.html','https://haiyong.site/moyu/cesu.html','https://haiyong.site/moyu/tamagotchi/','https://haiyong.site/moyu/mofang.html','https://haiyong.site/moyu/yingxiong.html','https://haiyong.site/moyu/saolei.html','https://haiyong.site/moyu/wu.html','https://haiyong.site/moyu/xiaoxiongchixingxing.html','https://haiyong.site/moyu/chazhen.html','https://haiyong.site/moyu/xxoo2.html','https://haiyong.site/moyu/xxoo3.html','https://haiyong.site/moyu/siyifu','https://haiyong.site/moyu/quwei.html','https://haiyong.site/moyu/dou.html','https://haiyong.site/moyu/danban.html','https://haiyong.site/moyu/zhipaijiyi.html','https://haiyong.site/moyu/touzi','https://haiyong.site/moyu/tiaofangzi.html','https://wanghao221.github.io/shuiguorenzhe/','https://haiyong.site/moyu/tiaofangzi.html','https://haiyong.site/moyu/SpaceHuggers/','https://haiyong.site/moyu/xbw','https://haiyong.site/moyu/xiangqi/','https://haiyong.site/moyu/hlxz/','https://haiyong.site/moyu/senlin/','https://haiyong.site/moyu/mdtw/','https://haiyong.site/moyu/100/','https://haiyong.site/moyu/qishi/','https://haiyong.site/moyu/flddsy/','https://haiyong.site/moyu/taikong/','https://haiyong.site/moyu/guangtouqiang/','https://haiyong.site/moyu/feiyue/','https://haiyong.site/moyu/magicegg/','https://haiyong.site/moyu/tegong/','https://haiyong.site/moyu/hjkg/'];
+a=1;
+textcolor="white";
+backcolor="black";
+function spi(str,needstr,num){
+    spistr="";
+    spiArry=[];
+    var cou=-1;
+    str.split(needstr).map((exp)=>{
+        cou+=1;
+        if(cou-num>0){
+            spistr+=needstr+exp;
+        }
+        else if(cou-num==0){
+            spistr+=exp;
+        }
+        else{
+            spiArry.push(exp);
+        }
+    });
+    spiArry.push(spistr);
+    return spiArry;
+}
+function shc(){
+if (event.ctrlKey && event.keyCode == 76){//Ctrl+L 清屏
+    document.getElementById("all").innerHTML="<span>html-cmd(version:1.01.20.33)<br>Sife Studio keeps all the rights.</span><br><span style=\"display:flex\" id=\"line1\"><span>cmd></span><input type=\"text\" id=\"inpot\" onkeydown=\"get()\"></span>";
+    document.querySelectorAll('span')[0].style.color=textcolor;
+    document.querySelectorAll('span')[0].style.backgroundColor=backcolor;
+    document.querySelectorAll('span')[1].style.color=textcolor;
+    document.querySelectorAll('span')[1].style.backgroundColor=backcolor;
+    document.querySelectorAll('span')[2].style.color=textcolor;
+    document.querySelectorAll('span')[2].style.backgroundColor=backcolor;
+    document.getElementById("inpot").style.color=textcolor;
+    document.getElementById("inpot").style.backgroundColor=backcolor;
+    a=1;
+    oldhis=[];
+    event.preventDefault();
+    document.getElementById("inpot").focus();
+    return false;
+}else if(event.ctrlKey && event.keyCode == 88){//Ctrl+X 对焦
+    event.preventDefault();
+    document.getElementById("inpot").focus();
+    return false;
+}
+};
+function get(){
+    if(event.keyCode==13){
+        Commad=document.getElementById('inpot').value;
+        oldhis.push(Commad);
+        document.getElementById('line'+String(a)).removeChild(document.getElementById("inpot"));
+        document.getElementById('line'+String(a)).innerHTML+='<span style="padding-left: 10px;">'+Commad+'</span>';
+        if(Commad!=''&&amazing(Commad,0)!='nonono'){
+            document.getElementById('all').innerHTML+='<span>'+amazing(Commad,1)+'</span>';
+        };
+        a=a+1;
+        numspan=document.querySelectorAll('span').length;
+        numinput=document.querySelectorAll('input').length;
+        document.getElementById("all").innerHTML+='<span style="display:flex;" id=line'+String(a)+'><span>cmd></span><input type="text" id="inpot" onkeydown="get()"></span>';
+        document.querySelectorAll('span')[numspan].style.color=textcolor;
+        document.querySelectorAll('span')[numspan+1].style.color=textcolor;
+        document.querySelectorAll('span')[numspan].style.backgroundColor=backcolor;
+        document.querySelectorAll('span')[numspan+1].style.backgroundColor=backcolor;
+        document.querySelectorAll('input')[numinput].style.color=textcolor;
+        document.querySelectorAll('input')[numinput].style.backgroundColor=backcolor;
+        document.getElementById("inpot").focus();
+    };
+};
+function amazing(str,ajk){
+    var n=spi(str," ",1);
+    if(n[0].toLowerCase()=="title"){
+        document.title=n[1];
+        return("nonono");
+    }else if(n[0].toLowerCase()=="search"||n[0].toLowerCase()=='sh'&&ajk==1){
+        if(spi(n[1]," ",1)[0].toLowerCase()=='baidu'){
+            var klk=document.createElement('a');
+            window.open("https://www.baidu.com/s?wd="+spi(n[1]," ",1)[1])//百度搜索
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='baidudev'){//百度开发者搜索
+            var klk=document.createElement('a');
+            window.open("https://kaifa.baidu.com/searchPage?wd="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='bilibili'){//bilibili搜索
+            var klk=document.createElement('a');
+            window.open("https://search.bilibili.com/all?keyword="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='music'){//网易云音乐搜索
+            var klk=document.createElement('a');
+            window.open("https://music.163.com/#/search/m/?s="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='bing'){//bing搜索
+            var klk=document.createElement('a');
+            window.open("https://global.bing.com/search?q="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='fsearch'){//F搜索
+            var klk=document.createElement('a');
+            window.open("https://fsoufsou.com/search?q="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='zhihu'){//知乎搜索
+            var klk=document.createElement('a');
+            window.open("https://www.zhihu.com/search?q="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='geng'){//梗搜索
+            var klk=document.createElement('a');
+            window.open("https://jikipedia.com/search?phrase="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='github'){//github搜索
+            var klk=document.createElement('a');
+            window.open("https://github.com/search?q="+spi(n[1]," ",1)[1])
+            return('nonono');
+        }else if(spi(n[1]," ",1)[0].toLowerCase()=='diy'){//自定义搜索  search DIY 数据源 搜索内容
+            var klk=document.createElement('a');
+            window.open(spi(n[1]," ",2)[1]+spi(n[1]," ",2)[2]);
+            return('nonono');
+        }else{
+            return("<span class=\"jing\" style='color:red;'>error:Insufficient parameters</span>");
+        };
+    }else if(n[0].toLowerCase()=='color'&&str.toLowerCase()!='color'){
+        if(n[1].length==1){
+            for(var i=0;i<document.querySelectorAll('span').length;i++){
+                document.querySelectorAll('span')[i].style.color="white";
+                document.querySelectorAll('span')[i].style.backgroundColor="black";
+            };
+            for(var i=0;i<document.querySelectorAll('input').length;i++){
+                document.querySelectorAll('input')[i].style.color="white";
+                document.querySelectorAll('input')[i].style.backgroundColor="black";
+            };
+            textcolor="white";
+            backcolor="black";
+            document.getElementById('all').style.backgroundColor='black';
+            obs=n[1].replace('0','black').replace('1','blue').replace('2','lightgreen').replace('3','aqua').replace('4','red').replace('5','purple').replace('6','yellow').replace('7','white').replace('8','gray').replace('9','lightblue');
+            for(var i=0;i<document.querySelectorAll('span').length;i++){
+                document.querySelectorAll('span')[i].style.color=obs;
+                document.querySelectorAll('span')[i].style.backgroundColor='balck';
+            };
+            for(var i=0;i<document.querySelectorAll('input').length;i++){
+                document.querySelectorAll('input')[i].style.color=obs;
+                document.querySelectorAll('input')[i].style.backgroundColor='balck';
+            };
+            textcolor=obs;
+            backcolor="black";
+            document.getElementById('all').style.backgroundColor='black';
+            return("nonono");
+        }else if(n[1].length==2&&n[1][0]!=n[1][1]){
+            obs=n[1][0]+','+n[1][1]
+            obs=obs.replace('0','black').replace('1','blue').replace('2','lightgreen').replace('3','aqua').replace('4','red').replace('5','purple').replace('6','yellow').replace('7','white').replace('8','gray').replace('9','lightblue');
+            for(var i=0;i<document.querySelectorAll('span').length;i++){
+                document.querySelectorAll('span')[i].style.color=obs.split(",")[1];
+                document.querySelectorAll('span')[i].style.backgroundColor=obs.split(",")[0];
+            };
+            for(var i=0;i<document.querySelectorAll('input').length;i++){
+                document.querySelectorAll('input')[i].style.color=obs.split(",")[1];
+                document.querySelectorAll('input')[i].style.backgroundColor=obs.split(",")[0];
+            };
+            textcolor=obs.split(",")[1];
+            backcolor=obs.split(",")[0];
+            document.getElementById('all').style.backgroundColor=obs.split(",")[0];
+            return("nonono");
+        }else if(n[1].length==0){
+            for(var i=0;i<document.querySelectorAll('span').length;i++){
+                document.querySelectorAll('span')[i].style.color="white";
+                document.querySelectorAll('span')[i].style.backgroundColor="black";
+            };
+            for(var i=0;i<document.querySelectorAll('input').length;i++){
+                document.querySelectorAll('input')[i].style.color="white";
+                document.querySelectorAll('input')[i].style.backgroundColor="black";
+            };
+            textcolor="white";
+            backcolor="black";
+            document.getElementById('all').style.backgroundColor='black';
+            return('nonono');
+        }else if(n[1].length==2&&n[1][0]==n[1][1]){
+            return("<span class=\"jing\" style='color:yellow;'>error:Parameters cannot be the same</span>");
+        }else{
+            return("<span class=\"jing\" style='color:red;'>error:Insufficient parameters</span>");
+        };
+    }else if(str.toLowerCase()=='color'){
+        for(var i=0;i<document.querySelectorAll('span').length;i++){
+                document.querySelectorAll('span')[i].style.color="white";
+                document.querySelectorAll('span')[i].style.backgroundColor="black";
+        };
+        for(var i=0;i<document.querySelectorAll('input').length;i++){
+                document.querySelectorAll('input')[i].style.color="white";
+                document.querySelectorAll('input')[i].style.backgroundColor="black";
+        };
+        textcolor="white";
+        backcolor="black";
+        document.getElementById('all').style.backgroundColor='black';
+        return('nonono');
+    }else if(n[0].toLowerCase()=='play'){
+        if(spi(n[1],' ',1)[0].toLowerCase()=='easygame'){
+            if(Number(spi(n[1],' ',1)[1])>0&&Number(spi(n[1],' ',1)[1])<71){
+                document.getElementById('all').innerHTML+='<iframe style="width:100%;height:100%;border:0;" src='+easygame[Number(spi(n[1],' ',1)[1])-1]+'></iframe>';
+                return("nonono");
+            }else{
+                document.getElementById('all').innerHTML+='<iframe style="width:100%;height:100%;border:0;" src='+easygame[Math.floor(Math.random() *69)]+'></iframe>';
+                return("nonono");
+            };
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='minecraft'){
+            document.getElementById('all').innerHTML+='<iframe style="width:100%;height:100%;border:0;" src=\'https://classic.minecraft.net/\'></iframe>';
+            return('nonono');
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='sandpainting'){
+            document.getElementById('all').innerHTML+='<iframe style="width:100%;height:100%;border:0;" src=\'https://thisissand.com/\'></iframe>'
+        }
+    }else if(n[0].toLowerCase()=='music'){
+        document.getElementById("willmusic")?document.getElementById("willmusic").setAttribute("id",""):void(0);
+        $.ajax({
+            url: 'http://192.168.101.10:8080/music-api?keywords='+encodeURI(encodeURI(n[1])),
+            type: 'GET',
+            dataType: 'jsonp',
+            success:function (dat){
+                console.log(dat);
+            }
+        });
+        document.getElementById("all").innerHTML+='<br><span id="willmusic"></span>';
+        return('nonono');
+    }else if(n[0].toLowerCase()=='history'){
+        var r = oldhis.filter(function (s) {
+            return s && s.trim();
+        });
+        return(String(r));
+    }else if(n[0].toLowerCase()=='date'){
+        d=new Date();
+        return(d.toUTCString());
+    }else if(n[0].toLowerCase()=='clear'){
+        document.getElementById("all").innerHTML="<span>html-cmd(version:1.01.20.33)<br>Sife Studio keeps all the rights.</span><br>";
+        document.querySelectorAll('span')[0].style.color=textcolor;
+        document.querySelectorAll('span')[0].style.backgroundColor=backcolor;
+        a=1;
+        oldhis=[];
+        event.preventDefault();
+        return("nonono");
+    }else if(n[0].toLowerCase()=='open'&&ajk==1){
+        window.open(n[1]);
+        return(n[1]+" was opened");
+    }else if(n[0].toLowerCase()=='bilibili'){
+        if(n[1]){
+            if(spi(n[1],' ',1)[1]&&spi(n[1],' ',1)[0].toLowerCase()=='look'){
+                document.getElementById("wilookb")?document.getElementById("wilookb").setAttribute("id",""):void(0);
+                $.ajax({
+                    url: 'http://192.168.101.10:8080/lookbili-api?bvid='+encodeURI(encodeURI(spi(n[1],' ',1)[1])),
+                    type: 'GET',
+                    dataType: 'jsonp',
+                    success:function (dat){
+                        console.log(dat);
+                    }
+                });
+                document.getElementById("all").innerHTML+='<br><span id="wilookb"></span>';
+                return('nonono');
+            }else{
+                document.getElementById('all').innerHTML+='<iframe src="https://player.bilibili.com/player.html?bvid='+n[1]+'" scrolling="no" border="0" framespacing="0" allowfullscreen="true" width="600" height="421" frameborder="no"> </iframe>';
+                return("nonono");
+            }
+        }else{
+            document.getElementById("willbi")?document.getElementById("willbi").setAttribute("id",""):void(0);
+            $.ajax({
+                url: 'http://192.168.101.10:8080/sample-api',
+                type: 'GET',
+                dataType: 'jsonp',
+                success:function (dat){
+                    console.log(dat);
+                }
+            });
+            document.getElementById("all").innerHTML+='<br><span id="willbi"></span>';
+            return('nonono');
+        };
+    }else if(n[0].toLowerCase()=='cryptology'||n[0].toLowerCase()=='cy'||n[0].toLowerCase()=='password'){
+        if(spi(n[1],' ',1)[0].toLowerCase()=='md5'){
+            return CryptoJS.MD5(spi(n[1],' ',2)[1]).toString();
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='sha1'){
+            return CryptoJS.SHA1(spi(n[1],' ',2)[1]).toString();
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='sha256'){
+            return CryptoJS.SHA256(spi(n[1],' ',2)[1]).toString();
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='sha512'){
+            return CryptoJS.SHA512(spi(n[1],' ',2)[1]).toString();
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='sha3'){
+            if(spi(n[1],' ',2)[2]){
+                return CryptoJS.SHA3(spi(n[1],' ',2)[2],{outputLength:Number(spi(n[1],' ',2)[1])}).toString();//224,512,384,256
+            }else{
+            return CryptoJS.SHA3(spi(n[1],' ',2)[1]).toString()}
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='ripemd160'){
+            return CryptoJS.RIPEMD160(spi(n[1],' ',2)[1]).toString();
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='hmac'){
+            //cryptology hmac 加密方式 密钥 加密内容
+            if(spi(n[1],' ',3)[1].toLowerCase()=='md5'){
+                return CryptoJS.HmacMD5(spi(n[1],' ',3)[3], spi(n[1],' ',3)[2]).toString();
+            }else if(spi(n[1],' ',3)[1].toLowerCase()=='sha1'){
+                return CryptoJS.HmacSHA1(spi(n[1],' ',3)[3], spi(n[1],' ',3)[2]).toString();
+            }else if(spi(n[1],' ',3)[1].toLowerCase()=='sha256'){
+                return CryptoJS.HmacSHA256(spi(n[1],' ',3)[3], spi(n[1],' ',3)[2]).toString();
+            }else if(spi(n[1],' ',3)[1].toLowerCase()=='sha512'){
+                return CryptoJS.HmacSHA512(spi(n[1],' ',3)[3], spi(n[1],' ',3)[2]).toString();
+            };
+        }else if(['aes','des','tripledes','rabbit','rc4','rc4drop'].indexOf(spi(n[1],' ',1)[0].toLowerCase())!=-1){
+            //password 加密方式 0 密钥 加密内容
+            //password 加密方式 1 密钥 解密内容
+            //password 加密方式 2 key iv 加密内容
+            if(spi(n[1],' ',3)[1]==0){
+                countttt=['aes','des','tripledes','rabbit','rc4','rc4drop'].indexOf(spi(n[1],' ',1)[0].toLowerCase());
+                var objpass=eval('CryptoJS.'+['AES','DES','TripleDES','Rabbit','RC4','RC4Drop'][countttt]+'.encrypt(spi(n[1],\' \',3)[3], spi(n[1],\' \',3)[2])');
+                return '<span>'+objpass.toString()+'</span><br><span>key:'+objpass.key.toString()+'</span><br><span>iv:'+objpass.iv.toString()+'</span><br><span>salt:'+objpass.salt.toString()+'</span><br><span>ciphertext:'+objpass.ciphertext.toString();
+            }else if(spi(n[1],' ',3)[1]==1){
+                countttt=['aes','des','tripledes','rabbit','rc4','rc4drop'].indexOf(spi(n[1],' ',1)[0].toLowerCase());
+                var objpass=eval('CryptoJS.'+['AES','DES','TripleDES','Rabbit','RC4','RC4Drop'][countttt]+'.decrypt(spi(n[1],\' \',3)[3], spi(n[1],\' \',3)[2])');
+                return '<span>'+objpass.toString(CryptoJS.enc.Utf8)+'</span>';
+            }else if(spi(n[1],' ',3)[1]==2){
+                countttt=['aes','des','tripledes','rabbit','rc4','rc4drop'].indexOf(spi(n[1],' ',1)[0].toLowerCase());
+                var objpass=eval('CryptoJS.'+['AES','DES','TripleDES','Rabbit','RC4','RC4Drop'][countttt]+'.encrypt(spi(n[1],\' \',3)[4], CryptoJS.enc.Hex.parse(spi(n[1],\' \',3)[2]),{iv:CryptoJS.enc.Hex.parse(spi(n[1],\' \',3)[3])})');
+                return '<span>'+objpass.toString()+'</span><br><span>key:'+objpass.key.toString()+'</span><br><span>iv:'+objpass.iv.toString()+'</span><br><span>ciphertext:'+objpass.ciphertext.toString();
+            }
+        }
+    }else if(n[0].toLowerCase()=='unicode'){
+        return escape(n[1]).replace(/%/g,"\\").toLowerCase();
+    }else if(n[0].toLowerCase()=='ununicode'){
+        return unescape(n[1].replace(/\\/g, "%"));
+    }else if(n[0].toLowerCase()=='url'){
+        return encodeURI(n[1]);
+    }else if(n[0].toLowerCase()=='unurl'){
+        return decodeURI(n[1]);
+    }else if(n[0].toLowerCase()=='hash'){
+        if(spi(n[1],' ',1)[0].toLowerCase()=='str'){
+            return () => spi(n[1],' ',1)[1].split('').reduce((prev, curr) => (Math.imul(31, prev) + curr.charCodeAt(0)) | 0, 0);
+        }else{
+            document.getElementById('willhash')?document.getElementById('willhash').setAttribute('id',''):void(0);
+            $.ajax({
+                url: 'http://192.168.101.10:8080/hash-api?s='+encodeURI(encodeURI(n[1])),
+                type: 'GET',
+                dataType: 'jsonp',
+                success:function (dat){
+                    console.log(dat);
+                }
+            });
+            document.getElementById('all').innerHTML+='<span id="willhash"></span>';
+            return('nonono');
+        }
+    }else if(n[0].toLowerCase()=='ping'){
+        document.getElementById('willping')?document.getElementById('willping').setAttribute('id',''):void(0);
+        $.ajax({
+            url: 'http://192.168.101.10:8080/ping-api?s='+encodeURI(encodeURI(n[1])),
+            type: 'GET',
+            dataType: 'jsonp',
+            success:function (dat){
+                console.log(dat);
+            }
+        });
+        document.getElementById('all').innerHTML+='<span id="willping"></span>';
+        return('nonono');
+    }else if(n[0].toLowerCase()=='base64'){
+        if(!n[1]||n[1].toLowerCase()=='pic'){
+            document.getElementById("willbase")?document.getElementById("willbase").setAttribute("id",""):void(0);
+            document.getElementById("all").innerHTML+='<input accept="image/*" onchange="pib()" type="file" style="display:none;" id="imagefile" /><span id="willbase">Please click <span style=\'color:blue;background-color:black;\' onclick="picbase()">here</span> to upload pictures</span>'
+            return("nonono");
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='str'){
+            return window.btoa(unescape(encodeURIComponent(spi(n[1],' ',1)[1])));
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='unstr'){
+            return decodeURIComponent(escape(window.atob(spi(n[1],' ',1)[1])));
+        }
+    }else if(n[0].toLowerCase()=='image'){
+        document.getElementById("pibase")?document.getElementById("pibase").setAttribute('id',''):void(0);
+        document.getElementById("all").innerHTML+='<div id="pibase"><img src='+spi(n[1]," ",1)[0]+'></img></div>';
+        document.getElementById("pibase").style.filter=spi(n[1]," ",1)[1];
+        imagwi=cssRenderImage2PureImage(document.getElementById('pibase'));
+        document.getElementById("pibase").setAttribute('id','');
+        return('<details><summary><span style="color:lightgreen;">Result base64</span></summary><xmp>'+imagwi+'</xmp></details>');
+    }else if(n[0].toLowerCase()=='imagetoascii'||n[0].toLowerCase()=='ita'){//ita image char size color
+        document.getElementById('ita')?document.getElementById("ita").setAttribute('id',''):void(0);
+        document.getElementById('all').innerHTML+='<span id="ita"></span>';
+        imageta=new imgToAscii(spi(n[1],' ',3)[0],Number(spi(n[1],' ',3)[1]),Number(spi(n[1],' ',3)[2]))//image,charType,size
+        if(spi(n[1],' ',3)[3]==1){
+            imageta.displayColor();
+        }else{
+            imageta.display();
+        };
+        return('nonono')
+    }else if(n[0].toLowerCase()=='code'&&ajk==1&&n[1]){
+        if(n[1].toLowerCase()=='run'){
+            window.open('https://jsrun.net/');
+            return("");
+        }else if(n[1].toLowerCase()=='vscode'){
+            window.open('https://vscode.dev/');
+            return("");
+        }else{return("<span style=\"color:red\">error:Incorrect command syntax</span>")};//https://riju.codes/国外
+    }else if(n[0].toLowerCase()=='code'&&ajk==1&&!n[1]){
+        return("<span style=\"color:red\">error:Incorrect command syntax</span>");
+    }else if(n[0].toLowerCase()=='morsecode'){
+        return(morse.parse(n[1]));
+    }else if(n[0].toLowerCase()=='unmorsecode'){
+        return(morse.decode(n[1]));
+    }else if(n[0].toLowerCase()=='javascript'||n[0].toLowerCase()=='js'){
+        try{return eval(n[1])}catch(err){return '<span style="color:red;">'+err+"</span>"}
+    }else if(n[0].toLowerCase()=='numeration'||n[0].toLowerCase()=='numn'){
+        if(spi(n[1],' ',1)[0].toLowerCase()=='str'){
+            n[1]=spi(n[1],' ',1)[1];
+            return Number(spi(n[1],' ',1)[0])>=2&&Number(spi(n[1],' ',1)[0])<=38?spi(n[1],' ',1)[1].match(/./g).map((things)=>{return things.charCodeAt(0).toString(Number(spi(n[1],' ',1)[0]))}).toString():'<span style="color:red;">errer:Illegal parameter</span>';
+        }else if(spi(n[1],' ',1)[0].toLowerCase()=='num'){
+            n[1]=spi(n[1],' ',1)[1];
+            return Number(spi(n[1],' ',1)[1]).toString(Number(spi(n[1],' ',1)[0]));
+        };
+    }else if(n[0].toLowerCase()=='dino'){
+        return('<iframe src="https://chromedino.com/" frameborder="0" scrolling="no" width="100%" height="100%" loading="lazy"></iframe><style type="text/css">iframe { position: absolute; width: 100%; height: 100%; z-index: 999; }</style>')
+    }else if(n[0].toLowerCase()=='translate'||n[0].toLowerCase()=='tr'){
+        document.getElementById('transr')?document.getElementById('transr').setAttribute('id',''):void(0);
+        $.ajax({
+            url: 'http://192.168.101.10:8080/translate-api?q='+encodeURI(encodeURI(spi(n[1],' ',2)[2]))+'&from='+spi(n[1],' ',2)[0]+'&to='+spi(n[1],' ',2)[1],
+            type: 'GET',
+            dataType: 'jsonp',
+            success:function (dat){
+                console.log(dat);
+            }
+        });
+        document.getElementById('all').innerHTML+='<span id="transr"></span>';
+        return('nonono');
+    }else{
+        return("<span style=\"color:red;\">error:The instruction does not exist</span>");
+    };
+};
+function opbi(jSON){
+    document.getElementById('willbi').innerHTML+='<iframe src="https://player.bilibili.com/player.html?aid='+jSON['data']['item'][0]['id']+'" scrolling="no" border="0" framespacing="0" allowfullscreen="true" width="600" height="421" frameborder="no"> </iframe>';
+    document.getElementById("willbi").setAttribute("id","");
+};
+function opmu(jSON){
+    document.getElementById("willmusic").innerHTML+='<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="https://music.163.com/outchain/player?type=2&id='+jSON["result"]["songs"][0]["id"]+'&auto=1&height=66"></iframe>';
+    document.getElementById("willmusic").setAttribute("id","");
+};
+function picbase(){
+    var evt = document.createEvent("MouseEvents");
+		evt.initEvent("click", true, true);
+		document.getElementById("imagefile").dispatchEvent(evt);
+};
+function pib(){
+    if(typeof FileReader=='undifined'){
+        document.getElementById("willbase").innerHTML+='<br><span style=\'color:red;background-color:black\'>error:This browser does not support FillRader</span>'
+        return false;
+    };
+    var file=document.getElementById("imagefile").files[0];
+    if(!/image\/\w+/.test(file.type)){
+        document.getElementById("willbase").innerHTML+='<br><span style="color:purple;background-color:black;">error:Not a picture</span>';
+        document.getElementById("willbase").setAttribute("id","");
+        return false;
+    }
+    var reader=new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload=function(e){
+        document.getElementById("willbase").innerHTML+='<br><details><summary><span style="color:lightgreen;">Result base64</span></summary><span>'+this.result+'</span></details>';
+        document.getElementById("willbase").setAttribute("id","");
+    };
+};
+var cssRenderImage2PureImage = function (dom) {
+    if (!dom) {return this;};
+    var width = dom.querySelector('img').offsetWidth;
+    var height = dom.querySelector('img').offsetHeight;
+    var cloneDom = dom.cloneNode(true);
+    cloneDom.setAttribute('xmlns', 'http://www.w3.org/1999/xhtml');
+    return 'data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="' + width + '" height="' + height + '"><foreignObject x="0" y="0" width="100%" height="100%">'+new XMLSerializer().serializeToString(cloneDom).replace(/#/g, '%23').replace(/\n/g, '%0A') +document.querySelector('style').outerHTML+'</foreignObject></svg>';
+};
+var utils = utils || {};
+
+utils.isArray = function(value) {
+    return Object.prototype.toString.apply(value) === '[object Array]';
+}
+utils.trim = function(value) {
+    return value.trim ? value.trim() : value.replace(/^\s+|\s+$|/g,'');
+};
+function Dictionary() {
+    this.datasource = {};
+    this.rdatasource = {};
+};
+Dictionary.prototype.add = function(keys, values) {
+    if(typeof keys === 'undefined' || typeof values === 'undefined') {
+        console.error('Illegal arguments');
+        return ;
+    }
+    if(utils.isArray(keys) && utils.isArray(values)) {
+        if(keys.length != values.length) {
+            console.error('keys length not equals values length');
+            return ;
+        }
+        for(var i = 0; i < keys.length; i++) {
+            this.datasource[keys[i]] = values[i];
+        }
+        return ;
+    }
+    this.datasource[keys] = values;
+}
+Dictionary.prototype.reversal = function(){
+    var tempData = this.datasource;
+    for(var i in tempData) {
+        if(tempData.hasOwnProperty(i)) {
+            this.rdatasource[tempData[i]] = i;
+        }
+    }
+}
+Dictionary.prototype.showAll = function(values) {
+    var count = 0;
+    console.log('-----------morse code mapping-----------');
+    for(var i in values) {
+        if(values.hasOwnProperty(i)) {
+            count++;
+            console.log(i + '\t > ' + values[i]);
+        }
+    }
+    console.log('total count: ' + count);
+};
+var morse = (function(global){
+    var mcode = {},
+        r_special = /\<\w+\>/g,
+        r_find = /^\<(\w+)\>$/;
+    mcode.mdatas = (function(){
+        var dictionaryDS = new Dictionary();
+        dictionaryDS.add(
+            [
+                'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z',
+                '1','2','3','4','5','6','7','8','9','0',
+                'AA','AR','AS','BK','BT','CT','SK','SOS',
+                '.',':',',',';','?','=',"'",'/','!','-','_','"','(',')','$','&','@','+'
+            ],
+            [
+                '.-','-...','-.-.','-..','.','..-.','--.','....','..','.---','-.-','.-..','--','-.','---','.--.','--.-','.-.','...','-','..-','...-','.--','-..-','-.--','--..',
+                '.----','..---','...--','....-','.....','-....','--...','---..','----.','-----',
+                '.-.-','.-.-.','.-...','-...-.-','-...-','-.-.-','...-.-','...---...',
+                '.-.-.-','---...','--..--','-.-.-.','..--..','-...-','.----.','-..-.','-.-.--','-....-','..--.-','.-..-.','-.--.','-.--.-','...-..-','.-...','.--.-.','.-.-.'
+            ]
+        );
+        return dictionaryDS;
+    }());
+    mcode.error_flag = false;
+    mcode.parse = function(values) {
+        this.error_flag = false;
+
+        var _datasource = this.mdatas.datasource,
+            item = '',
+            a_special = [],
+            a_temp = [],
+            a_value = [],
+            count = 0,
+            result = '';
+        values = values.toUpperCase();
+        a_special = values.match(r_special);
+        a_temp = values.split(r_special);
+        for(var i=0; i<a_temp.length; i++) {
+            item = a_temp[i];
+            if(item !== '') {
+                if(!item[0]){
+                    item = item.split('');
+                }
+                for(var j=0; j<item.length; j++) {
+                    a_value[count++] = item[j];
+                }
+            }
+            if(i !== a_temp.length - 1){
+                a_value[count++] = a_special[i].match(r_find)[1];
+            }
+        }
+        for(var i=0; i<a_value.length; i++) {
+            item = a_value[i];
+
+            if(item === ' ') {
+                result += '/ ';
+            } else if(typeof _datasource[item] === 'undefined') {
+                this.error_flag = true;
+                result += '? ';
+            }else {
+                result += _datasource[item] + ' ';
+            }
+        }
+        return utils.trim(result);
+    }
+    mcode.decode = function(values) {
+        this.error_flag = false;
+
+        this.mdatas.reversal();
+        var _rdatasource = this.mdatas.rdatasource,
+            a_input = values.split(' '),
+            result = '',
+            item = '',
+            c_result = '';
+
+        for(var i=0; i<a_input.length; i++) {
+            item = a_input[i];
+            if(item === '/') {
+                result += ' ';
+            }else {
+                c_result = _rdatasource[item];
+                if(typeof c_result === 'undefined') {
+                    this.error_flag = true;
+                    result += '?';
+                } else {
+                    if(c_result.length > 1){
+                        result += '<' + c_result + '>';
+                    } else {
+                        result += c_result;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+    return mcode;
+}(this));
+class imgToAscii {
+	constructor(image,charType,size){
+		this.size = ( size <= 0 || size > 1 ? 1 : size) || 1;
+		this.charType = charType || 0;
+		this.alphabet = {
+			0: ["@","%","#","*","+","=","-",":","."," "],
+			1: ["$","@","B","%","8","&","W","M","#","*","o","a","h","k","b","d","p","q","w","m","Z","O",
+					"0","Q","L","C","J","U","Y","X","z","c","v","u","n","x","r","j","f","t","/","\\","|","(",
+					")","1","{","}","[","]","?","-","_","+","~","\<","\>","i","!","l","I",";",":",",","\"","^",
+					"`","'","."," "]
+		}
+		this.string = "";
+		this.stringColor = "";
+		this.imageSrc = image;
+		this.loadImage = new Promise( (resolve,reject) =>{
+			this.image = new Image();
+			this.image.src = this.imageSrc;
+			this.image.onload = ()=> {
+				this.canvas = document.createElement('canvas');
+				this.canvas.width = this.image.width * this.size;
+				this.canvas.height = this.image.height * this.size;
+				this.context = this.canvas.getContext('2d');
+				this.context.drawImage(this.image, 0, 0, this.canvas.width, this.canvas.height);
+				this.imageData = this.context.getImageData(0,0,this.canvas.width,this.canvas.height);
+				let grayStep = Math.ceil( 255 / this.alphabet[this.charType].length );
+				for(let i = 0; i < this.imageData.data.length; i+=4){
+					for(let j = 0; j < this.alphabet[this.charType].length; j++){
+						let r = this.imageData.data[i];
+						let g = this.imageData.data[i+1];
+						let b = this.imageData.data[i+2];
+						if( (r * 0.2126) + (g * 0.7152) + (b * 0.0722) < (j+1) * grayStep ){
+							this.string += this.alphabet[this.charType][j];
+							this.stringColor += "<span style=\"color: rgb("+r+","+g+","+b+"); \">" 
+															 +this.alphabet[this.charType][j]
+															 +"</span>";
+							break;	
+						}
+					}
+					if( !((i/4+1) % this.canvas.width) ){
+						this.string += "\n";
+						this.stringColor += "<br>";
+					}
+				}
+				resolve();
+			};
+			this.image.error = reject;
+		}).catch( e => console.error(e) );
+	}
+	
+	async display(){
+		let pre = document.createElement('pre');
+		pre.style.fontFamily = "Courier, monospace";
+		pre.style.lineHeight = "6px";
+		pre.style.fontSize = "11px";
+		pre.style.display = "inline-block";
+		document.getElementById('ita').appendChild(pre);
+		await this.loadImage;
+		document.querySelector('#ita > pre:nth-child(1)').innerText = this.string;
+	}
+
+	async displayColor(bg){
+		let pre = document.createElement('pre');
+		pre.style.fontFamily = "Courier, monospace";
+		pre.style.lineHeight = "6px";
+		pre.style.fontSize = "11px";
+		pre.style.display = "inline-block";
+		pre.style.backgroundColor = bg;
+		document.getElementById('ita').appendChild(pre);
+		await this.loadImage;
+		document.querySelector('#ita > pre:nth-child(1)').innerHTML = this.stringColor;
+	}
+
+};
+function trans(ajSOn){
+    document.getElementById('transr').innerHTML+='<span>'+ajSOn['content']['out']+'</span>';
+    document.getElementById('transr').setAttribute('id','');
+};
+function hashs(ajSON){
+    for(var i=0;i<Object.keys(ajSON).length;i++){
+        document.getElementById('willhash').innerHTML+='<br><span>'+Object.keys(ajSON)[i]+':'+Object.values(ajSON)[i]+'</span>';
+    }
+    document.getElementById('willhash').setAttribute('id','');
+};
+function pings(ajSON){
+    document.getElementById('willping').innerHTML+='<span>'+ajSON.replaceAll('\n','<br>')+'</span>';
+    document.getElementById('willping').setAttribute('id','');
+};
+function lookb(tagjson,datajson){
+    document.getElementById('wilookb').innerHTML+='<span>owner:'+datajson['data']['owner']['name']
+        +'<br>bvid:'+datajson['data']['bvid']+'<br>aid:'+datajson['data']['aid']+'<br>title:'+datajson['data']['title']+'<br>view(播放量):'
+        +datajson['data']['stat']['view']+'<br>danmaku(弹幕数):'
+        +datajson['data']['stat']['danmaku']+'<br>reply(视频回复量):'
+        +datajson['data']['stat']['reply']+'<br>favorite(收藏量):'
+        +datajson['data']['stat']['favorite']+'<br>coin(投币数):'
+        +datajson['data']['stat']['coin']+'<br>share(转发量):'
+        +datajson['data']['stat']['share']+'<br>like(点赞量):'
+        +datajson['data']['stat']['like']+'</span>';
+    var tagstr='';
+    for(var i=0;i<tagjson['data'].length;i++){
+        tagstr+=tagjson['data'][i]['tag_name']+' ';
+    };
+    tagstr+=datajson['data']['tname'];
+    document.getElementById('wilookb').innerHTML+='<br><span>tags(标签):'+tagstr+'</span>';
+    document.getElementById('wilookb').setAttribute('id','');
+}
+</script>
+</body>
+</html>
