@@ -1,7 +1,7 @@
 function submit() {
-    var username = document.getElementById("username");
-    var password = document.getElementById("password");
-    var LoginServerURL = "http://127.0.0.1:3000/login";
+    const username = document.getElementById("username");
+    const password = document.getElementById("password");
+    const LoginServerURL = "http://127.0.0.1:3000/login";
     fetch(LoginServerURL, {
         method: 'post',
         headers: {
