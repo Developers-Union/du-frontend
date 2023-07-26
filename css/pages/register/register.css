@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 a {
@@ -9,14 +10,14 @@ a {
     transition: all .5s;
 }
 
-a:hover{
+a:hover {
     opacity: 1.4;
 }
 
 body {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    height: max(100vw, 100vh);
 
     display: flex;
     justify-content: center;
@@ -59,7 +60,7 @@ textarea {
 }
 
 .main-wrapper {
-    margin: 10vw 40vw;
+    margin: -10% 40vw 10vw;
 }
 
 .register-wrapper {
@@ -115,6 +116,17 @@ textarea {
     height: 3vw;
     margin-right: 3%;
     background-image: linear-gradient(135deg, rgba(78, 232, 44, 0.2), rgba(153, 220, 71, 0.2));
+    outline: none;
+}
+
+.register-wrapper .verify #verify-code-wrapper .verify-code-digit>p {
+    outline: none;
+    height: 3vw;
+    line-height: 3vw;
+    text-align: center;
+    font-family: 'Jetbrains Mono';
+    color: #fff;
+    font-size: 2vw;
 }
 
 .register-wrapper .verify #verify-code-wrapper #verify {

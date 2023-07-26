@@ -7,137 +7,198 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Register | DU</title>
     <link rel="stylesheet" href="../../css/pages/register/register.css">
+    <script src="../../js/lib.min.js"></script>
 </head>
 
 <body>
 
-    <div class="main-wrapper">
-        <div class="register-wrapper">
-            <div class="h1-wrapper">
-                <h1>Register</h1>
-            </div>
+<div class="main-wrapper">
+    <div class="register-wrapper">
+        <div class="h1-wrapper">
+            <h1>Register</h1>
+        </div>
 
-            <div class="username input-wrapper">
-                <p>input username:</p>
-                <textarea name="username" id="username"></textarea>
-            </div>
+        <div class="username input-wrapper">
+            <p>input username:</p>
+            <textarea name="username" id="username"></textarea>
+        </div>
 
-            <div class="username input-wrapper">
-                <p>input e-mail:</p>
-                <textarea name="email" id="email"></textarea>
-            </div>
+        <div class="username input-wrapper">
+            <p>input e-mail:</p>
+            <textarea name="email" id="email"></textarea>
+        </div>
 
-            <div class="password input-wrapper">
-                <p>input password:</p>
-                <textarea name="password" id="password"></textarea>
-                <br>
-            </div>
+        <div class="password input-wrapper">
+            <p>input password:</p>
+            <textarea name="password" id="password"></textarea>
+            <br>
+        </div>
 
-            <div class="verify">
-                <p>input verify code:</p><input id="verifyCode">
-                <div id="verify-code-wrapper">
-                    <div class="verify-code-digit"></div>
-                    <div class="verify-code-digit"></div>
-                    <div class="verify-code-digit"></div>
-                    <div class="verify-code-digit"></div>
-                    <div class="verify-code-digit"></div>
-                    <div class="verify-code-digit"></div>
-                    <button id="verify">verify</button>
+        <div class="verify">
+            <div id="verify-code-wrapper">
+                <div class="verify-code-digit">
+                    <p contenteditable="true" oninput="onVerifyInput(0)"></p>
                 </div>
-            </div>
-            <div class="had-account">
-                <p>Had had an account? <a href="../login/login.html" id="login">Log In</a> </p>
-            </div>
-            <div class="register-button-wrapper">
-                <button id="login-button">Register</button>
+                <div class="verify-code-digit">
+                    <p contenteditable="true" oninput="onVerifyInput(1)"></p>
+                </div>
+                <div class="verify-code-digit">
+                    <p contenteditable="true" oninput="onVerifyInput(2)"></p>
+                </div>
+                <div class="verify-code-digit">
+                    <p contenteditable="true" oninput="onVerifyInput(3)"></p>
+                </div>
+                <div class="verify-code-digit">
+                    <p contenteditable="true" oninput="onVerifyInput(4)"></p>
+                </div>
+                <div class="verify-code-digit">
+                    <p contenteditable="true" oninput="onVerifyInput(5)"></p>
+                </div>
+                <button id="verify">Send Code</button>
             </div>
         </div>
+        <div class="had-account">
+            <p>Had had an account? <a href="../login/login.html" id="login">Log In</a></p>
+        </div>
+        <div class="register-button-wrapper">
+            <button id="login-button">Register</button>
+        </div>
     </div>
+</div>
 
-    <script>
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
-        var email = document.getElementById("email").value;
-        var verifyCode = document.getElementById("verifyCode").value;
-        var Server = "http://127.0.0.1:3000";
-        var uuid;
-        var wrong = document.getElementById("wrong");
-        function submit() {
-            // var RegServerURL = Server+"/register";
-            // fetch(RegServerURL, {
-            //     method: 'post',
-            //     mode: 'no-cors',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify({
-            //         "username" : username,
-            //         "password" : password,
-            //         "email" : email,
-            //         "avatar" : "xxx",
-            //         "sex" : 3,
-            //         "verifyCode" : verifyCode,
-            //         "uuid" : uuid
-            //     })
-            // })
-            //     .then((response) => response.json())
-            //     .then((response) => {
-            //         console.log(response)
-            //     })
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-
-            var raw = JSON.stringify({
-                "username": "yang11541137",
-                "password": password,
-                "email": email,
-                "avatar": "xxx",
-                "sex": 3,
-                "verifyCode": verifyCode,
-                "uuid": uuid
-            });
-
-            var requestOptions = {
-                method: 'POST',
-                headers: myHeaders,
-                body: raw,
-                    redirect: 'follow'
-            };
-
-            fetch("http://127.0.0.1:3000/register/", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-        }
-        document.getElementById("login-button").onclick = submit;
-
-        function SendVerifyCode() {
-            // if(!/^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)+$/.test(email)){
-
-            // }
-            var EmailServerURL = Server+"/email";
-            var email = document.getElementById("email").value;
-            var myHeaders = new Headers();
-            myHeaders.append("Content-Type", "application/json");
-
-            var raw = JSON.stringify({
-            "email": email
-            });
-
-            var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: raw,
-            redirect: 'follow'
-            };
-
-            fetch("http://127.0.0.1:3000/email", requestOptions)
-            .then(response => response.text())
-            .then(result => console.log(result))
-            .catch(error => console.log('error', error));
-        }
-        document.getElementById("verify").onclick = SendVerifyCode;
-    </script>
 </body>
 
+<script>
+    let username;
+    let password;
+    let email;
+    const server = "http://127.0.0.1:3000";
+    let verifyCode;
+    const wrong = $("#wrong");
+    let uuid = "";
+    let uuid_promise = [];
+
+    function onVerifyInput(num) {
+        const d = $$('.verify-code-digit')[num];
+        const digit = d.getElementsByTagName('p')[0];
+
+        let next;
+        if (num < 5) {
+            next = $$('.verify-code-digit')[num + 1].getElementsByTagName("p")[0];
+        }
+        if (digit.innerText.length === 1) {
+            if (num < 5) {
+                next.focus()
+            }
+        } else {
+            digit.innerText = digit.innerText.slice(0, 1)
+
+        }
+    }
+
+
+    $$('.verify-code-digit').forEach(addListener)
+
+    function addListener(element, index, _) {
+        element.addEventListener('keydown', (event) => {
+            const keyName = event.key;
+            if (keyName === 'Backspace') {
+                deleteDigit(index)
+            }
+        })
+    }
+
+    function deleteDigit(index) {
+        let before;
+        if (index > 0) {
+            const digit = $$('.verify-code-digit')[index].getElementsByTagName("p")[0];
+            if (digit.innerText.length === 1) {
+                digit.innerText = '';
+            } else {
+                before = $$('.verify-code-digit')[index - 1].getElementsByTagName("p")[0];
+                before.innerText = '';
+                before.focus()
+            }
+        }
+    }
+
+
+    function submit() {
+        if (uuid.length) {
+            var myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            verifyCode = $("#verifyCode").value;
+            username = $("#username").value;
+            password = $("#password").value;
+            email = $('#email').value;
+            var requestOptions = {
+                h: myHeaders,
+                b: {
+                    "username": username,
+                    "password": password,
+                    "email": email,
+                    "avatar": "xxx",
+                    "sex": 3,
+                    "verifyCode": verifyCode,
+                    "uuid": uuid.slice(1, -1)
+                },
+                redirect: 'follow'
+            };
+
+            fedu("http://127.0.0.1:3000/register/", requestOptions)
+                .then(response => response.text())
+                .then(result => console.log(result))
+                .catch(error => console.log('error', error));
+        } else {
+            alert("验证码未验证，请稍后重试")
+        }
+    }
+
+    document.getElementById("login-button").onclick = submit;
+
+    let second = 0;
+
+    function sendVerifyCode() { //把这个返回值传入uuid 一会我去测逝一下
+        var EmailServerURL = server + "/email";
+        var email = document.getElementById("email").value;
+        var myHeaders = new Headers();
+        myHeaders.append("Content-Type", "application/json");
+
+        var requestOptions = {
+            h: myHeaders,
+            b: {
+                "email": email
+            },
+            redirect: 'follow'
+        };
+        fedu("http://127.0.0.1:3000/email", requestOptions)
+            .then(response => response.text())
+            .then(t => {
+                uuid = t;
+                console.log(t)
+            })
+            .catch(error => console.log('error', error))
+        second = 60;
+    }
+
+    function minusTime() {
+        if (second > 0) {
+            second--;
+            $('#verify').innerText = second.toString() + "s"
+        }
+        if (second === 0) {
+            $('#verify').innerText = "Send Code";
+        }
+    }
+
+    setInterval(minusTime, 1000)
+
+    function sendVCWrapper() {
+        if (second === 0) {
+            sendVerifyCode()
+        }
+    }
+
+    document.getElementById("verify").onclick = sendVCWrapper;
+</script>
 </html>

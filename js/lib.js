@@ -1,34 +1,34 @@
 //import {md5_$} from "./md5";
-const fedu=(function(){
-    function fedu0(){
-        if(!arguments[0]){
+const fedu = (function () {
+    function fedu0() {
+        if (!arguments[0]) {
             throw "None Args!";
         }
         var arr = [arguments[0]];
-        if(arguments[1]){
+        if (arguments[1]) {
             var obj = {};
             var bodyr = 1;
-            for(var k in arguments[1]){
-                if(k == "h"){
+            for (var k in arguments[1]) {
+                if (k === "h") {
                     obj.headers = arguments[1].h;
-                }else if(k == "m" || k == "method"){
-                    if(arguments[1][k].toUpperCase() == "POST"){
+                } else if (k === "m" || k === "method") {
+                    if (arguments[1][k].toUpperCase() === "POST") {
                         obj.method = "POST";
                         bodyr = 0;
                     }
-                }else if(k == "body" || k == "b"&& bodyr){
+                } else if (k === "body" || k === "b" && bodyr) {
                     obj.body = JSON.stringify(arguments[1][k]);
                     obj.method = "POST";
                     bodyr = 0;
-                }else if(k == "q"||k == "query"){
+                } else if (k === "q" || k === "query") {
                     arr[0] += "?";
-                    for(var t in arguments[1][k]){
+                    for (var t in arguments[1][k]) {
                         arr[0] += encodeURIComponent(t) + "=" + encodeURIComponent(arguments[1][k][t]) + "&";
                     }
                     arr[0] = arr[0].slice(0, -1)
                 }
             }
-            if(bodyr){
+            if (bodyr) {
                 obj.method = "GET";
             }
             arr.push(obj);
@@ -38,24 +38,25 @@ const fedu=(function(){
 
     function throttle(fn, delay = 1000) {//节流，每1秒限制1次
         let last = 0;
-        return function(...args) {
-        let now = new Date().getTime();
-        if (now - last > delay) {
-            last = now;
-            return fn.apply(this, args);
-        }else{
-            var n=args.slice(-1)[0];
-            if(Object.prototype.toString.call(n).slice(8, -1) == "Function"){
-                n();
-                return new Promise(()=>"Error");
+        return function (...args) {
+            let now = new Date().getTime();
+            if (now - last > delay) {
+                last = now;
+                return fn.apply(this, args);
+            } else {
+                var n = args.slice(-1)[0];
+                if (Object.prototype.toString.call(n).slice(8, -1) === "Function") {
+                    n();
+                    return new Promise(() => "Error");
+                }
             }
-        }
         };
     }
+
     return throttle(fedu0);
 })();
-const $= x => document.querySelector(x);
-const $$= x => Array.from(document.querySelectorAll(x));
+const $ = x => document.querySelector(x);
+const $$ = x => Array.from(document.querySelectorAll(x));
 var Cookie = {};
 Cookie.set = function setCookie(c_name, value, expire_days) {
     let exDate = new Date();
@@ -87,10 +88,11 @@ Cookie.clear = function clearCookie(name) {
 }
 Cookie.check = function checkCookie(c_name) {
     let username = getCookie(c_name);
-    return username !== null && username !== '' ? true : false;
+    return username !== null && username !== '';
 }//检查是否有指定名字的cookie且有值
 
-var $h_obj = (x) => Object.prototype.toString.call(x).slice(8, 14) == "Object";
+var $h_obj = (x) => Object.prototype.toString.call(x).slice(8, 14) === "Object";
+
 function $h() {
     var main = document.createElement(arguments[0]);
     child = [];
@@ -109,13 +111,17 @@ function $h() {
                     main.setAttribute(i, arguments[1][i])
                 }
             }
-        } else { child.push(arguments[1]) }
-        if (arguments[2]) { child.push(arguments[2]) }
+        } else {
+            child.push(arguments[1])
+        }
+        if (arguments[2]) {
+            child.push(arguments[2])
+        }
     }
     if (child.length) {
         child = $h_flat(child);
         for (var i in child) {
-            if (Object.prototype.toString.call(child[i].__proto__.__proto__.__proto__).slice(8, 15) == "Element") {
+            if (Object.prototype.toString.call(child[i].__proto__.__proto__.__proto__).slice(8, 15) === "Element") {
                 main.append(child[i])
             } else {
                 main.innerText = child[i]
@@ -124,7 +130,19 @@ function $h() {
     }
     return main;
 }
-function $h_flat(arr){var t=[];for(var i=0;i<arr.length;i++){if(arr[i] instanceof Array){t=t.concat($h_flat(arr[i]))}else{t.push(arr[i])}};return t}
+
+function $h_flat(arr) {
+    var t = [];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] instanceof Array) {
+            t = t.concat($h_flat(arr[i]))
+        } else {
+            t.push(arr[i])
+        }
+    }
+    return t
+}
+
 /*
 try{
     module.exports={fedu, $, $$, Cookie, $h, md5_$};
