@@ -36,7 +36,7 @@ const fedu = (function () {
         return fetch.apply(null, arr);
     }
 
-    function throttle(fn, delay = 1000) {//节流，每1秒限制1次
+    function throttle(fn, delay = 1000) {//鑺傛祦锛屾瘡1绉掗檺鍒�1娆�
         let last = 0;
         return function (...args) {
             let now = new Date().getTime();
@@ -57,7 +57,7 @@ const fedu = (function () {
 })();
 const $ = x => document.querySelector(x);
 const $$ = x => Array.from(document.querySelectorAll(x));
-var Cookie = {};
+const Cookie = {};
 Cookie.set = function setCookie(c_name, value, expire_days) {
     let exDate = new Date();
     exDate.setDate(exDate.getDate() + expire_days);
@@ -68,7 +68,7 @@ Cookie.set = function setCookie(c_name, value, expire_days) {
         ';expires=' +
         exDate.toUTCString() +
         ';path=/';
-}//set Cookie（名称，值，时间）
+}
 Cookie.get = function getCookie(c_name) {
     let c_start = null;
     let c_end = null;
@@ -89,16 +89,17 @@ Cookie.clear = function clearCookie(name) {
 Cookie.check = function checkCookie(c_name) {
     let username = getCookie(c_name);
     return username !== null && username !== '';
-}//检查是否有指定名字的cookie且有值
+}
 
-var $h_obj = (x) => Object.prototype.toString.call(x).slice(8, 14) === "Object";
+const $h_obj = (x) => Object.prototype.toString.call(x).slice(8, 14) === "Object";
 
 function $h() {
-    var main = document.createElement(arguments[0]);
-    child = [];
+    let i;
+    const main = document.createElement(arguments[0]);
+    let child = [];
     if (arguments[1]) {
         if ($h_obj(arguments[1])) {
-            for (var i in arguments[1]) {
+            for (i in arguments[1]) {
                 if (i in HTMLElement.prototype) {
                     if ($h_obj(arguments[1][i])) {
                         for (var k in arguments[1][i]) {
@@ -120,7 +121,7 @@ function $h() {
     }
     if (child.length) {
         child = $h_flat(child);
-        for (var i in child) {
+        for (i in child) {
             if (Object.prototype.toString.call(child[i].__proto__.__proto__.__proto__).slice(8, 15) === "Element") {
                 main.append(child[i])
             } else {
