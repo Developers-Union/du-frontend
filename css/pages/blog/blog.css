@@ -1,0 +1,139 @@
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url(../../../fonts/JetBrainsMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url(../../../fonts/Verdana-1.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    /* background-color: #080214; */
+    background-color: #080614;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-wrapper {
+    margin: 0 3vw;
+}
+
+.main-wrapper .nav {
+    height: 7vw;
+}
+
+.main-wrapper .nav .nav-left {
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-left a {
+    font-family: 'Poppins', serif;
+    margin-left: 2vw;
+    height: 4vw;
+    line-height: 4vw;
+    font-size: 1.2vw;
+    color: azure;
+    transition: all .5s;
+    border-bottom: 2px solid #080614;
+}
+
+.main-wrapper .nav .nav-left a:hover {
+    border-bottom: 2px solid #6ab7ff;
+}
+
+.main-wrapper .nav .nav-right {
+    float: right;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-right .avatar {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.main-wrapper .nav .nav-right .nav-name {
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+
+.main-wrapper .main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.main-wrapper .main > h1 {
+    color: white;
+    font-family: 'Poppins', serif;
+    font-size: 3vw;
+    font-weight: 400;
+}
+
+.main-wrapper .main .blogs .blog {
+    margin: 2vw;
+}
+
+.main-wrapper .main .blogs .blog .blog-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .main .blogs .blog .blog-author .blog-title-avatar {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.main-wrapper .main .blogs .blog .blog-author .blog-author-name {
+    margin-left: .5vw;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    color: #ccc;
+}
+
+.main-wrapper .main .blogs .blog .blog-title {
+    font-family: 'Poppins', serif;
+    color: #eee;
+    font-weight: normal;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+.main-wrapper .main .blogs .blog .blog-title:hover {
+    color: #6ab7ff;
+}
+
+.main-wrapper .main .blogs .blog .blog-description {
+    font-family: 'Poppins', serif;
+    color: #aaa;
+    font-weight: 300;
+    font-size: small;
+}

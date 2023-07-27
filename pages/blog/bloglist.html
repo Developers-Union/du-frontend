@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | DU</title>
+    <link rel="stylesheet" href="../../css/pages/blog/blog.css">
+    <script src="../../js/lib.js"></script>
+</head>
+<body>
+<div class="main-wrapper">
+    <div class="nav">
+        <div class="nav-left">
+            <a href="../../index.html">Return Homepage</a>
+        </div>
+        <div class="nav-right">
+            <div class="avatar"></div>
+            <p class="nav-name" id="username">Minsecrus</p>
+        </div>
+    </div>
+    <div class="main">
+        <h1>Blogs - "<span id="blog-keyword">mdr</span>":</h1>
+        <ul class="blogs" id="blogs-root">
+            <li class="blog">
+                <div class="blog-author">
+                    <div class="blog-title-avatar"></div>
+                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                </div>
+                <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                <p class="blog-description">using std::vector</p>
+            </li>
+            <li class="blog">
+                <div class="blog-author">
+                    <div class="blog-title-avatar"></div>
+                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                </div>
+                <a href="" class="blog-title">C++ High Precision Integer Library</a>
+            </li>
+            <li class="blog">
+                <div class="blog-author">
+                    <div class="blog-title-avatar"></div>
+                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                </div>
+                <a href="" class="blog-title">C++ High Precision Integer Library</a>
+            </li>
+            <li class="blog">
+                <div class="blog-author">
+                    <div class="blog-title-avatar"></div>
+                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                </div>
+                <a href="" class="blog-title">C++ High Precision Integer Library</a>
+            </li>
+        </ul>
+    </div>
+</div>
+<script>
+    const $$$ = x => document.createElement(x)
+    const blogs_root = $('#blogs-root')
+
+    function addBlog(author, title, description) {
+        let ele = $$$("li");
+        ele.classList.add("blog");
+
+        let eba = $$$('div');
+        eba.classList.add('blog-author');
+        let ebta = $$$('div');
+        ebta.classList.add('blog-title-avatar');
+        eba.appendChild(ebta);
+        let eban = $$$('a');
+        eban.classList.add('blog-author-name');
+        eban.innerText = author;
+        eba.appendChild(eban);
+        ele.appendChild(eba);
+
+        let ebt = $$$("a");
+        ebt.classList.add('blog-title');
+        ebt.innerText = title;
+
+        let ebd = $$$("p");
+        ebd.classList.add('blog-description');
+        ebd.innerText = description;
+
+        ele.appendChild(ebt);
+        ele.appendChild(ebd);
+
+        blogs_root.appendChild(ele);
+    }
+
+    addBlog('mdr', 'DUNote', 'app')
+</script>
+</body>
+</html>

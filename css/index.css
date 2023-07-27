@@ -185,13 +185,13 @@ ul {
 
 .main-left .blogs .blog .blog-author .blog-author-name {
     margin-left: .5vw;
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     font-size: 1vw;
     color: #ccc;
 }
 
 .main-left .blogs .blog .blog-title {
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     color: #eee;
     font-weight: normal;
     font-size: 1.3vw;
