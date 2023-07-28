@@ -30,7 +30,6 @@ function checkLogin() {
         $('#username').classList.remove('nav-name-not-login')
         $('#username').classList.add('nav-name')
     } else {
-
         $('#hider').classList.remove('main-right-hidden')
         $('#hider').classList.add('main-right')
 
@@ -98,4 +97,8 @@ function addBlog(author, title, description) {
     ele.appendChild(ebd);
 
     blogs_root.appendChild(ele);
+}
+
+function getBlogs(){
+
 }

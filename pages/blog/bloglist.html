@@ -6,6 +6,7 @@
     <title>Blogs | DU</title>
     <link rel="stylesheet" href="../../css/pages/blog/blog.css">
     <script src="../../js/lib.js"></script>
+    <script src="../../js/pages/blog/label2word.js"></script>
 </head>
 <body>
 <div class="main-wrapper">
@@ -19,45 +20,46 @@
         </div>
     </div>
     <div class="main">
-        <h1>Blogs - "<span id="blog-keyword">mdr</span>":</h1>
-        <ul class="blogs" id="blogs-root">
-            <li class="blog">
-                <div class="blog-author">
-                    <div class="blog-title-avatar"></div>
-                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                </div>
-                <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                <p class="blog-description">using std::vector</p>
-            </li>
-            <li class="blog">
-                <div class="blog-author">
-                    <div class="blog-title-avatar"></div>
-                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                </div>
-                <a href="" class="blog-title">C++ High Precision Integer Library</a>
-            </li>
-            <li class="blog">
-                <div class="blog-author">
-                    <div class="blog-title-avatar"></div>
-                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                </div>
-                <a href="" class="blog-title">C++ High Precision Integer Library</a>
-            </li>
-            <li class="blog">
-                <div class="blog-author">
-                    <div class="blog-title-avatar"></div>
-                    <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                </div>
-                <a href="" class="blog-title">C++ High Precision Integer Library</a>
-            </li>
-        </ul>
+        <div class="main-left">
+            <h1>Blogs - "<span id="blog-keyword">mdr</span>":</h1>
+            <ul class="blogs" id="blogs-root">
+                <li class="blog">
+                    <div class="blog-author">
+                        <div class="blog-title-avatar"></div>
+                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
+                    </div>
+                    <div class="blog-title-wrapper">
+                        <a href="" class="blog-title">C++ High Precision Integer Library</a>
+                        <div class="labels">
+                            <div class="label fp">Functional Programming</div>
+                            <div class="label c">C</div>
+                            <div class="label cpp">C++</div>
+                        </div>
+                    </div>
+                    <div class="blog-description-wrapper">
+                        <p class="blog-description"> using std::vector using std::vector using std::vector using
+                            std::vector using std::vector using std::vector using std::vector using std::vector using
+                            std::vector using std::vector using std::vector using std::vector</p>
+                        <p class="popular">
+                            <span class="popular-num">15</span>
+                            &nbsp;likes&nbsp;&nbsp;
+                            <span class="popular-num">16</span>
+                            &nbsp;favorites
+                        </p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="main-right">
+            <h1>keyword: mdr</h1>
+        </div>
     </div>
 </div>
 <script>
     const $$$ = x => document.createElement(x)
     const blogs_root = $('#blogs-root')
 
-    function addBlog(author, title, description) {
+    function addBlog(author, title, description, likes, favorites, labels) {
         let ele = $$$("li");
         ele.classList.add("blog");
 
@@ -72,21 +74,64 @@
         eba.appendChild(eban);
         ele.appendChild(eba);
 
+        let ebtw = $$$("div");
+        ebtw.classList.add('blog-title-wrapper');
+
         let ebt = $$$("a");
         ebt.classList.add('blog-title');
         ebt.innerText = title;
+        ebtw.appendChild(ebt);
+
+        let lab = $$$('div');
+        lab.classList.add('labels')
+        let n;
+        for (let i = 0; i < labels.length; i++) {
+            n = $$$('div');
+            n.classList.add('label');
+            n.classList.add(labels[i]);
+            n.innerText = label2word[labels[i]];
+            lab.appendChild(n)
+        }
+        ebtw.appendChild(lab);
+
+        let ebdw = $$$('div');
+        ebdw.classList.add('blog-description-wrapper')
 
         let ebd = $$$("p");
         ebd.classList.add('blog-description');
         ebd.innerText = description;
+        ebdw.appendChild(ebd);
 
-        ele.appendChild(ebt);
-        ele.appendChild(ebd);
+        let popular = $$$('p');
+        popular.classList.add('popular');
+        popular.innerHTML = "<span class=\"popular-num\">" + likes.toString() + "</span>\n" +
+            "&nbsp;likes&nbsp;&nbsp;\n" +
+            "<span class=\"popular-num\">" + favorites.toString() + "</span>\n" +
+            "&nbsp;favorites";
+        ebdw.appendChild(popular);
+
+        ele.appendChild(ebtw);
+        ele.appendChild(ebdw);
 
         blogs_root.appendChild(ele);
     }
 
-    addBlog('mdr', 'DUNote', 'app')
+    addBlog(
+        'mdr',
+        'DUNote',
+        'app app app app app app app app app ',
+        13,
+        15,
+        ["pl", "linux", "rust", "py", "java", "go"]
+    );
+    addBlog(
+        'Timer',
+        'femd',
+        'Extensible markdown',
+        114514,
+        1919810,
+        ["js", "md"]
+    )
 </script>
 </body>
 </html>

@@ -83,43 +83,58 @@ ul {
 
 .main-wrapper .main {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    gap: 3vw;
     margin: 0 auto;
     width: 90%;
 }
 
-.main-wrapper .main > h1 {
+.main-wrapper .main .main-left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 0;
+    border-right: 1px solid white;
+}
+
+.main-wrapper .main .main-left > h1 {
     color: white;
     font-family: 'Poppins', serif;
     font-size: 3vw;
     font-weight: 400;
 }
 
-.main-wrapper .main .blogs .blog {
+.main-wrapper .main .main-left .blogs .blog {
     margin: 2vw;
 }
 
-.main-wrapper .main .blogs .blog .blog-author {
+.main-wrapper .main .main-left .blogs .blog .blog-author {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
 
-.main-wrapper .main .blogs .blog .blog-author .blog-title-avatar {
+.main-wrapper .main .main-left .blogs .blog .blog-author .blog-title-avatar {
     height: 2vw;
     width: 2vw;
     border-radius: 50%;
     border: 1px solid #ddd;
 }
 
-.main-wrapper .main .blogs .blog .blog-author .blog-author-name {
+.main-wrapper .main .main-left .blogs .blog .blog-author .blog-author-name {
     margin-left: .5vw;
     font-family: 'Poppins', serif;
     font-size: 1vw;
     color: #ccc;
 }
 
-.main-wrapper .main .blogs .blog .blog-title {
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .blog-title {
     font-family: 'Poppins', serif;
     color: #eee;
     font-weight: normal;
@@ -127,13 +142,141 @@ ul {
     transition: all .3s;
 }
 
-.main-wrapper .main .blogs .blog .blog-title:hover {
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .blog-title:hover {
     color: #6ab7ff;
 }
 
-.main-wrapper .main .blogs .blog .blog-description {
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels {
+    display: flex;
+    flex-direction: row;
+    gap: .3vw;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .label {
     font-family: 'Poppins', serif;
-    color: #aaa;
+    font-size: 1vw;
+    padding: 0 .5vw;
+    border-radius: 100px;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .c {
+    background-color: #246ED044;
+    color: #246ED0;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .cpp {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .clang {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .gcc {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .cmake {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .msvc {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .java {
+    background-color: #9d772544;
+    color: #9d7725;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .js {
+    background-color: #ad971544;
+    color: #ad9715;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .py {
+    background-color: #51ea6344;
+    color: #51ea63;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .go {
+    background-color: #1ec5cb44;
+    color: #1ec5cb;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .rust {
+    background-color: #d5572144;
+    color: #d55721;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .md {
+    background-color: #8ef38044;
+    color: #8ef380;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .fp {
+    background-color: #d9393944;
+    color: #d93939;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .pl {
+    background-color: #29a69344;
+    color: #29a693;
+
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .os {
+    background-color: #87959f44;
+    color: #87959f;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .linux {
+    background-color: #87858f44;;
+    color: #87959f;
+
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-description-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-description-wrapper .blog-description {
+    font-family: 'Poppins', serif;
+    color: #bbb;
     font-weight: 300;
-    font-size: small;
+    font-size: .8vw;
+    max-width: 75%;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-description-wrapper .popular {
+    color: #ccc;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+}
+
+.main-wrapper .main .main-left .blogs .blog .blog-description-wrapper .popular .popular-num {
+    color: white;
+    font-family: 'JetBrains Mono', serif;
+}
+
+.main-wrapper .main .main-right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    padding-top: 1vw;
+}
+
+.main-wrapper .main .main-right h1 {
+    font-family: 'JetBrains Mono', serif;
+    font-weight: 500;
+    font-size: 2vw;
+    color: white;
+    white-space: nowrap;
 }

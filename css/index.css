@@ -44,14 +44,14 @@ ul {
 }
 
 .main-wrapper .nav .nav-left span {
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     color: #6ab7ff;
     font-size: 1.5vw;
     border-bottom: 3px solid #080614;
 }
 
 .main-wrapper .nav .nav-left a {
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     margin-left: 2vw;
     height: 4vw;
     line-height: 4vw;
@@ -147,7 +147,7 @@ ul {
 
 .main h2 {
     color: #fff;
-    font-family: 'Verdana';
+    font-family: 'Verdana', serif;
     font-weight: normal;
     font-size: 2vw;
     margin-right: 2vw;
@@ -243,7 +243,7 @@ ul {
 }
 
 .main-right .main-team .team-name a {
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     color: #fff;
     font-size: 1vw;
     transition: all .3s;
