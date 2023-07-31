@@ -188,6 +188,11 @@ ul {
     font-family: 'Poppins', serif;
     font-size: 1vw;
     color: #ccc;
+    transition: .5s;
+}
+
+.main-left .blogs .blog .blog-author .blog-author-name:hover {
+    color: #6ab7ffc8;
 }
 
 .main-left .blogs .blog .blog-title {
