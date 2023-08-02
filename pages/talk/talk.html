@@ -9,16 +9,16 @@
 <body>
 <ul id="messages"></ul>
 <form id="form" action="">
-    <textarea id="input" autocomplete="off"></textarea>
+    <textarea id="input" autocomplete="off" disabled="disabled">DU Talk is not completed.</textarea>
     <button>Send</button>
 </form>
 <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
 <script type="module">
-    import {cookie} from "../../tools/cookie.js";
+    import {Cookie} from "../../js/lib";
     //import {$h} from "../../tools/h.js";
     var usr = {};
-    usr.token = cookie.get("token");
-    usr.id = Number(cookie.get("id"));
+    usr.token = Cookie.get("token");
+    usr.id = Number(Cookie.get("id"));
     var socket = io("http://127.0.0.1:3001", {//临时测试
         auth: {
             token: usr.token

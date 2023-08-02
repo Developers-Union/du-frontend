@@ -1,0 +1,160 @@
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url(../../../fonts/JetBrainsMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url(../../../fonts/Verdana-1.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    /* background-color: #080214; */
+    background-color: #080614;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-wrapper {
+    margin: 0 3vw;
+}
+
+.main-wrapper .nav {
+    height: 7vw;
+}
+
+.main-wrapper .nav .nav-left {
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-left a {
+    font-family: 'Poppins', serif;
+    margin-left: 2vw;
+    height: 4vw;
+    line-height: 4vw;
+    font-size: 1.2vw;
+    color: azure;
+    transition: all .5s;
+    border-bottom: 2px solid #080614;
+}
+
+.main-wrapper .nav .nav-left a:hover {
+    border-bottom: 2px solid #6ab7ff;
+}
+
+.main-wrapper .nav .nav-right {
+    float: right;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-right .avatar {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+}
+
+.main-wrapper .nav .nav-right #publish {
+    font-family: 'Poppins', serif;
+    font-size: 1.4vw;
+    height: 4vw;
+    line-height: 4vw;
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin: 2vw;
+    transition: all .5s;
+}
+
+.main-wrapper .nav .nav-right #publish:hover {
+    color: #6ab7ff;
+    border-bottom: 2px solid #6ab7ff;
+}
+
+.main-wrapper .nav .nav-right #save-draft {
+    font-family: 'Poppins', serif;
+    font-size: 1.2vw;
+    height: 4vw;
+    line-height: 4vw;
+    color: white;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    transition: all .5s;
+}
+
+.main-wrapper .nav .nav-right #save-draft:hover {
+    color: #6ab7ff;
+    border-bottom: 2px solid #6ab7ff;
+}
+
+.main-wrapper .container {
+    display: flex;
+}
+
+.main-wrapper .container .editor-column {
+    flex: 1;
+    padding: 10px;
+}
+
+.main-wrapper .container .editor {
+    width: calc(100% - 20px);
+    min-height: 60vh;
+    resize: vertical;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.main-wrapper .container #marked {
+    font-family: Consolas, Microsoft YaHei, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0;
+    cursor: text;
+    outline: 0;
+    flex: 1;
+    background-color: transparent;
+    color: white;
+    padding: 10px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.main-wrapper .container #marked:hover {
+    border-color: #B721FF;
+    box-shadow: 0 0 5px #B721FF;
+}
+
+.main-wrapper .container #result {
+    font-family: Consolas, Microsoft YaHei, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    letter-spacing: 0;
+    overflow-x: auto;
+    padding: 1vw;
+    white-space: normal;
+    word-break: break-word;
+    color: white;
+}

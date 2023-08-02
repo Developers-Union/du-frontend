@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/index.css">
     <script src="https://kit.fontawesome.com/be1fe47fa2.js" crossorigin="anonymous"></script>
+    <script src="js/lib.js"></script>
     <link rel="stylesheet" href="css/ionicon.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/sidebar.css">
@@ -15,33 +16,19 @@
 <body>
 <div class="main-wrapper">
     <div class="cover">
-        <div class="shell">
-            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                <span>footer</span></a>
-            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                <span>xxxxxxxx</span></a>
-            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                <span>xxxxxxxx</span></a>
-            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                <span>xxxxxx</span></a>
-            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                <span>xxxx</span></a>
-            <a href="" class="box"><i class="fa-solid fa-thumbs-up"></i>
-                <span>xxxx</span></a>
-        </div>
         <div class="nav">
             <div class="nav-left">
                 <span>Developers Union</span>
                 <a href="pages/description/description.html">About us</a>
-                <a href="">Write Blogs</a>
-                <a href="">Activities</a>
+                <a href="pages/blog/writeblog.html">Write Blogs</a>
+                <a href="">Talk</a>
             </div>
             <div class="nav-right">
                 <div class="avatar" onclick="window.location.href='./pages/personpage/person.html'"></div>
-                <!-- <button class="original-button" id="button-login"
+                <button class="original-button" id="button-login"
                         onclick="window.location='pages/login/login.html'">Log In
                 </button>
-                <button class="original-button" id="button-signup">Sign Up</button> -->
+                <button class="original-button" id="button-signup">Sign Up</button>
                 <p class="nav-name" id="username">Minsecrus</p>
             </div>
         </div>
@@ -56,36 +43,8 @@
                 <h2>blogs</h2>
                 <ion-icon name="refresh-circle-outline" id="icon-fresh-blog"></ion-icon>
             </div>
-            <ul class="blogs">
-                <li class="blog">
-                    <div class="blog-author">
-                        <div class="blog-title-avatar"></div>
-                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                    </div>
-                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                    <p class="blog-description">using std::vector</p>
-                </li>
-                <li class="blog">
-                    <div class="blog-author">
-                        <div class="blog-title-avatar"></div>
-                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                    </div>
-                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                </li>
-                <li class="blog">
-                    <div class="blog-author">
-                        <div class="blog-title-avatar"></div>
-                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                    </div>
-                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                </li>
-                <li class="blog">
-                    <div class="blog-author">
-                        <div class="blog-title-avatar"></div>
-                        <a href="" class="blog-author-name">Minsecrus dreamers</a>
-                    </div>
-                    <a href="" class="blog-title">C++ High Precision Integer Library</a>
-                </li>
+            <ul class="blogs" id="blogs-root">
+
             </ul>
         </div>
         <div class="main-right" id="hider">Log in to Learn More.</div>
@@ -190,5 +149,4 @@
 
 <script src="js/lib.js"></script>
 <script src="js/pages/main/mainpage.js"></script>
-
 </html>
