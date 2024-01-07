@@ -44,14 +44,14 @@ ul {
 }
 
 .main-wrapper .nav .nav-left span {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     color: #6ab7ff;
     font-size: 1.5vw;
     border-bottom: 3px solid #080614;
 }
 
 .main-wrapper .nav .nav-left a {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     margin-left: 2vw;
     height: 4vw;
     line-height: 4vw;
@@ -116,6 +116,54 @@ ul {
     display: none !important;
 }
 
+.searchBox {
+    display: flex;
+    max-width: 230px;
+    height: 45px;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    background: #2f3640;
+    border-radius: 50px;
+    position: relative;
+}
+
+.searchButton {
+    color: white;
+    position: absolute;
+    right: 8px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: var(--gradient-2, linear-gradient(90deg, #2AF598 0%, #009EFD 100%));
+    border: 0;
+    display: inline-block;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+}
+/*hover effect*/
+button:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.5) 0 10px 20px;
+    transform: translateY(-3px);
+}
+/*button pressing effect*/
+button:active {
+    box-shadow: none;
+    transform: translateY(0);
+}
+
+.searchInput {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    padding: 24px 46px 24px 26px;
+}
+
+
+
 .title h1 {
     /* font-family: 'Jetbrains Mono';
     margin-top: 3vw;
@@ -147,7 +195,7 @@ ul {
 
 .main h2 {
     color: #fff;
-    font-family: 'Verdana', serif;
+    font-family: 'Verdana';
     font-weight: normal;
     font-size: 2vw;
     margin-right: 2vw;
@@ -185,18 +233,13 @@ ul {
 
 .main-left .blogs .blog .blog-author .blog-author-name {
     margin-left: .5vw;
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     font-size: 1vw;
     color: #ccc;
-    transition: .5s;
-}
-
-.main-left .blogs .blog .blog-author .blog-author-name:hover {
-    color: #6ab7ffc8;
 }
 
 .main-left .blogs .blog .blog-title {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     color: #eee;
     font-weight: normal;
     font-size: 1.3vw;
@@ -248,7 +291,7 @@ ul {
 }
 
 .main-right .main-team .team-name a {
-    font-family: 'Poppins', serif;
+    font-family: 'Poppins';
     color: #fff;
     font-size: 1vw;
     transition: all .3s;

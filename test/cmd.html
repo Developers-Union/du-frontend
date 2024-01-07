@@ -2,14 +2,18 @@
 <html>
 <head>
     <style>
+        @font-face {
+            font-family: Jetbrains Mono;
+            src: url("../fonts/JetBrainsMono-Medium.ttf")format('truetype');
+        }
         body {
             margin: 0;
-            background-color: black;
-            color: white;
+            background-color: #0c0c0c;
+            color: #cccccc;
             padding: 20px;
             line-height: 1.5715;
-            font-size: 16px;
-            font-family: courier-new, courier, monospace;
+            font-size: 20px;
+            font-family: 'Jetbrains Mono';
         }
 
         #input {
@@ -18,16 +22,16 @@
             text-align: inherit;
             padding-left: 10px;
             padding-right: 10px;
-            background-color: black;
-            color: white;
+            background-color: #0c0c0c;
+            color: #cccccc;
             border: 0;
             outline: 0;
-            font-size: 16px;
-            font-family: courier-new, courier, monospace;
+            font-size: 20px;
+            font-family: 'JetBrains Mono';
         }
 
         .jing {
-            background-color: black;
+            background-color: #0c0c0c;
         }
 
         details ::marker {
@@ -47,14 +51,15 @@
     <title></title>
 </head>
 <body id="all" onkeydown="shc()">
-<span>html-cmd(version:2.12.21.33)<br>Sife Studio keeps all the rights.</span><br>
-<span style="display:flex" id="line1"><span>cmd></span><input type="text" id="input" onkeydown="get()"></span>
+<div style="background-color: wheat;"></div>
+<span>Developers Union Shell<br>(C) Developers Union Keeps All Rights.<br></span><br>
+<span style="display:flex" id="line1"><span>DevelopersUnion/Shell></span><input type="text" id="input" onkeydown="get()"></span>
 <script>
     oldhis = [];
     easygame = ['https://haiyong.site/moyu/lion.html', 'https://haiyong.site/moyu/2048.html', 'https://haiyong.site/moyu/feiji.html', 'https://haiyong.site/moyu/Santa-Claus.html', 'https://haiyong.site/moyu/qiefangkuai.html', 'https://haiyong.site/moyu/catch-mole.html', 'https://haiyong.site/moyu/simplejsgame.html', 'https://haiyong.site/moyu/tower-blocks.html', 'https://haiyong.site/moyu/sanzhiji.html', 'https://haiyong.site/moyu/kill-the-king.html', 'https://haiyong.site/moyu/penhuolong.html', 'https://haiyong.site/moyu/migong.html', 'https://haiyong.site/moyu/feijizhadan.html', 'https://haiyong.site/moyu/baohujidan.html', 'https://haiyong.site/moyu/shengchengshu.html', 'https://haiyong.site/moyu/doumaomi.html', 'https://haiyong.site/moyu/yunshi.html', 'https://haiyong.site/moyu/xiaofeiyu.html', 'https://haiyong.site/moyu/xxoo.html', 'https://haiyong.site/moyu/pokemon.html', 'https://haiyong.site/moyu/shejian.html', 'https://haiyong.site/moyu/wuxianpaoku.html', 'https://haiyong.site/moyu/paocaimigong.html', 'http://liferestart.syaro.io/view/', 'https://haiyong.site/moyu/flappy-dino.html', 'https://haiyong.site/moyu/shitoujiandaobu', 'https://haiyong.site/moyu/guomalu.html', 'https://haiyong.site/moyu/wuziqi.html', 'https://haiyong.site/moyu/laganziguoguan', 'https://haiyong.site/moyu/doudizhu.html', 'https://haiyong.site/moyu/danzhu.html', 'https://haiyong.site/moyu/rengongzhizh.html', 'https://haiyong.site/moyu/baohuduixin.html', 'https://haiyong.site/moyu/eluosi.html', 'https://haiyong.site/moyu/huaxue.html', 'https://haiyong.site/moyu/tan.html', 'https://haiyong.site/moyu/cesu.html', 'https://haiyong.site/moyu/tamagotchi/', 'https://haiyong.site/moyu/mofang.html', 'https://haiyong.site/moyu/yingxiong.html', 'https://haiyong.site/moyu/saolei.html', 'https://haiyong.site/moyu/wu.html', 'https://haiyong.site/moyu/xiaoxiongchixingxing.html', 'https://haiyong.site/moyu/chazhen.html', 'https://haiyong.site/moyu/xxoo2.html', 'https://haiyong.site/moyu/xxoo3.html', 'https://haiyong.site/moyu/siyifu', 'https://haiyong.site/moyu/quwei.html', 'https://haiyong.site/moyu/dou.html', 'https://haiyong.site/moyu/danban.html', 'https://haiyong.site/moyu/zhipaijiyi.html', 'https://haiyong.site/moyu/touzi', 'https://haiyong.site/moyu/tiaofangzi.html', 'https://wanghao221.github.io/shuiguorenzhe/', 'https://haiyong.site/moyu/tiaofangzi.html', 'https://haiyong.site/moyu/SpaceHuggers/', 'https://haiyong.site/moyu/xbw', 'https://haiyong.site/moyu/xiangqi/', 'https://haiyong.site/moyu/hlxz/', 'https://haiyong.site/moyu/senlin/', 'https://haiyong.site/moyu/mdtw/', 'https://haiyong.site/moyu/100/', 'https://haiyong.site/moyu/qishi/', 'https://haiyong.site/moyu/flddsy/', 'https://haiyong.site/moyu/taikong/', 'https://haiyong.site/moyu/guangtouqiang/', 'https://haiyong.site/moyu/feiyue/', 'https://haiyong.site/moyu/magicegg/', 'https://haiyong.site/moyu/tegong/', 'https://haiyong.site/moyu/hjkg/'];
     a = 1;
-    textcolor = "white";
-    backcolor = "black";
+    textcolor = "#cccccc";
+    backcolor = "#0c0c0c";
 
     function spi(str, needstr, num) {
         spistr = "";
@@ -76,7 +81,7 @@
 
     function shc() {
         if (event.ctrlKey && event.keyCode === 76) {//Ctrl+L 清屏
-            document.getElementById("all").innerHTML = "<span>html-cmd(version:1.01.20.33)<br>Sife Studio keeps all the rights.</span><br><span style=\"display:flex\" id=\"line1\"><span>cmd></span><input type=\"text\" id=\"input\" onkeydown=\"get()\"></span>";
+            document.getElementById("all").innerHTML = "<span>Developers Union Shell<br>(C) Developers Union Keeps All Rights.<br></span><br><span style=\"display:flex\" id=\"line1\"><span>DevelopersUnion/Shell></span><input type=\"text\" id=\"input\" onkeydown=\"get()\"></span>";
             document.querySelectorAll('span')[0].style.color = textcolor;
             document.querySelectorAll('span')[0].style.backgroundColor = backcolor;
             document.querySelectorAll('span')[1].style.color = textcolor;
@@ -98,7 +103,7 @@
     };
 
     function get() {
-        if (event.keyCode === 13) {
+        if (event.keyCode === 13) { //按下Enter
             Commad = document.getElementById('input').value;
             oldhis.push(Commad);
             document.getElementById('line' + String(a)).removeChild(document.getElementById("input"));
