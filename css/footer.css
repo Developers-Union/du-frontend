@@ -32,10 +32,11 @@
     height: 16vh;
     text-align: right;
     background-color: #00bfff;
-    flex-direction:column;
+    flex-direction: column;
 }
-.content1 right{
-    flex-direction:row;
+
+.content1 right {
+    flex-direction: row;
 }
 
 .parallax>use {
