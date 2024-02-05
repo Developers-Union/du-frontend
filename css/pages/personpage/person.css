@@ -97,7 +97,7 @@ ul {
 .main-wrapper .main .main-top .main-top-left {
     display: flex;
     flex-direction: column;
-    flex-grow: 2;
+    width: 20%;
 }
 
 .main-wrapper .main .main-top .main-top-left .main-top-avatar {
@@ -168,7 +168,7 @@ ul {
     display: flex;
     flex-direction: column;
     margin: 2vw;
-    flex-grow: 18;
+    width: 80%;
 }
 
 .main-wrapper .main .main-top-right .main-top-info, .main-wrapper .main .main-top-right .main-top-saying {
@@ -193,7 +193,7 @@ ul {
     margin-left: 1vw;
 }
 
-.main-wrapper .main .main-top-right .main-top-info .main-top-info-id > span {
+.main-wrapper .main .main-top-right .main-top-info .main-top-info-id>span {
     font-weight: 700;
     font-size: 1.2vw;
     color: #ff2255;
@@ -225,7 +225,7 @@ ul {
     color: #e016d5;
 }
 
-.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-sex > ion-icon {
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-sex>ion-icon {
     height: 1.5vw;
 }
 
@@ -265,7 +265,7 @@ ul {
     padding-bottom: 1.3vw;
 }
 
-.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-team > p {
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-team>p {
     font-family: 'Poppins', serif;
     font-size: 1vw;
     margin-left: .5vw;
@@ -300,10 +300,10 @@ ul {
     font-family: 'Poppins', serif;
 }
 
-.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-follower > p,
-.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-following > p,
-.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-blog > p,
-.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-favorite > p {
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-follower>p,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-following>p,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-blog>p,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-favorite>p {
     font-size: 1vw;
 }
 
@@ -327,7 +327,7 @@ ul {
     margin-bottom: 2vw;
 }
 
-.main-wrapper .main .main-middle .main-middle-left .main-middle-left-charts > div {
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-charts>div {
     border: 1px solid white;
     margin-right: 1vw;
     padding: 1vw;
@@ -347,7 +347,7 @@ ul {
     font-weight: 400;
 }
 
-.main-wrapper .main .main-middle .main-middle-left > h1 {
+.main-wrapper .main .main-middle .main-middle-left>h1 {
     color: white;
 }
 
@@ -380,13 +380,14 @@ ul {
     display: flex;
     flex-direction: column;
     margin-left: 1vw;
-    margin-bottom: .5vw;
+    margin-bottom: .7vw;
 }
 
 .main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-title {
     color: #fff;
-    font-size: 1.3vw;
+    font-size: 1.5vw;
     font-family: 'Poppins', serif;
+    font-weight: 300;
     transition: all .5s;
 }
 
@@ -412,9 +413,9 @@ ul {
     color: white;
 }
 
-.main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-data .main-middle-right-blog-liked > p,
-.main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-data .main-middle-right-blog-comment > p,
-.main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-data .main-middle-right-blog-favorite > p {
+.main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-data .main-middle-right-blog-liked>p,
+.main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-data .main-middle-right-blog-comment>p,
+.main-wrapper .main .main-middle .main-middle-right .main-middle-right-blog .main-middle-right-blog-list .main-middle-right-blog-list-item .main-middle-right-blog-data .main-middle-right-blog-favorite>p {
     color: white;
     height: 1.5vw;
     padding-left: .3vw;
@@ -442,13 +443,13 @@ ul {
     font-size: 1vw;
 }
 
-.main-wrapper .main .main-middle .main-middle-right .main-middle-right-about .main-middle-right-about-list .main-middle-right-about-item > a {
+.main-wrapper .main .main-middle .main-middle-right .main-middle-right-about .main-middle-right-about-list .main-middle-right-about-item>a {
     margin-left: .5vw;
     transition: all .3s;
     color: white;
 }
 
-.main-wrapper .main .main-middle .main-middle-right .main-middle-right-about .main-middle-right-about-list .main-middle-right-about-item > a:hover {
+.main-wrapper .main .main-middle .main-middle-right .main-middle-right-about .main-middle-right-about-list .main-middle-right-about-item>a:hover {
     color: #6ab7ff;
 }
 
@@ -461,8 +462,9 @@ ul {
     /* margin-bottom: 1rem; */
     font-size: 2.2rem;
     /* padding: 2rem; */
-    color: rgb(150,150,150);
+    color: rgb(150, 150, 150);
 }
+
 #charts {
     width: 100%;
 }

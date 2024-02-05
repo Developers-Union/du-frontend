@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Type Module</title>
+</head>
+<body>
+  <input type="text" id="inputText">
+  <button onclick="hhh()">获取选中文字</button>
+  <p>被选中的文字为：<span id="selectedText"></span></p>
+  <script>
+    var c="";
+    var a={x:0,y:0,c};
+    function logSelection(event) {
+        const selection = event.target.value.substring(event.target.selectionStart, event.target.selectionEnd);
+        c=selection;
+        [a.x,a.y,a.c]=[event.target.selectionStart, event.target.selectionEnd,event.target]//获取选中位置
+    }
+    document.querySelector('input').addEventListener('select', logSelection);
+    function hhh(){
+        document.querySelector("#selectedText").innerText=c;
+        const input = document.querySelector('input');//恢复选中状态+添加文本
+        a.c.value=a.c.value.substring(0,a.x)+"哈哈哈"+a.c.value.substring(a.x,a.y)+"哈哈哈"+a.c.value.substring(a.y)
+        a.x+=3;
+        a.y+=3;
+        input.focus();
+        input.setSelectionRange(a.x, a.y);
+    }
+  </script>
+</body>
+</html>

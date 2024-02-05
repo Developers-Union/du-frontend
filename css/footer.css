@@ -1,9 +1,15 @@
 .afooter {
-    font-family: 'Lato', sans-serif;
-    letter-spacing: 1px;
+    font-family: 'JetBrains Mono', sans-serif;
+    margin: 0 .3vw;
     font-size: 15px;
-    color: #00619a;
+    font-weight: 700;
+    color: #333;
     text-decoration: none;
+    transition: all .3s;
+}
+
+.afooter:hover {
+    color: #000000;
 }
 
 .header1 {
@@ -33,6 +39,7 @@
     text-align: right;
     background-color: #00bfff;
     flex-direction: column;
+    font-family: 'Poppins', serif;
 }
 
 .content1 right {
