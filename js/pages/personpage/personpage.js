@@ -10,3 +10,7 @@ function follow() {
         e.innerText = 'follow'
     }
 }
+
+function editProfile() {
+    window.location.href = window.location.href + '/../editprofile.html'
+}

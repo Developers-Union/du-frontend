@@ -20,7 +20,6 @@ a {
 }
 
 body {
-    /* background-color: #080214; */
     background-color: #080614;
 }
 
@@ -227,7 +226,6 @@ ul {
 .main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .pl {
     background-color: #29a69344;
     color: #29a693;
-
 }
 
 .main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .os {
@@ -237,7 +235,6 @@ ul {
 
 .main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .linux {
     background-color: #87858f44;
-    ;
     color: #87959f;
 
 }
@@ -283,7 +280,6 @@ ul {
 }
 
 .main-wrapper .main .main-right h1 #keyword {
-
     font-weight: 500;
 }
 
