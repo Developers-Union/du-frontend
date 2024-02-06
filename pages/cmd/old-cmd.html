@@ -46,8 +46,9 @@
 </head>
 
 <body id="all" onkeydown="shc()">
-    <span>html-cmd(version:2.12.21.33)<br>Sife Studio keeps all the rights.</span><br>
-    <span style="display:flex" id="line1"><span>cmd></span><input type="text" id="inpot" onkeydown="get()"></span>
+    <span>Developers Union Shell(version: 1.14)<br>Developers Union keeps all the rights.</span><br>
+    <span style="display:flex" id="line1"><span>cmd></span><input type="text" id="inpot" aria-autocomplete="none"
+            onkeydown="get()"></span>
     <script>
         oldhis = [];
         a = 1;
@@ -74,7 +75,7 @@
         }
         function shc() {
             if (event.ctrlKey && event.keyCode == 76) {//Ctrl+L 清屏
-                document.getElementById("all").innerHTML = "<span>html-cmd(version:1.01.20.33)<br>Sife Studio keeps all the rights.</span><br><span style=\"display:flex\" id=\"line1\"><span>cmd></span><input type=\"text\" id=\"inpot\" onkeydown=\"get()\"></span>";
+                document.getElementById("all").innerHTML = "<span>Developers Union Shell(version: 1.14)<br>Developers Union keeps all the rights.</span><br><span style=\"display:flex\" id=\"line1\"><span>cmd></span><input type=\"text\" id=\"inpot\" onkeydown=\"get()\"></span>";
                 document.querySelectorAll('span')[0].style.color = textcolor;
                 document.querySelectorAll('span')[0].style.backgroundColor = backcolor;
                 document.querySelectorAll('span')[1].style.color = textcolor;
@@ -192,7 +193,7 @@
                 } else {
                     return ("<span class=\"jing\" style='color:red;'>error: Insufficient parameters</span>");
                 };
-                return (1);
+                return "";
             } else if (command == 'history') {
                 var r = oldhis.filter(function (s) {
                     return s && s.trim();
@@ -202,13 +203,13 @@
                 d = new Date();
                 return (d.toUTCString());
             } else if (command == 'clear') {
-                document.getElementById("all").innerHTML = "<span>html-cmd(version:1.01.20.33)<br>Sife Studio keeps all the rights.</span><br>";
+                document.getElementById("all").innerHTML = "<span>Developers Union Shell(version: 1.14)<br>Developers Union keeps all the rights.</span><br>";
                 document.querySelectorAll('span')[0].style.color = textcolor;
                 document.querySelectorAll('span')[0].style.backgroundColor = backcolor;
                 a = 1;
                 oldhis = [];
                 event.preventDefault();
-                return ("nonono");
+                return "";
             } else if (n[0].toLowerCase() == 'open') {
                 window.open(n[1]);
                 return (n[1] + " was opened");
@@ -224,7 +225,7 @@
                 try { return eval(n[1]) } catch (err) { return '<span style="color:red;">' + err + "</span>" }
             } else if (command == 'quit') {
                 window.location.href = window.location.href + "/../../../index.html";
-                return "returning homepage...";
+                return "";
             } else {
                 return ("<span style=\"color:red;\">error: The instruction does not exist</span>");
             };

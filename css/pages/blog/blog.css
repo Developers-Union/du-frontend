@@ -92,11 +92,11 @@ ul {
 .main-wrapper .main .main-left {
     display: flex;
     flex-direction: column;
-    flex-grow: 0;
+    flex-grow: 6;
     border-right: 1px solid white;
 }
 
-.main-wrapper .main .main-left > h1 {
+.main-wrapper .main .main-left>h1 {
     color: white;
     font-family: 'Poppins', serif;
     font-size: 3vw;
@@ -236,7 +236,8 @@ ul {
 }
 
 .main-wrapper .main .main-left .blogs .blog .blog-title-wrapper .labels .linux {
-    background-color: #87858f44;;
+    background-color: #87858f44;
+    ;
     color: #87959f;
 
 }
@@ -269,14 +270,31 @@ ul {
 .main-wrapper .main .main-right {
     display: flex;
     flex-direction: column;
-    flex-grow: 2;
+    flex-grow: 1;
     padding-top: 1vw;
 }
 
 .main-wrapper .main .main-right h1 {
-    font-family: 'JetBrains Mono', serif;
-    font-weight: 500;
+    font-family: 'Poppins', serif;
+    font-weight: 300;
     font-size: 2vw;
     color: white;
     white-space: nowrap;
+}
+
+.main-wrapper .main .main-right h1 #keyword {
+
+    font-weight: 500;
+}
+
+.main-wrapper .main .main-right p {
+    font-family: 'Poppins', serif;
+    font-weight: 300;
+    font-size: 1.5vw;
+    color: white;
+    white-space: nowrap;
+}
+
+.main-wrapper .main .main-right p #blog-cnt {
+    font-weight: 500;
 }
