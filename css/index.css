@@ -78,6 +78,7 @@ ul {
     width: 4vw;
     border-radius: 50%;
     border: 1px solid #fff;
+    overflow: hidden !important;
 }
 
 .main-wrapper .original-button {

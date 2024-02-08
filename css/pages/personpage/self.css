@@ -288,7 +288,7 @@ ul {
 
 .main-wrapper .main .main-middle {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-top: 1vw;
 }
 
@@ -296,6 +296,7 @@ ul {
     display: flex;
     flex-direction: column;
     flex-grow: 4;
+    border-right: 1px #fff solid;
 }
 
 .main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav {
@@ -323,6 +324,90 @@ ul {
 .main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button.active {
     border-bottom: #91caff 2px solid;
     color: #91caff;
+}
+
+/*
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs
+*/
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog {
+    margin: 2vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-author .blog-title-avatar {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-author .blog-author-name {
+    margin-left: .5vw;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    color: #ccc;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .blog-title {
+    font-family: 'Poppins', serif;
+    color: #eee;
+    font-weight: normal;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .blog-title:hover {
+    color: #6ab7ff;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .labels {
+    display: flex;
+    flex-direction: row;
+    gap: .3vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .labels .label {
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    padding: 0 .5vw;
+    border-radius: 100px;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper .blog-description {
+    font-family: 'Poppins', serif;
+    color: #bbb;
+    font-weight: 300;
+    font-size: .8vw;
+    max-width: 75%;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper .popular {
+    color: #ccc;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper .popular .popular-num {
+    color: white;
+    font-family: 'JetBrains Mono', serif;
 }
 
 .main-wrapper .main .main-middle .main-middle-right {
