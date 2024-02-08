@@ -285,3 +285,48 @@ ul {
 .main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-favorite>p {
     font-size: 1vw;
 }
+
+.main-wrapper .main .main-middle {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 4;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button {
+    border: none;
+    margin-left: 2vw;
+    background-color: transparent;
+    font-family: 'Poppins', serif;
+    font-size: 1.5vw;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    transition: all .5s;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button:hover {
+    border-bottom: #5db1ff 2px solid;
+    color: #6ab7ff;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button.active {
+    border-bottom: #91caff 2px solid;
+    color: #91caff;
+}
+
+.main-wrapper .main .main-middle .main-middle-right {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
