@@ -90,16 +90,18 @@
                     </div>
 
                 </div>
-                <div class="nav-right">
-                    <div class="avatar" onclick="loading.in('./pages/personpage/self.html')">
+                <div class="nav-right-hidden" id="nav-right-logged-in">
+                    <div class="avatar" onclick="loading.in('./pages/person/self.html')">
                         <img src="../../image/avatar.png" alt="?">
                         <div class="loading"></div>
                     </div>
-                    <!-- <button class="original-button" id="button-login"
-                        onclick="window.location='pages/login/login.html'">Log In
-                </button>
-                <button class="original-button" id="button-signup">Sign Up</button> -->
                     <p class="nav-name" id="username">Minsecrus</p>
+                </div>
+                <div class="nav-right" id="nav-right-not-logged-in">
+                    <button class="original-button" id="button-login"
+                        onclick="window.location='pages/login/login.html'">Log In</button>
+                    <button class="original-button" id="button-signup"
+                        onclick="window.location='pages/register/register.html'">Sign Up</button>
                 </div>
                 <script>
                     const loading = {

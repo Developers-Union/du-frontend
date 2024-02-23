@@ -223,10 +223,30 @@
                 return decodeURI(n[1]);
             } else if (command == 'javascript' || command == 'js') {
                 try { return eval(n[1]) } catch (err) { return '<span style="color:red;">' + err + "</span>" }
-            } else if (command == 'quit') {
+            } else if (command == 'quit' || command == 'home') {
                 window.location.href = window.location.href + "/../../../index.html";
                 return "";
-            } else {
+            } else if (command == 'blog') {
+                window.location.href = window.location.href + "/../../blog/showblog.html?id=" + n[1];
+                return "";
+            } else if (command == 'user') {
+                window.location.href = window.location.href + "/../../person/person.html?id=" + n[1];
+                return "";
+            } else if (command == 'writeblog') {
+                if (1)
+                    return ("<span class=\"jing\" style='color:red;'>error: You are not logged in</span>");
+                window.location.href = window.location.href + "/../../blog/writeblog.html";
+                return "";
+            } else if (command == 'editpf') {
+                if (1)
+                    return ("<span class=\"jing\" style='color:red;'>error: You are not logged in</span>");
+                window.location.href = window.location.href + "/../../person/editprofile.html";
+                return "";
+            } else if (command == 'credit') {
+                window.location.href = window.location.href + "/../../credit/credit.html";
+                return "";
+            }
+            else {
                 return ("<span style=\"color:red;\">error: The instruction does not exist</span>");
             };
         };

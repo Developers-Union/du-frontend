@@ -2,16 +2,16 @@ window.onload = function () {
     checkLogin()
 }
 
-window.onkeydown = function (){
+window.onkeydown = function () {
     var oEvent = window.Event;
-    if (123 === oEvent.keyCode){
+    if (123 === oEvent.keyCode) {
         alert("Don't F12!")
-    }else if(oEvent.keyCode === 68 && oEvent.keyCode === 76){
+    } else if (oEvent.keyCode === 68 && oEvent.keyCode === 76) {
         window.location = "../../../pages/credit/credit.html";
     }
 }
 
-let alreadyLogin = true;
+let alreadyLogin = false;
 
 function checkLogin() {
     if (alreadyLogin) {
@@ -21,14 +21,11 @@ function checkLogin() {
         $('#main-right').classList.remove('main-right-hidden')
         $('#main-right').classList.add('main-right')
 
-        $('#button-login').classList.remove('original-button')
-        $('#button-login').classList.add('original-button-already-login')
+        $('#nav-right-logged-in').classList.remove('nav-right-hidden');
+        $('#nav-right-logged-in').classList.add('nav-right');
 
-        $('#button-signup').classList.remove('original-button')
-        $('#button-signup').classList.add('original-button-already-login')
-
-        $('#username').classList.remove('nav-name-not-login')
-        $('#username').classList.add('nav-name')
+        $('#nav-right-not-logged-in').classList.remove('nav-right');
+        $('#nav-right-not-logged-in').classList.add('nav-right-hidden');
     } else {
 
         $('#hider').classList.remove('main-right-hidden')
@@ -37,14 +34,11 @@ function checkLogin() {
         $('#main-right').classList.remove('main-right')
         $('#main-right').classList.add('main-right-hidden')
 
-        $('#button-login').classList.remove('original-button-already-login')
-        $('#button-login').classList.add('original-button')
+        $('#nav-right-logged-in').classList.remove('nav-right');
+        $('#nav-right-logged-in').classList.add('nav-right-hidden');
 
-        $('#button-signup').classList.remove('original-button-already-login')
-        $('#button-signup').classList.add('original-button')
-
-        $('#username').classList.remove('nav-name')
-        $('#username').classList.add('nav-name-not-login')
+        $('#nav-right-not-logged-in').classList.remove('nav-right-hidden');
+        $('#nav-right-not-logged-in').classList.add('nav-right');
     }
 }
 
