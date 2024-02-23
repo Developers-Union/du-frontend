@@ -24,7 +24,7 @@ body {
     justify-content: center;
     align-items: center;
 
-    background: linear-gradient(135deg, #34ac40, #2c8ae8, #dc47cd, #e7e373);
+    background: linear-gradient(135deg, #2e9638, #267acd, #c43fb7, #d1ce68);
     background-size: 500%;
 
     animation: bgAnimation 6s linear infinite;
@@ -60,8 +60,98 @@ textarea {
     line-height: 2vw;
 }
 
+textarea.content-error-length {
+    border-bottom: 2px #00ffff solid !important;
+}
+
+textarea.content-error-char {
+    border-bottom: 2px #ffee00 solid !important;
+}
+
+textarea.content-error-format {
+    border-bottom: 2px #a6ff00 solid !important;
+}
+
+textarea.content-error-repeat {
+    border-bottom: 2px #00ff22 solid !important;
+}
+
 .main-wrapper {
     margin: -10% 40vw 10vw;
+}
+
+.username-tip {
+    position: absolute;
+    left: 10vw;
+    top: 40vh;
+}
+
+.username-tip .tip-title {
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    border: 2px solid #dddddd88;
+    border-radius: 44% 56% 70% 30% / 50% 61% 39% 50%;
+    box-shadow: 20px 5px 20px #dddddd66,
+        -15px -10px 30px #ddddddaa,
+        inset 20px 20px 35px #dddddd44,
+        inset -20px -20px 25px #dddddd88;
+    color: #ffffffd0;
+    font-family: 'Poppins', serif;
+}
+
+.username-tip .tip-content {
+    position: absolute;
+    bottom: -12vh;
+    width: 18vw;
+    font-size: 1vw;
+    color: #ffffffd0;
+    font-family: 'Poppins', serif;
+    display: none;
+}
+
+.username-tip:hover .tip-content {
+    display: block;
+}
+
+.password-tip {
+    position: absolute;
+    right: 15vw;
+    top: 70vh;
+}
+
+.password-tip .tip-title {
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5vw;
+    border: 2px solid #dddddd88;
+    border-radius: 44% 56% 70% 30% / 30% 61% 39% 70%;
+    box-shadow: 20px 5px 20px #dddddd66,
+        -15px -10px 30px #ddddddaa,
+        inset 20px 20px 35px #dddddd44,
+        inset -20px -20px 25px #dddddd88;
+    color: #ffffffd0;
+    font-family: 'Poppins', serif;
+}
+
+.password-tip .tip-content {
+    position: absolute;
+    bottom: -12vh;
+    width: 18vw;
+    font-size: 1vw;
+    color: #ffffffd0;
+    font-family: 'Poppins', serif;
+    display: none;
+}
+
+.password-tip:hover .tip-content {
+    display: block;
 }
 
 .register-wrapper {
@@ -75,7 +165,7 @@ textarea {
 }
 
 .register-wrapper p {
-    color: #ffffff95;
+    color: #ffffffaa;
     font-family: 'Poppins';
     font-size: 1.5vw;
 }
@@ -90,7 +180,7 @@ textarea {
 
 .register-wrapper .h1-wrapper h1 {
     font-family: 'Poppins', serif;
-    color: #ffffffd1;
+    color: #ffffffdd;
     font-size: 3vw;
     font-weight: normal;
 }
@@ -98,6 +188,32 @@ textarea {
 .register-wrapper .input-wrapper {
     width: 100%;
     margin: 1vw;
+}
+
+.register-wrapper .input-wrapper div.content-error {
+    display: block;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+}
+
+.register-wrapper .input-wrapper .content-error-length {
+    color: #00ffff;
+}
+
+.register-wrapper .input-wrapper .content-error-char {
+    color: #ffee00;
+}
+
+.register-wrapper .input-wrapper .content-error-format {
+    color: #a6ff00;
+}
+
+.register-wrapper .input-wrapper .content-error-repeat {
+    color: #00ff22;
+}
+
+.register-wrapper .input-wrapper .content-error-hidden {
+    display: none !important;
 }
 
 .register-wrapper .verify {
@@ -120,7 +236,7 @@ textarea {
     outline: none;
 }
 
-.register-wrapper .verify #verify-code-wrapper .verify-code-digit > p {
+.register-wrapper .verify #verify-code-wrapper .verify-code-digit>p {
     outline: none;
     height: 3vw;
     line-height: 3vw;
@@ -156,9 +272,9 @@ textarea {
     background-color: transparent;
     width: 40%;
     font-family: 'Poppins', serif;
-    color: #ffffffd1;
+    color: #ffffffdd;
     font-size: 2vw;
-    border: 2px solid #ffffffd1;
+    border: 2px solid #ffffffdd;
     margin: 1vw;
     padding: 1vw;
     transition: all 0.5s;
