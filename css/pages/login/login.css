@@ -108,7 +108,8 @@ textarea {
 }
 
 .login-wrapper #forget-password {
-    color: rgba(255, 249, 14, 0.4);
+    color: rgba(255, 253, 127, 0.4);
+    font-family: 'Poppins', serif;
     font-size: 1vw;
 }
 

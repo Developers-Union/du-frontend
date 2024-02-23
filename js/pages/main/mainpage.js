@@ -11,7 +11,7 @@ window.onkeydown = function () {
     }
 }
 
-let alreadyLogin = false;
+let alreadyLogin = true;
 
 function checkLogin() {
     if (alreadyLogin) {

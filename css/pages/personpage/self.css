@@ -295,7 +295,7 @@ ul {
 .main-wrapper .main .main-middle .main-middle-left {
     display: flex;
     flex-direction: column;
-    flex-grow: 4;
+    width: 80%;
     border-right: 1px #fff solid;
 }
 
@@ -413,5 +413,5 @@ ul {
 .main-wrapper .main .main-middle .main-middle-right {
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
+    width: 20%;
 }
