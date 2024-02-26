@@ -42,7 +42,7 @@ function shc() {
         document.getElementById("inpot").focus();
         return false;
     }
-};
+}
 function get() {
     if (event.keyCode == 13) {
         Commad = document.getElementById('inpot').value;
@@ -171,7 +171,7 @@ function amazing(str) {
         return decodeURI(n[1]);
     } else if (command == 'javascript' || command == 'js') {
         try { return eval(n[1]) } catch (err) { return '<span style="color:red;">' + err + "</span>" }
-    } else if (command == 'quit' || command == 'home') {
+    } else if (command == 'quit' || command == 'home' || command == 'exit') {
         window.location.href = window.location.href + "/../../../index.html";
         return "";
     } else if (command == 'blog') {

@@ -6,11 +6,13 @@
     <link rel="stylesheet" href="../../css/fonts.css">
 </head>
 
-<body id="all" onkeydown="shc()">
+<body id="all" onkeydown="shc()" onmouseover="document.getElementById('inpot').focus()">
     <span>Developers Union Shell(version: 1.14)<br>Developers Union keeps all the rights.</span><br>
-    <span style="display:flex" id="line1"><span>cmd></span><input type="text" id="inpot" aria-autocomplete="none"
-            onkeydown="get()"></span>
-    <script src="../../js/pages/cmd/cmd.js"></script>
+    <span id="line1">
+        <span>cmd></span>
+        <input type="text" id="inpot" aria-autocomplete="none" onkeydown="get()"">
+    </span>
+    <script src=" ../../js/pages/cmd/cmd.js"></script>
 </body>
 
 </html>

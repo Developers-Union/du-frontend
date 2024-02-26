@@ -1,4 +1,5 @@
 body {
+    height: 100vh;
     margin: 0;
     background-color: black;
     color: white;
@@ -8,9 +9,13 @@ body {
     font-family: Consolas, 'Courier New', monospace;
 }
 
+#line1 {
+    display: flex;
+}
+
 #inpot {
     float: left;
-    width: 100%;
+    width: 1000%;
     text-align: inherit;
     padding-left: 10px;
     padding-right: 10px;
