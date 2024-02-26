@@ -1,136 +1,143 @@
 <!doctype html>
 <html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <style>
- body{
-            background-color: #080614;
-            display: flex;
-        }
-.card {
-  color: #1b1b1b;
-  width: 190px;
-  height: 254px;
-  position: relative;
-  outline: 6px solid #f5f5f5;
-  border-radius: 8px;
-  line-height: 150%;
-  padding: 16px;
-  background: #ff930f;
-  background-blend-mode: multiply;
-  background: linear-gradient(to top, #ff930f, #ffcc33);
-  transition: background-color 1s ease-in-out;
-  overflow: hidden;
-}
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="../../css/fonts.css">
+  <style>
+    body {
+      background-color: #080614;
+      display: flex;
+    }
 
-.card-front {
-  bottom: 16px;
-  left: 0;
-  position: absolute;
-  width: 100%;
-  text-align: center;
-  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-}
+    .card {
+      color: #1b1b1b;
+      width: 190px;
+      height: 254px;
+      position: relative;
+      outline: 6px solid #f5f5f5;
+      border-radius: 8px;
+      line-height: 150%;
+      padding: 16px;
+      background: #ff930f;
+      background-blend-mode: multiply;
+      background: linear-gradient(to top, #ff930f, #ffcc33);
+      transition: background-color 1s ease-in-out;
+      overflow: hidden;
+    }
 
-.card-back {
-  transform: translateX(120%);
-  transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
-}
+    .card-front {
+      bottom: 16px;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    }
 
-
-/*Text*/
-.title {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-/*Text divider*/
-.title::after {
-  content: "";
-  display: block;
-  width: 50%;
-  border-radius: 50%;
-  height: 2px;
-  margin: 2px auto;
-  background-color: #1b1b1b;
-}
+    .card-back {
+      transform: translateX(120%);
+      transition: transform 1s cubic-bezier(0.785, 0.135, 0.150, 0.860);
+    }
 
 
-/*Hover*/
-.card:hover {
-  background-color: #1b1b1b25;
-}
+    /*Text*/
+    .title {
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
 
-.card:hover .card-front {
-  transform: translateX(-100%);
-}
+    /*Text divider*/
+    .title::after {
+      content: "";
+      display: block;
+      width: 50%;
+      border-radius: 50%;
+      height: 2px;
+      margin: 2px auto;
+      background-color: #1b1b1b;
+    }
 
-.card:hover .card-back {
-  transform: translateX(0);
-}
-    </style>
-    <title></title>
+
+    /*Hover*/
+    .card:hover {
+      background-color: #1b1b1b25;
+    }
+
+    .card:hover .card-front {
+      transform: translateX(-100%);
+    }
+
+    .card:hover .card-back {
+      transform: translateX(0);
+    }
+  </style>
+  <title></title>
 </head>
+
 <body>
-    <div style="padding-top: 50px;padding-left: 20px;">
-        <div class="card">
-            <div class="card-front">
-            <p class="title">John Doe</p>
-            <p class="subtitle">Web Dev</p>
-            </div>
-            <div class="card-back">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
+  <div style="padding-top: 50px;padding-left: 20px;">
+    <div class="card">
+      <div class="card-front">
+        <p class="title">John Doe</p>
+        <p class="subtitle">Web Dev</p>
+      </div>
+      <div class="card-back">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
     </div>
+  </div>
 
-    <div style="padding-top: 50px;padding-left: 20px;">
-        <div class="card">
-            <div class="card-front">
-            <p class="title">John Doe</p>
-            <p class="subtitle">Web Dev</p>
-            </div>
-            <div class="card-back">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
+  <div style="padding-top: 50px;padding-left: 20px;">
+    <div class="card">
+      <div class="card-front">
+        <p class="title">John Doe</p>
+        <p class="subtitle">Web Dev</p>
+      </div>
+      <div class="card-back">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
     </div>
+  </div>
 
-    <div style="padding-top: 50px;padding-left: 20px;">
-        <div class="card">
-            <div class="card-front">
-            <p class="title">John Doe</p>
-            <p class="subtitle">Web Dev</p>
-            </div>
-            <div class="card-back">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
+  <div style="padding-top: 50px;padding-left: 20px;">
+    <div class="card">
+      <div class="card-front">
+        <p class="title">John Doe</p>
+        <p class="subtitle">Web Dev</p>
+      </div>
+      <div class="card-back">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
     </div>
+  </div>
 
-    <div style="padding-top: 50px;padding-left: 20px;">
-        <div class="card">
-            <div class="card-front">
-            <p class="title">John Doe</p>
-            <p class="subtitle">Web Dev</p>
-            </div>
-            <div class="card-back">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
+  <div style="padding-top: 50px;padding-left: 20px;">
+    <div class="card">
+      <div class="card-front">
+        <p class="title">John Doe</p>
+        <p class="subtitle">Web Dev</p>
+      </div>
+      <div class="card-back">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
     </div>
+  </div>
 
-    <div style="padding-top: 50px;padding-left: 20px;">
-        <div class="card">
-            <div class="card-front">
-            <p class="title">John Doe</p>
-            <p class="subtitle">Web Dev</p>
-            </div>
-            <div class="card-back">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            </div>
-        </div>
+  <div style="padding-top: 50px;padding-left: 20px;">
+    <div class="card">
+      <div class="card-front">
+        <p class="title">John Doe</p>
+        <p class="subtitle">Web Dev</p>
+      </div>
+      <div class="card-back">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
     </div>
+  </div>
 </body>
+
 </html>
