@@ -85,6 +85,8 @@ function get() {
  
 */
 function color2(a, b) {
+    window.textcolor = a;
+    window.backcolor = b;
     var c = document.querySelectorAll('span');
     var d = document.querySelectorAll('input');
     console.log(c);
@@ -97,8 +99,6 @@ function color2(a, b) {
         d[i].style.color = a;
         d[i].style.backgroundColor = b;
     };
-    window.textcolor = a;
-    window.backcolor = b;
     document.getElementById('all').style.backgroundColor = b;
 }
 function amazing(str) {
@@ -127,17 +127,26 @@ function amazing(str) {
         return (1);
     } else if (command == 'color') {
         var colors = ['black', 'blue', 'lightgreen', 'aqua', 'red', 'purple', 'yellow', 'white', 'gray', 'lightblue'];
-        if (n[1].length == 1 && n[1] != '0') {
-            var obs = colors[Number(n[1])]
-            color2(obs, 'black')
+        if (n[1].length == 1) {
+            if (Number(n[1]) > 0 && Number(n[1]) < 10) {
+                alert("yes")
+                var obs = colors[Number(n[1])]
+                color2(obs, 'black')
+            } else {
+                return "<span class=\"jing\" style='color:red;'>error: Sub-parameters OutOfRange: 0-9 valid</span>";
+            }
         } else if (n[1].length == 2 && n[1][0] != n[1][1]) {
-            var obc = colors[Number(n[1][0])];
-            var obs = colors[Number(n[1][1])];
-            color2(obs, obc);
+            if (Number(n[1][0]) > 0 && Number(n[1][0]) < 10 && Number(n[1][1]) > 0 && Number(n[1][1]) < 10) {
+                var obc = colors[Number(n[1][0])];
+                var obs = colors[Number(n[1][1])];
+                color2(obs, obc);
+            } else {
+                return "<span class=\"jing\" style='color:red;'>error: Sub-parameters OutOfRange: 0-9 valid</span>";
+            }
         } else if ((!n[1]) || n[1].length == 0) {
             color2("white", "black");
         } else if (n[1].length == 2 && n[1][0] == n[1][1]) {
-            return ("<span class=\"jing\" style='color:yellow;'>error: Parameters cannot be the same</span>");
+            return ("<span class=\"jing\" style='color:yellow !important;background-color:" + backcolor + ";'>error: Two Sub-parameters cannot be the same</span>");
         } else {
             return ("<span class=\"jing\" style='color:red;'>error: Insufficient parameters</span>");
         };
@@ -193,6 +202,8 @@ function amazing(str) {
     } else if (command == 'credit') {
         window.location.href = window.location.href + "/../../credit/credit.html";
         return "";
+    } else if (command == 'help') {
+        return ("<span>View the SOURCE to get the list of available commands.</span>")
     }
     else {
         return ("<span style=\"color:red;\">error: The instruction does not exist</span>");
