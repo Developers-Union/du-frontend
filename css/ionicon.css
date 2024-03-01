@@ -1,0 +1,20 @@
+ion-icon {
+    color: #fff;
+    transition: all .5s;
+}
+
+ion-icon:hover {
+    color: #6ab7ff;
+}
+
+#icon-fresh-blog {
+    width: 2vw;
+    height: 2vw;
+    margin-top: .2vw;
+}
+
+.icon-project-stars {
+    width: 1.5vw;
+    height: 1.5vw;
+    margin-right: 0.5vw;
+}

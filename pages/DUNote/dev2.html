@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>页面布局</title>
+    <style>
+        html{
+            height: 100%;
+        }
+        body{
+            margin: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+        .toolbar {
+            height: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0px 10px;
+            background-color: #ffffff;
+            margin-bottom: 0px;
+            border: 0;
+            border-bottom:1px solid black;
+            border-width: 1px;
+        }
+        .toolbar button {
+            padding: 5px 10px;
+            background-color: #ffffff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .content {
+            border: 0;
+            display: flex;
+            flex-direction: row;
+            height: calc(100% - 50px);
+        }
+        .left-column {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .right-column {
+            flex: 1;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        #mdd {
+            resize:none;
+            border: 0;
+            font-family: Consolas,Microsoft YaHei,'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New', monospace, sans-serif;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 19px;
+            letter-spacing: 0px;
+            cursor: text;
+            outline: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+	<div class="toolbar">
+		<button>按钮1</button>
+		<button>按钮2</button>
+		<button>按钮3</button>
+	</div>
+	<div class="content">
+        <textarea id="mdd" class="editor left-column" placeholder="这里写笔记..."></textarea>
+		<div class="right-column">
+			<h2>右侧内容</h2>
+			<p>这是右侧内容的文本。</p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blogs | DU</title>
+    <link rel="stylesheet" href="../../css/pages/blog/blog.css">
+    <link rel="stylesheet" href="../../css/pages/blog/bloglist.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <script src="../../js/lib.js"></script>
+    <script src="../../js/pages/blog/addBlog.js"></script>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="nav">
+            <div class="nav-left">
+                <a href="../../index.html">Return Homepage</a>
+            </div>
+            <div class="nav-right">
+                <div class="avatar"></div>
+                <p class="nav-name" id="username" onclick="">Minsecrus</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-left">
+                <h1>Blogs - "<span id="blog-keyword">mdr</span>":</h1>
+                <ul class="blogs" id="blogs-root">
+                </ul>
+            </div>
+            <div class="main-right">
+                <h1>keyword: <span id="keyword">mdr</span></h1>
+                <p><span id="blog-cnt">0</span>&nbsp;result<span id="result-s">s</span></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function addBlogCnt() {
+            $('#blog-cnt').innerText = String(Number($('#blog-cnt').innerText) + 1)
+            if (Number($('#blog-cnt').innerText) > 1) {
+                $('#result-s').innerText = 's'
+            } else {
+                $('#result-s').innerText = ''
+            }
+        }
+        const blogs_root = $('#blogs-root');
+        addBlog(
+            blogs_root,
+            'Minsecrus dreamers',
+            'C++ High Precision Integer Library',
+            'using std::vector',
+            114,
+            514,
+            ['c', 'cpp', 'fp'],
+            51815
+        );
+        addBlogCnt();
+        /*
+        addBlog(
+            'mdr',
+            'DUNote',
+            'app app app app app app app app app ',
+            13,
+            15,
+            ["pl", "linux", "rust", "py", "java", "go"],
+            1111
+        );
+        addBlog(
+            'Timer',
+            'femd',
+            'Extensible markdown',
+            114514,
+            1919810,
+            ["js", "md"],
+            333333333
+        )*/
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Register | DU</title>
+    <link rel="stylesheet" href="../../css/pages/register/register.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <script src="../../js/lib.js"></script>
+</head>
+
+<body>
+
+    <div class="main-wrapper">
+        <div class="username-tip">
+            <div class="tip-title">
+                <p>Username</p>
+            </div>
+            <div class="tip-content">Username can only contain letters, numbers and underlines, at a length of 6~15
+                characters.</div>
+        </div>
+        <div class="password-tip">
+            <div class="tip-title">
+                <p>Password</p>
+            </div>
+            <div class="tip-content">Password can only contain letters and numbers, at a length of 8~15
+                characters.</div>
+        </div>
+        <div class="register-wrapper">
+            <div class="h1-wrapper">
+                <h1>Register</h1>
+            </div>
+
+            <div class="username input-wrapper">
+                <p>input username:</p>
+                <textarea name="username" id="username"></textarea>
+                <div id="username-error" class="content-error content-error-hidden"></div>
+            </div>
+
+            <div class="email input-wrapper">
+                <p>input e-mail:</p>
+                <textarea name="email" id="email"></textarea>
+                <div id="email-error" class="content-error content-error-hidden">email illegal</div>
+            </div>
+
+            <div class="password input-wrapper">
+                <p>input password:</p>
+                <textarea name="password" id="password"></textarea>
+                <div id="password-error" class="content-error content-error-hidden"></div>
+                <br>
+            </div>
+
+            <div class="password input-wrapper">
+                <p>Repeat password:</p>
+                <textarea name="password2" id="password2"></textarea>
+                <div id="password2-error" class="content-error content-error-hidden">password not same</div>
+                <br>
+            </div>
+
+            <div class="verify">
+                <div id="verify-code-wrapper">
+                    <div class="verify-code-digit">
+                        <p contenteditable="true" oninput="onVerifyInput(0)"></p>
+                    </div>
+                    <div class="verify-code-digit">
+                        <p contenteditable="true" oninput="onVerifyInput(1)"></p>
+                    </div>
+                    <div class="verify-code-digit">
+                        <p contenteditable="true" oninput="onVerifyInput(2)"></p>
+                    </div>
+                    <div class="verify-code-digit">
+                        <p contenteditable="true" oninput="onVerifyInput(3)"></p>
+                    </div>
+                    <div class="verify-code-digit">
+                        <p contenteditable="true" oninput="onVerifyInput(4)"></p>
+                    </div>
+                    <div class="verify-code-digit">
+                        <p contenteditable="true" oninput="onVerifyInput(5)"></p>
+                    </div>
+                    <button id="verify">Send Code</button>
+                </div>
+            </div>
+            <div class="had-account">
+                <p>Had had an account? <a href="../login/login.html" id="login">Log In</a></p>
+            </div>
+            <div class="register-button-wrapper">
+                <button id="login-button">Register</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+<script src="../../js/pages/register/register.js"></script>
+
+</html>

@@ -1,0 +1,167 @@
+#blogs-root .blog {
+    margin: 2vw;
+}
+
+#blogs-root .blog .blog-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#blogs-root .blog .blog-author .blog-title-avatar {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+#blogs-root .blog .blog-author .blog-author-name {
+    margin-left: .5vw;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    color: #ccc;
+}
+
+#blogs-root .blog .blog-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#blogs-root .blog .blog-title-wrapper .blog-title {
+    font-family: 'Poppins', serif;
+    color: #eee;
+    font-weight: normal;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+#blogs-root .blog .blog-title-wrapper .blog-title:hover {
+    color: #6ab7ff;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels {
+    display: flex;
+    flex-direction: row;
+    gap: .3vw;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .label {
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    padding: 0 .5vw;
+    border-radius: 100px;
+}
+
+#blogs-root .blog .blog-description-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#blogs-root .blog .blog-description-wrapper .blog-description {
+    font-family: 'Poppins', serif;
+    color: #bbb;
+    font-weight: 300;
+    font-size: .8vw;
+    max-width: 75%;
+}
+
+#blogs-root .blog .blog-description-wrapper .popular {
+    color: #ccc;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+}
+
+#blogs-root .blog .blog-description-wrapper .popular .popular-num {
+    color: white;
+    font-family: 'JetBrains Mono', serif;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .c {
+    background-color: #246ED044;
+    color: #246ED0;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .cpp {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .clang {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .gcc {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .cmake {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .msvc {
+    background-color: #e13bd844;
+    color: #e13bd8;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .csharp {
+    background-color: #a8eb2244;
+    color: #a8eb22;
+}
+
+
+#blogs-root .blog .blog-title-wrapper .labels .apring,
+#blogs-root .blog .blog-title-wrapper .labels .java {
+    background-color: #9d772544;
+    color: #9d7725;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .js {
+    background-color: #ad971544;
+    color: #ad9715;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .py {
+    background-color: #51ea6344;
+    color: #51ea63;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .go {
+    background-color: #1ec5cb44;
+    color: #1ec5cb;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .rust {
+    background-color: #d5572144;
+    color: #d55721;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .md {
+    background-color: #8ef38044;
+    color: #8ef380;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .fp {
+    background-color: #d9393944;
+    color: #d93939;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .pl {
+    background-color: #29a69344;
+    color: #29a693;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .os {
+    background-color: #87959f44;
+    color: #87959f;
+}
+
+#blogs-root .blog .blog-title-wrapper .labels .linux {
+    background-color: #87858f44;
+    color: #87959f;
+}

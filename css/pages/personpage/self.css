@@ -1,0 +1,417 @@
+@font-face {
+    font-family: 'Jetbrains Mono';
+    src: url(../../../fonts/JetBrainsMono-Medium.ttf);
+}
+
+@font-face {
+    font-family: 'Verdana';
+    src: url(../../../fonts/Verdana-1.ttf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+body {
+    /* background-color: #080214; */
+    background-color: #080614;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-wrapper {
+    margin: 0 3vw;
+}
+
+.main-wrapper .nav {
+    height: 7vw;
+}
+
+.main-wrapper .nav .nav-left {
+    float: left;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-left a {
+    font-family: 'Poppins', serif;
+    margin-left: 2vw;
+    height: 4vw;
+    line-height: 4vw;
+    font-size: 1.2vw;
+    color: azure;
+    transition: all .5s;
+    border-bottom: 2px solid #080614;
+}
+
+.main-wrapper .nav .nav-left a:hover {
+    border-bottom: 2px solid #6ab7ff;
+}
+
+.main-wrapper .nav .nav-right {
+    float: right;
+    height: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+
+.main-wrapper .nav .nav-right .avatar {
+    height: 4vw;
+    width: 4vw;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    overflow: hidden !important;
+}
+
+.main-wrapper .nav .nav-right .nav-name {
+    color: #fff;
+    font-family: 'Poppins', serif;
+    font-size: 1.5vw;
+    margin-right: 1vw;
+}
+
+.main-wrapper .main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 90%;
+}
+
+.main-wrapper .main .main-top {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.main-wrapper .main .main-top .main-top-left {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+
+.main-wrapper .main .main-top .main-top-left .main-top-avatar {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    border: 1px solid white;
+    overflow: hidden;
+}
+
+.main-wrapper .main .main-top .main-top-left .main-top-avatar img {
+    width: 100%;
+    height: 100%;
+}
+
+.main-wrapper .main .main-top-right {
+    display: flex;
+    flex-direction: column;
+    margin: 2vw;
+    width: 80%;
+}
+
+.main-wrapper .main .main-top-right .main-top-info, .main-wrapper .main .main-top-right .main-top-saying {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .main .main-top-right .main-top-info {
+    justify-content: space-between;
+}
+
+.main-wrapper .main .main-top-right .main-top-info .main-top-info-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .main .main-top-right .main-top-info .main-top-info-main .main-top-info-name {
+    font-family: 'Poppins', serif;
+    font-size: 1.5vw;
+    color: #fff;
+}
+
+.main-wrapper .main .main-top-right .main-top-info .main-top-info-main .main-top-info-id {
+    font-family: 'JetBrains Mono', serif;
+    font-size: 1vw;
+    color: #ff0045;
+    background-color: #550010;
+    border-radius: 100px;
+    padding: .2vw .5vw;
+    margin-left: 1vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-info .main-top-info-main .main-top-info-id>span {
+    font-weight: 700;
+    font-size: 1.2vw;
+    color: #ff2255;
+}
+
+.main-wrapper .main .main-top-right .main-top-info .edit-profile-wrapper {
+    width: max-content;
+    display: flex;
+    margin-left: 5vw;
+    flex-direction: row;
+    align-items: center;
+    color: #eee;
+}
+
+.main-wrapper .main .main-top-right .main-top-info .edit-profile-wrapper button {
+    padding: .5vw;
+    border: none !important;
+    background-color: transparent !important;
+    font-family: 'Jetbrains Mono', serif;
+    font-size: 1.1vw;
+    font-weight: 100;
+    color: #fff;
+}
+
+.main-wrapper .main .main-top-right .main-top-saying {
+    font-size: 1vw;
+    font-family: 'Poppins', serif;
+    color: #ccc;
+    margin: 1.3vw 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: .3vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 1.5vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-sex {
+    height: 1.5vw;
+    color: #e016d5;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-sex>ion-icon {
+    height: 1.5vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-age {
+    color: #3ee;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0 1vw;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    height: 1.5vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-age #main-top-profile-age {
+    margin-left: .2vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-basic .main-top-profile-basic-location {
+    color: #ee3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    height: 1.5vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 1.5vw;
+    color: #ff6a00;
+    margin: .7vw 0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 1.3vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-team>p {
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    margin-left: .5vw;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-team #main-top-team-name {
+    transition: all .3s;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-team #main-top-team-name:hover {
+    color: #ff8330;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2vw;
+    height: 1.5vw;
+    color: #fff;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-follower,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-following,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-blog,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-favorite {
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    height: 2vw;
+    gap: .5vw;
+    font-family: 'Poppins', serif;
+}
+
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-follower>p,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-following>p,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-blog>p,
+.main-wrapper .main .main-top-right .main-top-profile .main-top-profile-popular .main-top-profile-popular-favorite>p {
+    font-size: 1vw;
+}
+
+.main-wrapper .main .main-middle {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border-right: 1px #fff solid;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button {
+    border: none;
+    margin-left: 2vw;
+    background-color: transparent;
+    font-family: 'Poppins', serif;
+    font-size: 1.5vw;
+    color: #fff;
+    border-bottom: 2px solid transparent;
+    transition: all .5s;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button:hover {
+    border-bottom: #5db1ff 2px solid;
+    color: #6ab7ff;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-nav button.active {
+    border-bottom: #91caff 2px solid;
+    color: #91caff;
+}
+
+/*
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs
+*/
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog {
+    margin: 2vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-author {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-author .blog-title-avatar {
+    height: 2vw;
+    width: 2vw;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-author .blog-author-name {
+    margin-left: .5vw;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    color: #ccc;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .blog-title {
+    font-family: 'Poppins', serif;
+    color: #eee;
+    font-weight: normal;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .blog-title:hover {
+    color: #6ab7ff;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .labels {
+    display: flex;
+    flex-direction: row;
+    gap: .3vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-title-wrapper .labels .label {
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+    padding: 0 .5vw;
+    border-radius: 100px;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper .blog-description {
+    font-family: 'Poppins', serif;
+    color: #bbb;
+    font-weight: 300;
+    font-size: .8vw;
+    max-width: 75%;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper .popular {
+    color: #ccc;
+    font-family: 'Poppins', serif;
+    font-size: 1vw;
+}
+
+.main-wrapper .main .main-middle .main-middle-left .main-middle-left-content #content-blogs .blog .blog-description-wrapper .popular .popular-num {
+    color: white;
+    font-family: 'JetBrains Mono', serif;
+}
+
+.main-wrapper .main .main-middle .main-middle-right {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}

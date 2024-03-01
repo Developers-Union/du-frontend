@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Profile | DU</title>
+    <link rel="stylesheet" href="../../css/pages/personpage/self.css">
+    <link rel="stylesheet" href="../../css/pages/blog/bloglist.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <script src="../../js/lib.js"></script>
+    <script src="../../js/pages/personpage/self.js"></script>
+    <script src="../../js/pages/blog/addBlog.js"></script>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <div class="nav">
+            <div class="nav-left">
+                <a href="../../index.html">Return Homepage</a>
+            </div>
+            <div class="nav-right">
+                <div class="avatar">
+                    <img src="../../image/avatar.png" alt="?">
+                </div>
+                <p class="nav-name" id="username">Minsecrus</p>
+            </div>
+        </div>
+        <div class="main">
+            <div class="main-top">
+                <div class="main-top-left">
+                    <div class="main-top-avatar">
+                        <img src="../../image/avatar.png" alt="">
+                    </div>
+                </div>
+                <div class="main-top-right">
+                    <div class="main-top-info">
+                        <div class="main-top-info-main">
+                            <div class="main-top-info-name">Minsecrus</div>
+                            <div class="main-top-info-id">ID: <span>1025</span></div>
+                        </div>
+                        <div class="edit-profile-wrapper">
+                            <ion-icon name="create-outline"></ion-icon>
+                            <button onclick="editProfile()">Edit Profile</button>
+                        </div>
+                    </div>
+                    <div class="main-top-saying">我相信会再次看到蓝天，鲜花挂满枝头</div>
+                    <div class="main-top-profile">
+                        <div class="main-top-profile-basic">
+                            <div class="main-top-profile-basic-sex">
+                                <ion-icon name="male-female-outline"></ion-icon>
+                            </div>
+                            <div class="main-top-profile-basic-age">
+                                <ion-icon name="cube-outline"></ion-icon>
+                                <div id="main-top-profile-age">15</div>
+                            </div>
+                            <div class="main-top-profile-basic-location">
+                                <ion-icon name="location"></ion-icon>
+                                <div id="main-top-profile-location">Liaoning, China</div>
+                            </div>
+                        </div>
+                        <div class="main-top-profile-team">
+                            <ion-icon name="people-circle-outline"></ion-icon>
+                            <p>in </p>
+                            <p id="main-top-team-name">Developers Union Dev Team</p>
+                        </div>
+                        <div class="main-top-profile-popular">
+                            <div class="main-top-profile-popular-follower">
+                                <ion-icon name="person-add-outline"></ion-icon>
+                                <p id="num-follower">51815</p>
+                                <p> followers</p>
+                            </div>
+                            <div class="main-top-profile-popular-following">
+                                <ion-icon name="heart-circle-outline"></ion-icon>
+                                <p id="num-following">14</p>
+                                <p> followings</p>
+                            </div>
+                            <div class="main-top-profile-popular-blog">
+                                <ion-icon name="document-outline"></ion-icon>
+                                <p id="num-blog">68</p>
+                                <p> blogs</p>
+                            </div>
+                            <div class="main-top-profile-popular-favorite">
+                                <ion-icon name="star-sharp"></ion-icon>
+                                <p id="num-favorite">13</p>
+                                <p> favorites</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-middle">
+                <div class="main-middle-left">
+                    <div class="main-middle-left-nav">
+                        <button id="mmln-blogs" class="active" onclick="clicked(0)">Your blogs</button>
+                        <button id="mmln-projects" onclick="clicked(1)">Your projects</button>
+                        <button id="mmln-teams" onclick="clicked(2)">Your teams</button>
+                        <button id="mmln-data" onclick="clicked(3)">Active data</button>
+                    </div>
+                    <div class="main-middle-left-content">
+                        <div id="blogs-root">
+
+                        </div>
+                        <div id="content-projects">
+                            <div class="no-projects">No Projects.</div>
+                        </div>
+                        <div id="content-teams">
+                            <div class="no-teams">No Teams.</div>
+                        </div>
+                        <div id="content-data">
+                            <div class="no-data">No Data.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-middle-right">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+<script>
+    // test
+    const root = $('#blogs-root');
+    addBlog(root, 'Minsecrus dreamers', 'C++ High Precision Integer Library', 'using std::vector', 114, 514, ['rust', 'py', 'go', 'csharp', 'cmake', 'gcc', 'clang', 'msvc'], 51815);
+    addBlog(root, 'Minsecrus dreamers', 'C++ High Precision Integer Library', 'using std::vector', 114, 514, ['c', 'cpp', 'fp'], 51815);
+</script>
+
+</html>

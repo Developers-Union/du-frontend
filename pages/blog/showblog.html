@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../css/index.css">
+    <link rel="stylesheet" href="../../css/fonts.css">
+    <script src="../../js/pages/showblog/showblog.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.1.0/github-markdown-dark.min.css">
+    <title></title>
+    <style>
+        @media (max-width: 767px) {
+            body {
+                padding: 15px;
+            }
+        }
+
+        body {
+            box-sizing: border-box;
+            min-width: 200px;
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 45px;
+            background-color: #0d1117;
+        }
+
+        .circle {
+            position: absolute;
+            left: 50px;
+            top: 80px;
+            width: 125px;
+            height: 125px;
+            background-color: #f00;
+            border-radius: 50%;
+        }
+
+        .name {
+            color: #fff;
+            font-size: 24px;
+            position: absolute;
+            left: 65px;
+            top: 170px;
+            width: 125px;
+            height: 125px;
+            line-height: 100px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="circle"></div>
+    <p class="name">name</p>
+    <div id="$m" class="markdown-body"></div>
+    <textarea id="$t" style="display:none">
+<!-- # Test -->
+</textarea>
+    <script>
+        $t.value = "# Test \n Az"
+        $m.innerHTML = marked.parse($t.value);
+    </script> <!-- 不要把 script 单独放到一个文件，一放就报错，我也不知道为什么 -->
+</body>
+
+</html>

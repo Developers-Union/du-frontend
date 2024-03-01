@@ -1,0 +1,44 @@
+body {
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    line-height: 1.5715;
+    font-size: 16px;
+    font-family: Consolas, 'Courier New', monospace;
+}
+
+#line1 {
+    display: flex;
+}
+
+#inpot {
+    float: left;
+    width: 1000%;
+    text-align: inherit;
+    padding-left: 10px;
+    padding-right: 10px;
+    background-color: black;
+    color: white;
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    font-family: Consolas, 'Courier New', monospace;
+}
+
+.jing {
+    background-color: black;
+}
+
+details ::marker {
+    content: ' > '
+}
+
+details[open] ::marker {
+    content: ' < '
+}
+
+summary {
+    user-select: none;
+}
