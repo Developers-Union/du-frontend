@@ -204,7 +204,33 @@ button:active {
     margin-right: 2vw;
 }
 
+.main-new{
+    display: flex;
+    flex-grow: 13;
+    flex-direction: column;
+    width: 300px;
+    height: 400px;
+    background-image: linear-gradient(to right, #2b0171 , #8c0098,#f6a42b);
+    /* background-image: url("../image/jb.svg"); */
+    border-radius: 20px;
+}
+.main-new .title{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 30px;
+    margin-top: 1.4vw;
+    margin-left: 2vw;
+    color: white;
+}
+.main-new .passage{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    margin-top: 1.4vw;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    color: white;
+}
 .main-left {
+    padding-left: 30px;
     display: flex;
     flex-grow: 13;
     flex-direction: column;
