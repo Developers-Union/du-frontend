@@ -1,90 +1,248 @@
 <!DOCTYPE html>
 <html lang="en" style="height: 100%;">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/femd/femd.min.js"></script>
     <title>Blog</title>
     <style>
         @font-face {
             font-family: 'Jetbrains Mono';
             src: url(../../fonts/JetBrainsMono-Medium.ttf);
         }
-        body{
+
+        body {
+            overflow-y: hidden;
+            overflow-x: hidden;
             height: 100%;
             background-color: #0d1117;
             font-family: "Jetbrains Mono";
+            scrollbar-arrow-color: rgb(13, 17, 23);
+            scrollbar-face-color: rgb(13, 17, 23);
+            scrollbar-shadow-color: rgb(13, 17, 23);
+            scrollbar-color: dark;
         }
-        .information{
+
+        .information {
             display: grid;
-            grid-template-rows: 35% 20% 30% 15%;
+            grid-template-rows: 35% 20% 10% 35%;
             box-sizing: border-box;
-            /* background-color: aliceblue; */
             float: left;
             width: 20%;
             height: 100%;
         }
 
-        .pic{
+        .pic {
             box-sizing: border-box;
-            /* background-color:blueviolet; */
         }
-        .pic .avatar{
-            /* display: block; */
-            /* margin: 10%; */
+
+        .pic .avatar {
             margin-left: 10%;
             margin-top: 10%;
             border-radius: 50%;
             width: 80%;
             height: 80%;
             background-color: rgb(32, 129, 153);
-            /* object-fit: fill; */
-
         }
-        .author{
+
+        .author {
             margin-top: -15%;
             box-sizing: border-box;
-            /* background-color:rgb(101, 226, 43); */
         }
-        .author h1{
+
+        .author h1 {
             text-align: center;
             color: white;
         }
-        .author p{
+
+        .author p {
             margin-top: -5%;
             margin-left: 5%;
             margin-right: 5%;
             color: white;
         }
 
-        .recent{
+
+        .recent {
             box-sizing: border-box;
-            background-color:rgb(226, 43, 43);
         }
-        
 
-
-        .creative{
-            box-sizing: border-box;
-            background-color:rgb(43, 43, 226);
+        .recent h3 {
+            margin-top: -15%;
+            margin-left: 2%;
+            color: white;
         }
-        
 
-        .content{
+        .recent div {
+            margin-top: -5%;
+            margin-left: 3.5%;
+            /* margin: auto; */
+            height: 7%;
+            width: 90%;
+        }
+
+        .recent div .title {
+            margin-top: -5%;
+            margin-left: 5%;
+            color: white;
+        }
+
+
+        .creative {
             box-sizing: border-box;
-            background-color: aqua;
+        }
+
+        .container {
+            position: relative;
+            max-width: 450px;
+            width: 75%;
+            background: #ececec;
+            margin: 0 15px;
+            padding: 10px 20px;
+            border-radius: 7px;
+            user-select: none;
+        }
+
+        .container .skill-box {
+            width: 100%;
+            margin: 25px 0;
+        }
+
+        .skill-box .title {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .skill-box .skill-bar {
+            height: 4px;
+            width: 100%;
+            border-radius: 6px;
+            margin-top: 4px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-bar .skill-per {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 90%;
+            border-radius: 6px;
+            background: #000000;
+            animation: progress 0.4s ease-in-out forwards;
+            opacity: 0;
+        }
+
+        .skill-per.html {
+            /*progreso de las diferentes lenguajes*/
+            width: 80%;
+            animation-delay: 0.1s;
+        }
+
+        .skill-per.css {
+            width: 30%;
+            animation-delay: 0.1s;
+        }
+
+        .skill-per.javascript {
+            width: 40%;
+            animation-delay: 0.2s;
+        }
+
+        .skill-per.nodejs {
+            width: 70%;
+            animation-delay: 0.3s;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0;
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        .skill-per .tooltip {
+            position: absolute;
+            right: -14px;
+            top: -28px;
+            font-size: 9px;
+            font-weight: 500;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: #000000;
+
+            z-index: 1;
+        }
+
+        .tooltip::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            bottom: -2px;
+            height: 10px;
+            width: 10px;
+            z-index: -1;
+            background: #000000;
+            transform: translateX(-50%) rotate(45deg);
+        }
+
+
+
+        .blogcontent {
+            border-left: #ececec solid;
+            border-right: #ececec solid;
+            word-wrap: break-word;
+            color: #ececec;
+            box-sizing: border-box;
             float: left;
             width: 60%;
             height: 100%;
+            scrollbar-color: dark;
         }
-        .more{
+
+        /* .scroll-area::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: #FFEB3B;
+        } */
+
+        .content {
+            word-wrap: break-word;
+            overflow-y: scroll;
+            margin-left: 2%;
+            margin-right: 5%;
+            width: 100%;
+            height: 100%;
+            scrollbar-color: dark;
+        }
+
+        .more {
+            border-radius: 20px;
             box-sizing: border-box;
             background-color: aliceblue;
             float: left;
             width: 20%;
             height: 100%;
         }
+
+        .more h1 {
+            margin-left: 3%;
+        }
+
+        .more .catalog {
+            margin-left: 3%;
+            margin-top: -10%;
+        }
     </style>
 </head>
+
 <body>
     <div class="information">
         <div class="pic">
@@ -94,18 +252,124 @@
 
         <div class="author">
             <h1>Sura</h1>
-            <p>Hello,I'm sura.I am good at doing programming with javascript.</p>
+            <p> Hello,I'm sura.I am good at doing programming with javascript.</p>
         </div>
-        <div class="recent"></div>
-        <div class="creative"></div>
+
+        <div class="recent">
+            <h3>Recent</h3>
+            <div>
+                <p class="title">· How to use css in ...</p>
+                <p class="title">· How to use mdr in du</p>
+                <p class="title">· How to use sura in ...</p>
+            </div>
+        </div>
+        <div class="creative">
+            <div class="container">
+                <div class="skill-box">
+                    <span class="title">Pyhton</span>
+
+                    <div class="skill-bar">
+                        <span class="skill-per html">
+                            <span class="tooltip">80%</span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="skill-box">
+                    <span class="title">Php</span>
+
+                    <div class="skill-bar">
+                        <span class="skill-per css">
+                            <span class="tooltip">30%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="title">Java</span>
+
+                    <div class="skill-bar">
+                        <span class="skill-per javascript">
+                            <span class="tooltip">40%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="title">C++</span>
+
+                    <div class="skill-bar">
+                        <span class="skill-per nodejs">
+                            <span class="tooltip">60%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
-    <div class="content">
-        content
+    <div class="blogcontent">
+        <div class="content" id="content"></div>
+        <div class="comment">hiahiahia</div>
     </div>
     <div class="more">
-        more
+        <h1>Catalog</h1>
+        <div id="more" class="catalog"></div>
     </div>
+
+    <script>
+        new Femd([`# 测试1
+## 测试2
+### 测试3
+# 测试1
+### 测试3
+................................................................................................................................................................................................................................................................................................
+# 测试1
+### 测试3
+内容测试   
+内容测试
+# 测试1
+### 测试3
+内容测试   
+内容测试
+# 测试1
+### 测试3
+内容测试   
+内容测试
+# 测试1
+### 测试3
+内容测试   
+内容测试
+# 测试1
+### 测试3
+内容测试   
+内容测试
+# 测试1
+### 测试3
+内容测试   
+内容测试
+
+`]).toDOM({ do: [["#", "<h1 class='h1'>"], ["##", "<h2 class='h2'>"], ["###", "<h3 class='h3'>"], ["####", "<h4 class='h4'>"], ["#####", "<h5 class='h5'>"], ["######", "<h6 class='h6'>"]] }).mount("#content");
+        window.onload = function () {
+            let i = 0;
+            var str = ""
+            var content = document.getElementById('content');
+            var child = content.firstChild;
+            console.log(content.nextSibling)
+            while (child != content.lastChild) {
+                if (child.nodeType == 1 && (child.tagName == "H1" || child.tagName == "H2" || child.tagName == "H3" || child.tagName == "H4" || child.tagName == "H5" || child.tagName == "H6")) {
+                    // console.log((child.tagName[1]+'')*"11");
+                    str += "\n" + "00".repeat((child.tagName[1] + '')) + child.textContent;
+
+                }
+                child = child.nextSibling;
+            }
+            console.log(str);
+            document.getElementById("more").innerText = str;
+            // console.log(document.getElementById("content").innerHTML);
+            // console.log(document.documentElement);
+        }
+    </script>
 </body>
+
 </html>
 
 <!-- #0d1117 -->

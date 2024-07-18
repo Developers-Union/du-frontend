@@ -6,12 +6,160 @@
     <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../../css/fonts.css">
+    <!-- <link rel="stylesheet" href="../../css/fonts.css"> -->
     <title>Official Website Developers | DU</title>
 </head>
 
 <body>
+    <style>
+        body {
+            background-color: #1D1D1D;
+            min-height: 100vh;
+            margin: 0;
+            font-family: "Droid Sans", sans-serif;
+        }
 
+        body:before {
+            content: "";
+            position: fixed;
+            top: 0px;
+            left: 50%;
+            bottom: 0px;
+            transform: translateX(-50%);
+            width: 4px;
+            background-color: #fff;
+        }
+
+        body .entries {
+            width: calc(100% - 80px);
+            max-width: 800px;
+            margin: auto;
+            position: relative;
+            left: -5px;
+        }
+
+        body .entries .entry {
+            width: calc(50% - 80px);
+            float: left;
+            padding: 20px;
+            clear: both;
+            text-align: right;
+        }
+
+        body .entries .entry:not(:first-child) {
+            margin-top: -60px;
+        }
+
+        body .entries .entry .title {
+            font-size: 32px;
+            margin-bottom: 12px;
+            position: relative;
+            color: #fff;
+        }
+
+        body .entries .entry .title:before {
+            content: "";
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border: 4px solid #ffffff;
+            background-color: #1D1D1D;
+            border-radius: 100%;
+            top: 50%;
+            transform: translateY(-50%);
+            right: -73px;
+            z-index: 1000;
+        }
+
+        body .entries .entry .title.big:before {
+            width: 24px;
+            height: 24px;
+            transform: translate(8px, -50%);
+        }
+
+        body .entries .entry .body {
+            color: #aaa;
+        }
+
+        body .entries .entry .body p {
+            line-height: 1.4em;
+        }
+
+        body .entries .entry:nth-child(2n) {
+            text-align: left;
+            float: right;
+        }
+
+        body .entries .entry:nth-child(2n) .title:before {
+            left: -63px;
+        }
+
+        body .entries .entry:nth-child(2n) .title.big:before {
+            transform: translate(-8px, -50%);
+        }
+    </style>
+    <div class="entries">
+        <div class="entry">
+            <div class="title">2022.11.25 </div>
+            <div class="body">
+                <p>Mdr posted a blog named "my thinking about Developers Union".He introduced what is DU, and created a qq group(Developers Union alpha).</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">2022.12</div>
+            <div class="body">
+                <p>We set up the dev group and started the development of the Official website.</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title big">2023.1-2023.3</div>
+            <div class="body">
+                <p>happy time. Learning while coding.</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">2023.6</div>
+            <div class="body">
+                <p>Mdr left the dev group.</p>
+                <p>Xingkong fighted against Sura.</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">2023.9</div>
+            <div class="body">
+                <p>Xinghuo and Sura went to the senior high school.</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title big">2024.1</div>
+            <div class="body">
+                <p>Xingkong left the dev group. There were only one developer in the group. No one to continue the work.</p>
+            </div>
+        </div>
+        <div class="entry">
+            <div class="title">2024.6</div>
+            <div class="body">
+                <p>mdr was back, and Sura was on vacation home.</p>
+            </div>
+        </div>
+    </div>
+    <audio src="../../image/music.m4a" loop="loop" autoplay="autoplay" id="music"></audio>
+    <script type="text/javascript">
+        window.onload = function(){
+                setInterval("toggleSound()",100);
+            }
+    
+        function toggleSound() {
+                    var music = document.getElementById("music");//获取ID  
+                    music.click()
+                        
+                    if (music.paused) { //判读是否播放  
+                        music.paused=false;
+                        music.play(); //没有就播放 
+                    }    
+            }
+    </script>
+    
 </body>
 
 </html>
