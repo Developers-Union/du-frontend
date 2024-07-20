@@ -42,6 +42,17 @@
     font-family: 'Poppins', serif;
 }
 
+.content1 .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.content1 .footer-content .footer-left, .content1 .footer-content .footer-right {
+    display: flex;
+    flex-direction: column;
+}
+
 .content1 right {
     flex-direction: row;
 }

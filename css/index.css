@@ -220,7 +220,7 @@ button:active {
     height: 180px;
     padding: 20px;
     color: white;
-    background: linear-gradient(#212121, #212121) padding-box,
+    background: linear-gradient(#120921, #120921) padding-box,
         linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
     border: 2px solid transparent;
     border-radius: 8px;
@@ -237,7 +237,7 @@ button:active {
 
 .main-new .card .header span:first-child {
     font-weight: 600;
-    color: #717171;
+    color: #a1a1a1;
     margin-right: 4px;
 }
 
@@ -262,8 +262,8 @@ button:active {
 }
 
 .main-new .card .footer1 {
-    font-weight: 600;
-    color: #717171;
+    font-weight: 500;
+    color: #919191;
     margin-right: 4px;
     margin-bottom: 0.2vw;
 }
@@ -279,7 +279,7 @@ button:active {
     width: 350px;
     /* max-width: 300px; */
     height: 70px;
-    background: #353535;
+    background: #161228;
     border-radius: 20px;
     display: flex;
     align-items: center;

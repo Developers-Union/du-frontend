@@ -1,11 +1,11 @@
 @font-face {
     font-family: 'Jetbrains Mono';
-    src: url(../../../fonts/JetBrainsMono-Medium.ttf);
+    src: url(../../fonts/JetBrainsMono-Medium.ttf);
 }
 
 @font-face {
     font-family: 'Verdana';
-    src: url(../../../fonts/Verdana-1.ttf);
+    src: url(../../fonts/Verdana-1.ttf);
 }
 
 * {
