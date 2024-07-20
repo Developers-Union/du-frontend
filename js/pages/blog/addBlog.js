@@ -1,9 +1,12 @@
 const $$$ = x => document.createElement(x)
 
 const label2word = {
+    "asm": "Assembly",
+    "wasm": "WebAssembly",
     "c": "C",
     "cpp": "C++",
     "csharp": "C#",
+    "dotnet": ".NET",
     "gcc": "GCC",
     "clang": "Clang",
     "cmake": "CMake",
@@ -11,13 +14,34 @@ const label2word = {
     "java": "Java",
     "py": "Python",
     "go": "Golang",
-    "rust": "Rust",
+    "rs": "Rust",
+    "vb": "Visual Basic",
     "js": "JavaScript",
     "ts": "TypeScript",
+    "kt": "Kotlin",
+    "hs": "Haskell",
+    "lsp": "Lisp",
+    "sc": "Scheme",
+    "lua": "Lua",
+    "scr": "Scratch",
+
+    "md": "Markdown",
+    "latex": "LaTeX",
+
+    "sb": "Spring Boot",
+
     "fp": "Functional Programming",
     "pl": "Programming Language",
+    "ml": "Machine Learning",
+    "dl": "Deep Learning",
+    "ai": "Artificial Intelligence",
+
     "linux": "Linux",
-    "md": "Markdown"
+
+    "vs": "Microsoft Visual Studio",
+    "vsc": "Visual Studio Code",
+    "idea": "IntelliJ IDEA",
+    "as": "Android Studio",
 }
 
 function addBlog(root, author, avatar, title, description, likes, favorites, labels, id) {
