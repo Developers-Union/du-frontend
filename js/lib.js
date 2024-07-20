@@ -36,7 +36,7 @@ const fedu = (function () {
         return fetch.apply(null, arr);
     }
 
-    function throttle(fn, delay = 1000) {//鑺傛祦锛屾瘡1绉掗檺鍒�1娆�
+    function throttle(fn, delay = 1000) {//节流函数
         let last = 0;
         return function (...args) {
             let now = new Date().getTime();
