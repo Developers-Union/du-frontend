@@ -20,7 +20,7 @@ const label2word = {
     "md": "Markdown"
 }
 
-function addBlog(root, author, title, description, likes, favorites, labels, id) {
+function addBlog(root, author, avatar, title, description, likes, favorites, labels, id) {
     let ele = $$$("li");
     ele.classList.add("blog");
 
@@ -28,6 +28,7 @@ function addBlog(root, author, title, description, likes, favorites, labels, id)
     eba.classList.add('blog-author');
     let ebta = $$$('div');
     ebta.classList.add('blog-title-avatar');
+    ebta.style.backgroundImage = 'url(' + avatar + ')';
     eba.appendChild(ebta);
     let eban = $$$('a');
     eban.classList.add('blog-author-name');

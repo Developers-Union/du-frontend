@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Page | DU</title>
-    <link rel="stylesheet" href="../../css/pages/personpage/person.css">
-    <link rel="stylesheet" href="../../css/fonts.css">
+    <link rel="stylesheet" href="../../css/pages/person/person.css">
     <script src="../../js/lib.js"></script>
-    <script src="../../js/pages/personpage/personpage.js"></script>
+    <script src="../../js/pages/person/person.js"></script>
 </head>
 
 <body>
@@ -19,7 +18,7 @@
             </div>
             <div class="nav-right">
                 <div class="avatar"></div>
-                <p class="nav-name" id="username">Minsecrus</p>
+                <p class="nav-name" id="username"></p>
             </div>
         </div>
         <div class="main">
@@ -34,7 +33,7 @@
                 <div class="main-top-right">
                     <div class="main-top-info">
                         <div class="main-top-info-name">Minsecrus</div>
-                        <div class="main-top-info-id">ID: <span>1025</span></div>
+                        <div class="main-top-info-id">ID: <span id="user-id"></span></div>
                     </div>
                     <div class="main-top-saying">我相信会再次看到蓝天，鲜花挂满枝头</div>
                     <div class="main-top-profile">
@@ -83,53 +82,38 @@
             </div>
             <div class="main-middle">
                 <div class="main-middle-left">
-                    <div class="main-middle-left-charts">
-                        <div class="main-middle-left-chart-left">
-                            <!-- <h1 class="main-middle-left-chart-title">Title1</h1> -->
-                            <div class="canvasBox">
-                                <canvas id="charts"></canvas>
-                            </div>
-                        </div>
-                        <div class="main-middle-left-chart-right">
-
-                            <h1 class="main-middle-left-chart-title">Title2</h1>
-                        </div>
-                    </div>
-                    <h1>此处为自定义主页内容，可使用DUNote进行编辑</h1>
-                </div>
-                <div class="main-middle-right">
-                    <div class="main-middle-right-blog">
-                        <p class="main-middle-right-title">Recent blogs</p>
-                        <ul class="main-middle-right-blog-list">
-                            <li class="main-middle-right-blog-list-item">
-                                <a class="main-middle-right-blog-title">Mdr's past</a>
-                                <div class="main-middle-right-blog-data">
-                                    <div class="main-middle-right-blog-liked">
+                    <div class="main-middle-left-blog">
+                        <p class="main-middle-left-title">Recent blogs</p>
+                        <ul class="main-middle-left-blog-list">
+                            <li class="main-middle-left-blog-list-item">
+                                <a class="main-middle-left-blog-title">Mdr's past</a>
+                                <div class="main-middle-left-blog-data">
+                                    <div class="main-middle-left-blog-liked">
                                         <ion-icon name="heart"></ion-icon>
                                         <p>143</p>
                                     </div>
-                                    <div class="main-middle-right-blog-comment">
+                                    <div class="main-middle-left-blog-comment">
                                         <ion-icon name="chatbox-ellipses"></ion-icon>
                                         <p>12</p>
                                     </div>
-                                    <div class="main-middle-right-blog-favorite">
+                                    <div class="main-middle-left-blog-favorite">
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <p>2</p>
                                     </div>
                                 </div>
                             </li>
-                            <li class="main-middle-right-blog-list-item">
-                                <a class="main-middle-right-blog-title">Mdr's future</a>
-                                <div class="main-middle-right-blog-data">
-                                    <div class="main-middle-right-blog-liked">
+                            <li class="main-middle-left-blog-list-item">
+                                <a class="main-middle-left-blog-title">Mdr's future</a>
+                                <div class="main-middle-left-blog-data">
+                                    <div class="main-middle-left-blog-liked">
                                         <ion-icon name="heart"></ion-icon>
                                         <p>8888888</p>
                                     </div>
-                                    <div class="main-middle-right-blog-comment">
+                                    <div class="main-middle-left-blog-comment">
                                         <ion-icon name="chatbox-ellipses"></ion-icon>
                                         <p>77777</p>
                                     </div>
-                                    <div class="main-middle-right-blog-favorite">
+                                    <div class="main-middle-left-blog-favorite">
                                         <ion-icon name="star-sharp"></ion-icon>
                                         <p>666</p>
                                     </div>
@@ -137,20 +121,22 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="main-middle-right-about">
-                        <p class="main-middle-right-title">Other things about <span class="personal-pronoun">him</span>
+                    <div class="main-middle-left-about">
+                        <p class="main-middle-left-title">Other things about <span class="personal-pronoun">him</span>
                         </p>
-                        <ul class="main-middle-right-about-list">
-                            <li class="main-middle-right-about-item">
+                        <ul class="main-middle-left-about-list">
+                            <li class="main-middle-left-about-item">
                                 <ion-icon name="logo-github"></ion-icon>
                                 <a target="_blank" href="https://github.com/Minsecrus">Minsecrus</a>
                             </li>
-                            <li class="main-middle-right-about-item">
+                            <li class="main-middle-left-about-item">
                                 <ion-icon name="logo-wechat"></ion-icon>
                                 <a target="_blank">Minsecrus_dreamers</a>
                             </li>
                         </ul>
                     </div>
+                </div>
+                <div class="main-middle-right">
                 </div>
             </div>
         </div>
@@ -160,5 +146,8 @@
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="../../js/pages/personpage/canvas.js"></script> <!-- 不要改这行代码的位置！-->
 </body>
+<script>
+    init('Minsecrus', '../../image/avatar.png', 1025)
+</script>
 
 </html>

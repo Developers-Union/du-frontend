@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Profile | DU</title>
-    <link rel="stylesheet" href="../../css/pages/personpage/self.css">
+    <link rel="stylesheet" href="../../css/pages/person/self.css">
     <link rel="stylesheet" href="../../css/pages/blog/bloglist.css">
-    <link rel="stylesheet" href="../../css/fonts.css">
     <script src="../../js/lib.js"></script>
-    <script src="../../js/pages/personpage/self.js"></script>
+    <script src="../../js/pages/person/self.js"></script>
     <script src="../../js/pages/blog/addBlog.js"></script>
 </head>
 
@@ -92,24 +91,18 @@
             <div class="main-middle">
                 <div class="main-middle-left">
                     <div class="main-middle-left-nav">
-                        <button id="mmln-blogs" class="active" onclick="clicked(0)">Your blogs</button>
-                        <button id="mmln-projects" onclick="clicked(1)">Your projects</button>
-                        <button id="mmln-teams" onclick="clicked(2)">Your teams</button>
-                        <button id="mmln-data" onclick="clicked(3)">Active data</button>
+                        <button id="mmln-blogs" class="active" onclick="Clicked(0)">Your blogs</button>
+                        <button id="mmln-projects" onclick="Clicked(1)">Your projects</button>
+                        <button id="mmln-teams" onclick="Clicked(2)">Your teams</button>
+                        <button id="mmln-data" onclick="Clicked(3)">Active data</button>
                     </div>
                     <div class="main-middle-left-content">
                         <div id="blogs-root">
 
                         </div>
-                        <div id="content-projects">
-                            <div class="no-projects">No Projects.</div>
-                        </div>
-                        <div id="content-teams">
-                            <div class="no-teams">No Teams.</div>
-                        </div>
-                        <div id="content-data">
-                            <div class="no-data">No Data.</div>
-                        </div>
+                        <div id="content-projects"></div>
+                        <div id="content-teams"></div>
+                        <div id="content-data"></div>
                     </div>
                 </div>
                 <div class="main-middle-right">
@@ -125,8 +118,8 @@
 <script>
     // test
     const root = $('#blogs-root');
-    addBlog(root, 'Minsecrus dreamers', 'C++ High Precision Integer Library', 'using std::vector', 114, 514, ['rust', 'py', 'go', 'csharp', 'cmake', 'gcc', 'clang', 'msvc'], 51815);
-    addBlog(root, 'Minsecrus dreamers', 'C++ High Precision Integer Library', 'using std::vector', 114, 514, ['c', 'cpp', 'fp'], 51815);
+    addBlog(root, 'Minsecrus', '/image/avatar.png', 'C++ High Precision Integer Library', 'using std::vector', 114, 514, ['rust', 'py', 'go', 'csharp', 'cmake', 'gcc', 'clang', 'msvc'], 51815);
+    addBlog(root, 'Minsecrus', '/image/avatar.png', 'C++ High Precision Integer Library', 'using std::vector', 114, 514, ['c', 'cpp', 'fp'], 51815);
 </script>
 
 </html>
