@@ -32,8 +32,8 @@
 }
 
 .content1 {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-left: 5vw;
+    padding-right: 3vw;
     position: relative;
     height: 16vh;
     text-align: right;
@@ -51,6 +51,16 @@
 .content1 .footer-content .footer-left, .content1 .footer-content .footer-right {
     display: flex;
     flex-direction: column;
+}
+
+.content1 .footer-content .footer-left a {
+    color: #222;
+    font-size: 1.3vw;
+    transition: all .3s;
+}
+
+.content1 .footer-content .footer-left a:hover {
+    color: #fff;
 }
 
 .content1 right {
